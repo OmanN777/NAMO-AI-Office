@@ -1,0 +1,240 @@
+{
+  "last_updated": "2026-05-23",
+  "currency": "USD",
+  "total_value": 2559.23,
+  "total_cost": 3078.0,
+  "total_pl": -518.77,
+  "pl_percentage": -16.85,
+  "holdings": [
+    {
+      "ticker": "UNH",
+      "shares": 1.3774948,
+      "average_cost": 252.73,
+      "current_price": 387.46,
+      "total_value": 533.73,
+      "pl_usd": 185.6,
+      "pl_pct": 53.31,
+      "category": "Value/Defensive"
+    },
+    {
+      "ticker": "BRK.B",
+      "shares": 0.4614797,
+      "average_cost": 476.01,
+      "current_price": 485.88,
+      "total_value": 224.22,
+      "pl_usd": 4.55,
+      "pl_pct": 2.07,
+      "category": "Value/Defensive"
+    },
+    {
+      "ticker": "APP",
+      "shares": 0.4634061,
+      "average_cost": 461.06,
+      "current_price": 480.9,
+      "total_value": 222.85,
+      "pl_usd": 9.19,
+      "pl_pct": 4.3,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "IBM",
+      "shares": 0.8028817,
+      "average_cost": 244.11,
+      "current_price": 254.94,
+      "total_value": 204.69,
+      "pl_usd": 8.7,
+      "pl_pct": 4.44,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "MSTR",
+      "shares": 0.858384,
+      "average_cost": 204.9,
+      "current_price": 160.3,
+      "total_value": 137.6,
+      "pl_usd": -38.28,
+      "pl_pct": -21.77,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "TTWO",
+      "shares": 0.4598325,
+      "average_cost": 228.34,
+      "current_price": 228.68,
+      "total_value": 105.16,
+      "pl_usd": 0.16,
+      "pl_pct": 0.15,
+      "category": "Value/Defensive"
+    },
+    {
+      "ticker": "ASST",
+      "shares": 6.6,
+      "average_cost": 25.77,
+      "current_price": 18.14,
+      "total_value": 119.72,
+      "pl_usd": -50.36,
+      "pl_pct": -29.61,
+      "category": "Speculative"
+    },
+    {
+      "ticker": "RBLX",
+      "shares": 2.3529412,
+      "average_cost": 72.25,
+      "current_price": 47.77,
+      "total_value": 112.4,
+      "pl_usd": -57.6,
+      "pl_pct": -33.88,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "V",
+      "shares": 0.2953725,
+      "average_cost": 337.98,
+      "current_price": 329.3,
+      "total_value": 97.27,
+      "pl_usd": -2.56,
+      "pl_pct": -2.56,
+      "category": "Value/Defensive"
+    },
+    {
+      "ticker": "XYZ",
+      "shares": 1.3177067,
+      "average_cost": 75.77,
+      "current_price": 68.07,
+      "total_value": 89.7,
+      "pl_usd": -10.14,
+      "pl_pct": -10.16,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "IONQ",
+      "shares": 1.6576457,
+      "average_cost": 60.23,
+      "current_price": 62.77,
+      "total_value": 104.05,
+      "pl_usd": 4.21,
+      "pl_pct": 4.22,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "OKLO",
+      "shares": 1.1442873,
+      "average_cost": 139.6,
+      "current_price": 65.78,
+      "total_value": 75.27,
+      "pl_usd": -84.47,
+      "pl_pct": -52.88,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "AMZN",
+      "shares": 0.228932,
+      "average_cost": 218.06,
+      "current_price": 266.87,
+      "total_value": 61.1,
+      "pl_usd": 11.18,
+      "pl_pct": 22.39,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "TTD",
+      "shares": 2.6647014,
+      "average_cost": 51.56,
+      "current_price": 22.03,
+      "total_value": 58.72,
+      "pl_usd": -78.67,
+      "pl_pct": -57.26,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "FIG",
+      "shares": 2.1352143,
+      "average_cost": 75.28,
+      "current_price": 22.72,
+      "total_value": 48.51,
+      "pl_usd": -112.23,
+      "pl_pct": -69.82,
+      "category": "Speculative"
+    },
+    {
+      "ticker": "NEON",
+      "shares": 9.0,
+      "average_cost": 6.58,
+      "current_price": 1.78,
+      "total_value": 16.06,
+      "pl_usd": -43.16,
+      "pl_pct": -72.88,
+      "category": "Speculative"
+    },
+    {
+      "ticker": "VOO",
+      "shares": 0.018955,
+      "average_cost": 492.22,
+      "current_price": 686.18,
+      "total_value": 13.01,
+      "pl_usd": 3.68,
+      "pl_pct": 39.44,
+      "category": "ETF"
+    },
+    {
+      "ticker": "MBIO",
+      "shares": 21.0,
+      "average_cost": 3.25,
+      "current_price": 0.64,
+      "total_value": 13.44,
+      "pl_usd": -54.81,
+      "pl_pct": -80.31,
+      "category": "Speculative"
+    },
+    {
+      "ticker": "JUNS",
+      "shares": 35.0,
+      "average_cost": 2.96,
+      "current_price": 0.24,
+      "total_value": 8.51,
+      "pl_usd": -95.09,
+      "pl_pct": -91.79,
+      "category": "Speculative"
+    },
+    {
+      "ticker": "USBC",
+      "shares": 22.0,
+      "average_cost": 4.57,
+      "current_price": 0.39,
+      "total_value": 8.51,
+      "pl_usd": -92.03,
+      "pl_pct": -91.54,
+      "category": "Speculative"
+    },
+    {
+      "ticker": "SLAI",
+      "shares": 10.3721128,
+      "average_cost": 4.81,
+      "current_price": 0.79,
+      "total_value": 8.19,
+      "pl_usd": -41.7,
+      "pl_pct": -83.58,
+      "category": "ADR"
+    },
+    {
+      "ticker": "VRT",
+      "shares": 0.6072439,
+      "average_cost": 326.09,
+      "current_price": 326.8,
+      "total_value": 198.45,
+      "pl_usd": 0.43,
+      "pl_pct": 0.22,
+      "category": "Aggressive Tech"
+    },
+    {
+      "ticker": "GOOGL",
+      "shares": 0.2558412,
+      "average_cost": 326.09,
+      "current_price": 383.32,
+      "total_value": 98.07,
+      "pl_usd": 14.64,
+      "pl_pct": 17.55,
+      "category": "Aggressive Tech"
+    }
+  ]
+}

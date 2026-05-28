@@ -1,0 +1,65 @@
+{
+  "portfolio_name": "Agent Oman Aggressive Growth",
+  "start_date": "2026-05-17",
+  "initial_nav": 30000.0,
+  "current_nav": 30000.0,
+  "currency": "USD",
+  "holdings": [
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "shares": 5.0,
+      "average_cost": 1400.0,
+      "total_value": 7000.0,
+      "allocation_pct": 23.33,
+      "thesis_id": "AVGO-2026-001"
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co",
+      "shares": 60.0,
+      "average_cost": 100.0,
+      "total_value": 6000.0,
+      "allocation_pct": 20.0,
+      "thesis_id": "VRT-2026-001"
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "shares": 20.0,
+      "average_cost": 280.0,
+      "total_value": 5600.0,
+      "allocation_pct": 18.67,
+      "thesis_id": "CRM-2026-001"
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "shares": 45.0,
+      "average_cost": 130.0,
+      "total_value": 5850.0,
+      "allocation_pct": 19.5,
+      "thesis_id": "MU-2026-001"
+    },
+    {
+      "ticker": "CCJ",
+      "name": "Cameco Corporation",
+      "shares": 110.0,
+      "average_cost": 50.0,
+      "total_value": 5550.0,
+      "allocation_pct": 18.5,
+      "thesis_id": "CCJ-2026-001"
+    }
+  ],
+  "cash_balance": 0.0,
+  "benchmark_vs_spy": 0.0,
+  "weeks_alive": 1,
+  "recommended_actions": [
+    "No actions this week — hold all positions",
+    "No kill condition was hit in the structural tripwire test.",
+    "The 0% cash is dry powder, but waiting for deployment signals."
+  ],
+  "performance_history": [
+    { "date": "2026-05-17", "oman_return": 0, "spy_return": 0 }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "namo-executive",
+  "version": "1.0.0",
+  "description": "Namo Executive Office Agent Team & Skills",
+  "author": "OmanN777",
+  "mcpServers": {
+    "youtube-full": {
+      "command": "npx",
+      "args": ["-y", "@konanx/youtube-mcp"],
+      "env": {
+        "YOUTUBE_API_KEY": "AIzaSyBmhDLu_OD91GiAnhz89-Wvu2ClGSQNs4o"
+      }
+    }
+  }
+}

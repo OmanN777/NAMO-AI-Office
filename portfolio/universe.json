@@ -1,0 +1,180 @@
+{
+  "last_updated": "2026-05-17",
+  "items": [
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "status": "SELECTED",
+      "reason": "ราชาแห่ง Custom AI Silicon ที่มี Backlog ยาวเหยียดและคุมตลาดกว่า 70% ตรงตามเกณฑ์ Scalability และ Engineering Strength ขั้นสูงสุด",
+      "category": "AI Chips"
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co",
+      "status": "SELECTED",
+      "reason": "ผู้นำระบบระบายความร้อน (Liquid Cooling) ซึ่งเป็นคอขวดสำคัญของ AI Infrastructure ในปี 2026 มี Backlog มหาศาลระดับ $15B",
+      "category": "Infrastructure"
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "status": "SELECTED",
+      "reason": "การเปลี่ยนผ่านสู่ Agentic AI ผ่าน Agentforce สร้างรายได้รูปแบบใหม่ (Usage-based) ที่สเกลได้ดีกว่าโมเดลเดิม",
+      "category": "Software"
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "status": "SELECTED",
+      "reason": "Memory (HBM3E) กลายเป็นสินค้าขาดแคลนและถูกจองเต็มล่วงหน้าข้ามปี ทำให้ Micron มีอำนาจการต่อรองราคาสูงมาก",
+      "category": "Memory"
+    },
+    {
+      "ticker": "CCJ",
+      "name": "Cameco Corporation",
+      "status": "SELECTED",
+      "reason": "AI Data Centers ต้องการพลังงานสะอาด 24/7 และนิวเคลียร์คือคำตอบเดียว CCJ ครองทรัพยากรยูเรเนียมคุณภาพสูงที่สุดในโลก",
+      "category": "Energy"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "status": "DISQUALIFIED",
+      "reason": "แม้ Moat จะแข็งแกร่งที่สุดในโลก แต่ Market Cap ระดับ $4.5T ทำให้ Upside เริ่มจำกัดเมื่อเทียบกับความเสี่ยงกระจุกตัว พิจารณาถือผ่านตัวอื่นที่ Valuation ถูกกว่า",
+      "category": "AI Chips"
+    },
+    {
+      "ticker": "ALAB",
+      "name": "Astera Labs",
+      "status": "PASSED",
+      "reason": "ทำระบบเชื่อมต่อ Smart Fabric ที่น่าสนใจมาก แต่ปัจจุบันเลือก AVGO ที่มี Ecosystem ครบวงจรกว่าในระดับเงินทุนนี้",
+      "category": "Hardware"
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices",
+      "status": "PASSED",
+      "reason": "MI450 กำลังชิงส่วนแบ่งตลาดได้ดี แต่ยังตามหลัง Nvidia และ Custom Silicon ของ Hyperscalers อยู่หนึ่งก้าว",
+      "category": "AI Chips"
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor",
+      "status": "PASSED",
+      "reason": "เป็นหัวใจของทุกอย่าง แต่ความเสี่ยงทางภูมิรัฐศาสตร์และต้นทุน node 2nm ที่สูงขึ้นทำให้การถือผ่านลูกค้า (AVGO/AAPL) ดูคุ้มค่ากว่า",
+      "category": "Foundry"
+    },
+    {
+      "ticker": "AMKR",
+      "name": "Amkor Technology",
+      "status": "PASSED",
+      "reason": "ผู้นำด้าน Advanced Packaging ที่โตตาม Nvidia แต่ Margin ยังต่ำกว่ากลุ่มผู้ออกแบบชิป",
+      "category": "Hardware"
+    },
+    {
+      "ticker": "TER",
+      "name": "Teradyne",
+      "status": "PASSED",
+      "reason": "โตตามความซับซ้อนของการทดสอบชิป AI แต่ยังไม่เห็นอำนาจการต่อรองที่ชัดเจนเท่ากลุ่มต้นน้ำ",
+      "category": "Hardware"
+    },
+    {
+      "ticker": "CRDO",
+      "name": "Credo Technology",
+      "status": "PASSED",
+      "reason": "Connectivity ประหยัดพลังงานเป็นธีมที่ดี แต่ขนาดตลาดยังเล็กเกินไปสำหรับพอร์ตหลัก",
+      "category": "Hardware"
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "status": "PASSED",
+      "reason": "แข็งแกร่งเกินบรรยาย แต่การจะสร้าง Aggressive Growth จากฐานที่ใหญ่ขนาดนี้ทำได้ยากกว่าหุ้นขนาดกลาง",
+      "category": "Cloud/AI"
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon.com",
+      "status": "PASSED",
+      "reason": "AWS Bedrock และชิป Trainium มาถูกทาง แต่ธุรกิจ E-commerce ยังเป็นตัวถ่วง Margin รวม",
+      "category": "Cloud/AI"
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "status": "SELECTED",
+      "reason": "อยู่ในรายการ Shortlist ลำดับที่ 1 มีความแข็งแกร่งจาก Vertical Integration (TPU + Gemini + Cloud) รอจังหวะเข้าลงทุนเมื่อมีกระแสเงินสดพร้อม",
+      "category": "Cloud/AI"
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms",
+      "status": "PASSED",
+      "reason": "Llama กลายเป็นมาตรฐาน Open-source แต่รายได้ยังผูกติดกับโฆษณาเป็นหลัก ซึ่งผันผวนตามเศรษฐกิจ",
+      "category": "Software/AI"
+    },
+    {
+      "ticker": "CEG",
+      "name": "Constellation Energy",
+      "status": "PASSED",
+      "reason": "ดีล Microsoft-Three Mile Island เป็นจุดเปลี่ยน แต่ราคาหุ้นสะท้อนข่าวดีไปมากแล้วเมื่อเทียบกับ CCJ",
+      "category": "Energy"
+    },
+    {
+      "ticker": "VST",
+      "name": "Vistra Corp",
+      "status": "PASSED",
+      "reason": "เป็น Utility ที่โตแรงที่สุดในปี 2026 แต่ความเสี่ยงด้านกฎระเบียบ (Regulation) สูงกว่าการถือวัตถุดิบต้นน้ำอย่างยูเรเนียม",
+      "category": "Energy"
+    },
+    {
+      "ticker": "NEE",
+      "name": "NextEra Energy",
+      "status": "PASSED",
+      "reason": "ผู้นำพลังงานสะอาด แต่โครงการ Renewable มักเจอปัญหาการเชื่อมต่อ Grid ที่ล่าช้า",
+      "category": "Energy"
+    },
+    {
+      "ticker": "GEV",
+      "name": "GE Vernova",
+      "status": "PASSED",
+      "reason": "Grid Modernization เป็นธีมที่ใช่ แต่การปรับปรุงโครงสร้างพื้นฐานรัฐต้องใช้เวลาพิสูจน์ผลกำไร",
+      "category": "Energy"
+    },
+    {
+      "ticker": "BEPC",
+      "name": "Brookfield Renewable",
+      "status": "PASSED",
+      "reason": "พันธมิตรที่ดีของ Hyperscalers แต่โครงสร้างหนี้ในกลุ่ม Infrastructure เริ่มสูงขึ้นตามดอกเบี้ย",
+      "category": "Energy"
+    },
+    {
+      "ticker": "SHOP",
+      "name": "Shopify Inc.",
+      "status": "DISQUALIFIED",
+      "reason": "เสี่ยงโดน AI Search (Perplexity/Google) ข้ามขั้นตอนการซื้อขายแบบเดิม กระทบ Business Model ระยะยาว",
+      "category": "E-commerce"
+    },
+    {
+      "ticker": "ASML",
+      "name": "ASML Holding",
+      "status": "PASSED",
+      "reason": "ผูกขาด EUV แน่นอน แต่เป็นรอบการลงทุนที่ไกลตัวผู้บริโภคเกินไปสำหรับพอร์ตที่เน้นการทำกำไรใน 1-2 ปีนี้",
+      "category": "Equipment"
+    },
+    {
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical",
+      "status": "PASSED",
+      "reason": "AI ในการแพทย์มาแรงจริง แต่ไม่ใช่หัวใจหลักของ AI-Energy Convergence ที่เราโฟกัส",
+      "category": "Healthcare/AI"
+    },
+    {
+      "ticker": "EQT",
+      "name": "EQT Corporation",
+      "status": "PASSED",
+      "reason": "Natural Gas เป็นสะพานเชื่อมพลังงานที่ดี แต่ Margin ต่ำกว่าและมีความเป็น Commodity สูงกว่านิวเคลียร์",
+      "category": "Energy"
+    }
+  ]
+}
