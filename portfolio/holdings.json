@@ -2,7 +2,7 @@
   "portfolio_name": "Agent Oman Aggressive Growth (Day 1 Reset)",
   "start_date": "2026-05-19",
   "initial_nav": 30000,
-  "current_nav": 30031.00,
+  "current_nav": 30043.43,
   "currency": "USD",
   "holdings": [
     {
@@ -10,60 +10,76 @@
       "name": "Vertiv Holdings Co",
       "shares": 17,
       "average_cost": 340.31,
-      "total_value": 5525.00,
+      "total_value": 5378.78,
       "allocation_pct": 18.39,
       "position_type": "LONG",
-      "thesis_id": "VRT-2026-001"
+      "thesis_id": "VRT-2026-001",
+      "current_price": 316.4,
+      "pl_usd": -406.49,
+      "pl_pct": -7.03
     },
     {
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
       "shares": 16,
       "average_cost": 413.39,
-      "total_value": 6800.00,
+      "total_value": 6808.24,
       "allocation_pct": 22.64,
       "position_type": "LONG",
-      "thesis_id": "AVGO-2026-001"
+      "thesis_id": "AVGO-2026-001",
+      "current_price": 425.52,
+      "pl_usd": 194.0,
+      "pl_pct": 2.93
     },
     {
       "ticker": "CRM",
       "name": "Salesforce, Inc.",
       "shares": 31,
       "average_cost": 179.48,
-      "total_value": 5425.00,
+      "total_value": 5561.25,
       "allocation_pct": 18.06,
       "position_type": "LONG",
-      "thesis_id": "CRM-2026-001"
+      "thesis_id": "CRM-2026-001",
+      "current_price": 179.4,
+      "pl_usd": -2.63,
+      "pl_pct": -0.05
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
       "shares": 15,
       "average_cost": 398.8,
-      "total_value": 5925.00,
+      "total_value": 5854.8,
       "allocation_pct": 19.73,
       "position_type": "LONG",
-      "thesis_id": "GOOGL-2026-001"
+      "thesis_id": "GOOGL-2026-001",
+      "current_price": 390.32,
+      "pl_usd": -127.2,
+      "pl_pct": -2.13
     },
     {
       "ticker": "CCJ",
       "name": "Cameco Corporation",
       "shares": 57,
       "average_cost": 105.2,
-      "total_value": 6156.00,
-      "allocation_pct": 20.50,
+      "total_value": 6240.36,
+      "allocation_pct": 20.5,
       "position_type": "LONG",
-      "thesis_id": "CCJ-2026-001"
+      "thesis_id": "CCJ-2026-001",
+      "current_price": 109.48,
+      "pl_usd": 243.96,
+      "pl_pct": 4.07
     }
   ],
-  "cash_balance": 200,
+  "cash_balance": 300,
   "benchmark_vs_spy": 0.32,
   "weeks_alive": 0,
   "recommended_actions": [
     "OMAN'S STRATEGY (2026-05-21 PM): Daily funding skipped (already funded today). Cash remains $180.00. Holding position into CRM earnings next week.",
     "MALLI-DAILY UPDATE (PM): After-hours scan completed. Tech sector consolidating. No new catalysts. Pordee optimization active.",
     "MARKET MONITOR: NVDA flat after hours. Energy (VST, CEG) continues to show strength.",
-    "OMAN'S STRATEGY (2026-05-23): Daily funding added ($20). Cash is $200.00. Tech sentiment remains strong. Monitoring CRM earnings coming on May 27."
+    "OMAN'S STRATEGY (2026-05-23): Daily funding added ($20). Cash is $200.00. Tech sentiment remains strong. Monitoring CRM earnings coming on May 27.",
+    "MALLI-DAILY UPDATE (2026-05-28): Retroactively added missing daily funding for 5 days ($100). Cash is now $300.00."
   ],
   "performance_history": [
     {
@@ -83,8 +99,24 @@
     },
     {
       "date": "2026-05-23",
-      "oman_return": 0.10,
-      "spy_return": 0.30
+      "oman_return": 0.1,
+      "spy_return": 0.3
+    },
+    {
+      "date": "2026-05-27",
+      "oman_return": -0.09,
+      "spy_return": 0.45
+    },
+    {
+      "date": "2026-05-28",
+      "oman_return": 0.14,
+      "spy_return": 0.50
     }
-  ]
+  ],
+  "total_value": 29843.43,
+  "total_cost": 29941.79,
+  "total_pl": -98.36,
+  "pl_percentage": -0.33,
+  "last_updated": "2026-05-28",
+  "stale_tickers": []
 }
