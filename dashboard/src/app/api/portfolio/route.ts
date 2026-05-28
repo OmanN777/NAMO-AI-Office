@@ -2,6 +2,8 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 const PORTFOLIO_FILE = path.join(process.cwd(), '..', 'portfolio', 'holdings.json');
 
 export async function GET(request: Request) {
@@ -10,7 +12,7 @@ export async function GET(request: Request) {
   
   let filePath = path.join(process.cwd(), '..', 'portfolio', 'holdings.json');
   
-  if (date && date !== '2026-05-19') {
+  if (date && date !== '2026-05-28') {
     filePath = path.join(process.cwd(), '..', 'portfolio', 'history', `${date}.json`);
   }
 

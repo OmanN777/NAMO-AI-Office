@@ -29,19 +29,19 @@ export default function Dashboard() {
   const [universe, setUniverse] = useState<Universe | null>(null);
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentDate, setCurrentDate] = useState("2026-05-23");
+  const [currentDate, setCurrentDate] = useState("2026-05-28");
   const [activeTab, setActiveTab] = useState<'dashboard' | 'about'>('dashboard');
   
-  const availableDates = ["2026-05-19", "2026-05-21", "2026-05-23"];
+  const availableDates = ["2026-05-19", "2026-05-21", "2026-05-23", "2026-05-28"];
 
   useEffect(() => {
     async function fetchData() {
       try {
         const [agentsRes, portfolioRes, commandsRes, universeRes] = await Promise.all([
-          fetch("/api/agents"),
-          fetch(`/api/portfolio?date=${currentDate}`),
-          fetch("/api/commands"),
-          fetch("/api/universe")
+          fetch("/api/agents", { cache: "no-store" }),
+          fetch(`/api/portfolio?date=${currentDate}`, { cache: "no-store" }),
+          fetch("/api/commands", { cache: "no-store" }),
+          fetch("/api/universe", { cache: "no-store" })
         ]);
         const agentsData = await agentsRes.json();
         const portfolioData = await portfolioRes.json();
@@ -74,7 +74,7 @@ export default function Dashboard() {
     );
   }
 
-  const omanCommands = globalCommands.filter(cmd => cmd.id.startsWith('oman'));
+  const agentCommands = selectedAgent ? globalCommands.filter(cmd => cmd.id.startsWith(selectedAgent.id)) : [];
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -170,7 +170,7 @@ export default function Dashboard() {
                             : "text-slate-500 hover:text-slate-300"
                         }`}
                       >
-                        {date === "2026-05-19" ? "LIVE" : date.split('-').slice(1).join('/')}
+                        {date === "2026-05-28" ? "LIVE" : date.split('-').slice(1).join('/')}
                       </button>
                     ))}
                   </div>
@@ -301,7 +301,7 @@ export default function Dashboard() {
                         <h3 className="font-bold text-sm">การดำเนินการของ Oman</h3>
                       </div>
                       <div className="space-y-4 flex-1 overflow-y-auto pr-2 custom-scrollbar">
-                        {portfolio.recommended_actions.map((action, idx) => (
+                        {portfolio.recommended_actions.slice(-4).reverse().map((action, idx) => (
                           <div key={idx} className="p-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-start gap-3">
                             <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
                             <p className="text-[11px] text-slate-300 leading-relaxed font-medium">{action}</p>
@@ -531,6 +531,28 @@ export default function Dashboard() {
                       </div>
                     </section>
                   </div>
+
+                  {/* Available Commands Section for Oman */}
+                  <section className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-lg">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="p-2 bg-blue-500/10 rounded-xl text-blue-400 border border-blue-500/20">
+                        <Code2 size={20} />
+                      </div>
+                      <h3 className="text-xl font-bold">คำสั่งเฉพาะ (Available Commands)</h3>
+                    </div>
+                    {agentCommands.length > 0 ? (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {agentCommands.map((cmd) => (
+                          <div key={cmd.id} className="p-4 bg-slate-950 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-colors">
+                            <p className="font-mono text-sm font-bold text-blue-400 mb-2">{cmd.name}</p>
+                            <p className="text-xs text-slate-400 font-medium leading-relaxed">{cmd.description || "ไม่มีคำอธิบาย"}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-slate-500 italic">ไม่มีคำสั่งเฉพาะสำหรับ Agent นี้</p>
+                    )}
+                  </section>
                 </div>
               </div>
             )}
@@ -579,6 +601,26 @@ export default function Dashboard() {
                         </div>
                       ))}
                     </div>
+                  </div>
+
+                  {/* Available Commands Section for other agents */}
+                  <div className="bg-slate-900 rounded-3xl border border-slate-800 p-6 shadow-lg flex-1 mt-8">
+                    <div className="flex items-center gap-2 mb-6">
+                      <Code2 size={18} className="text-blue-500" />
+                      <h3 className="font-bold text-sm">Available Commands</h3>
+                    </div>
+                    {agentCommands.length > 0 ? (
+                      <div className="space-y-4">
+                        {agentCommands.map((cmd) => (
+                          <div key={cmd.id} className="p-4 bg-slate-950 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-colors">
+                            <p className="font-mono text-xs font-bold text-blue-400 mb-1">{cmd.name}</p>
+                            <p className="text-[10px] text-slate-400 font-medium">{cmd.description || "No description"}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-xs text-slate-500 italic">No specific commands available.</p>
+                    )}
                   </div>
                 </div>
               </div>
