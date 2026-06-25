@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { NextResponse } from 'next/server';
 
-const THESIS_FILE = path.join(process.cwd(), '..', 'portfolio', 'investment_thesis.md');
+const THESIS_FILE = path.join(process.cwd(), '..', 'Portfolios', 'Oman_Mock_Portfolio', 'investment_thesis.md');
 
 export async function GET() {
   try {

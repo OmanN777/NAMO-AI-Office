@@ -142,11 +142,11 @@ export default function StockDetailPage({ params }: { params: Promise<{ ticker: 
                 </div>
                 <div className="space-y-4">
                   <div className="text-xs text-slate-400 leading-relaxed whitespace-pre-wrap font-medium">
-                    {data.financial ? formatContent(data.financial) : "กำลังวิเคราะห์งบการเงิน..."}
+                    {data.financial ? formatContent(data.financial) : "ข้อมูลการเงินและผลประกอบการอยู่ระหว่างการวิเคราะห์โดย Fundamentokung..."}
                   </div>
-                  {data.segments && (
+                  {data.segments && data.segments.length > 5 && (
                     <div className="mt-4 pt-4 border-t border-slate-800">
-                      <p className="text-[10px] text-slate-500 font-bold uppercase mb-2">Segment & Performance Analysis</p>
+                      <p className="text-[10px] text-slate-500 font-bold uppercase mb-2">Additional Insights</p>
                       <div className="text-[11px] text-slate-300 leading-relaxed whitespace-pre-wrap font-mono bg-slate-950/50 p-3 rounded-xl border border-slate-800">
                         {formatContent(data.segments)}
                       </div>
@@ -155,7 +155,7 @@ export default function StockDetailPage({ params }: { params: Promise<{ ticker: 
                 </div>
                 <div className="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between">
                   <span className="text-[9px] text-slate-500 font-bold uppercase">Analyst</span>
-                  <span className="text-[9px] text-orange-500 font-bold uppercase">Earnchan</span>
+                  <span className="text-[9px] text-orange-500 font-bold uppercase">Fundamentokung</span>
                 </div>
               </div>
             </div>

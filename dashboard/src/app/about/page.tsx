@@ -57,7 +57,7 @@ export default function AboutOmanPage() {
             </div>
             <h1 className="text-6xl font-black tracking-tighter">Agent <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-amber-400">Oman</span></h1>
             <p className="text-xl text-slate-400 max-w-2xl leading-relaxed font-medium italic">
-              &quot;Agent จำลองการเทรดตามสไตล์ CEO (OmanN777) บริหารพอร์ตจำลองมูลค่า $30,000 ด้วยวินัยทางวิศวกรรม&quot;
+              &quot;Agent จำลองการเทรดตามสไตล์ CEO (Namo) บริหารพอร์ตจำลองมูลค่า $30,000 ด้วยวินัยทางวิศวกรรม&quot;
             </p>
           </div>
         </header>

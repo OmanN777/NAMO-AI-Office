@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { NextResponse } from 'next/server';
 
-const AGENTS_DIR = path.join(process.cwd(), '..', '..', '.gemini', 'agents');
+const AGENTS_DIR = path.join(process.cwd(), '..', 'plugins', 'namo-executive', 'agents');
 
 export async function GET() {
   try {

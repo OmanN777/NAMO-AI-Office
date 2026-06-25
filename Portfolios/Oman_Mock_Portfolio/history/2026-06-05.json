@@ -1,0 +1,171 @@
+{
+  "portfolio_name": "Agent Oman Aggressive Growth (Day 1 Reset)",
+  "start_date": "2026-05-19",
+  "initial_nav": 3000.0,
+  "current_nav": 2972.294,
+  "currency": "USD",
+  "holdings": [
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co",
+      "shares": 1.7,
+      "average_cost": 340.31,
+      "total_value": 520.7439999999999,
+      "allocation_pct": 17.52,
+      "position_type": "LONG",
+      "thesis_id": "VRT-2026-001",
+      "current_price": 306.32,
+      "pl_usd": -57.783,
+      "pl_pct": -9.99,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "shares": 1.6,
+      "average_cost": 413.39,
+      "total_value": 643.088,
+      "allocation_pct": 21.64,
+      "position_type": "LONG",
+      "thesis_id": "AVGO-2026-001",
+      "current_price": 401.93,
+      "pl_usd": -18.336000000000002,
+      "pl_pct": -2.77,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "shares": 3.1,
+      "average_cost": 179.4795,
+      "total_value": 589.4649999999999,
+      "allocation_pct": 19.83,
+      "position_type": "LONG",
+      "thesis_id": "CRM-2026-001",
+      "current_price": 190.15,
+      "pl_usd": 33.079,
+      "pl_pct": 5.95,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "shares": 1.5,
+      "average_cost": 398.8,
+      "total_value": 556.2,
+      "allocation_pct": 18.71,
+      "position_type": "LONG",
+      "thesis_id": "GOOGL-2026-001",
+      "current_price": 370.8,
+      "pl_usd": -42.0,
+      "pl_pct": -7.02,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "CCJ",
+      "name": "Cameco Corporation",
+      "shares": 5.7,
+      "average_cost": 105.2,
+      "total_value": 616.797,
+      "allocation_pct": 20.75,
+      "position_type": "LONG",
+      "thesis_id": "CCJ-2026-001",
+      "current_price": 108.21,
+      "pl_usd": 17.157,
+      "pl_pct": 2.86,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    }
+  ],
+  "cash_balance": 219.82299999999987,
+  "benchmark_vs_spy": 0.45,
+  "weeks_alive": 0,
+  "recommended_actions": [
+    "OMAN'S STRATEGY (2026-05-23): Daily funding added ($20). Cash is $200.00. Tech sentiment remains strong. Monitoring CRM earnings coming on May 27.",
+    "MALLI-DAILY UPDATE (2026-05-28): Retroactively added missing daily funding for 5 days ($100). Cash is now $300.00.",
+    "OMAN'S STRATEGY (2026-05-30): Added daily funding for 2 days ($40). Cash is $340.00. Holding all positions. CRM earnings massive beat validated Agentic AI thesis. VRT pullback provides future accumulation opportunity.",
+    "MALLI-DAILY UPDATE (2026-05-30): CRM Q1 FY2027 earnings resulted in a 15%+ spike. AVGO running into June 3 earnings. CCJ operations back to normal.",
+    "OMAN'S STRATEGY (2026-06-01): Added daily funding ($40 for 2 days). Cash is $380.00. Holding positions. Bear case analysis noted for all holdings; setting tight stop losses on CRM due to structural SaaS risks.",
+    "OMAN'S STRATEGY (2026-06-02): Added daily funding ($20). Cash is $400.00. Holding positions. Tech sector showing resilience. AVGO momentum building before earnings tomorrow.",
+    "MALLI-DAILY UPDATE (2026-06-02): VRT rebounding from support. CRM finding a floor. CCJ broke out of consolidation.",
+    "OMAN'S STRATEGY (2026-06-03): Added daily funding ($20). Cash is $420.00. AVGO earnings massive beat! AI infra thesis fully validated. Holding all positions. Portfolio reached new all-time high.",
+    "MALLI-DAILY UPDATE (2026-06-03): AVGO Q2 FY26 earnings crushed estimates, stock up 6.5%. GOOGL also showing strong momentum. VRT continuing steady climb."
+  ],
+  "performance_history": [
+    {
+      "date": "2026-05-21",
+      "oman_return": -1.53,
+      "spy_return": 0.24
+    },
+    {
+      "date": "2026-05-23",
+      "oman_return": 0.1,
+      "spy_return": 0.3
+    },
+    {
+      "date": "2026-05-27",
+      "oman_return": -0.09,
+      "spy_return": 0.45
+    },
+    {
+      "date": "2026-05-28",
+      "oman_return": 0.14,
+      "spy_return": 0.5
+    },
+    {
+      "date": "2026-05-30",
+      "oman_return": 2.45,
+      "spy_return": 0.85
+    },
+    {
+      "date": "2026-06-01",
+      "oman_return": 4.16,
+      "spy_return": 1.25
+    },
+    {
+      "date": "2026-06-02",
+      "oman_return": 5.05,
+      "spy_return": 1.35
+    },
+    {
+      "date": "2026-06-03",
+      "oman_return": 7.22,
+      "spy_return": 1.55
+    },
+    {
+      "date": "2026-06-04",
+      "oman_return": 0.91,
+      "spy_return": 0.0
+    },
+    {
+      "date": "2026-06-05",
+      "oman_return": -0.92,
+      "spy_return": 0.0
+    }
+  ],
+  "total_value": 2972.294,
+  "total_cost": 3040.177,
+  "total_pl": -67.88300000000001,
+  "pl_percentage": -2.23,
+  "last_updated": "2026-06-05",
+  "stale_tickers": [],
+  "total_deposited": 3260.0,
+  "total_dividends": 0.0,
+  "realized_pl_total": 0.0,
+  "daily_change_usd": -57.059000000000005,
+  "daily_change_pct": -1.88
+}

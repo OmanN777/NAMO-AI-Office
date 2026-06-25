@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { NextResponse } from 'next/server';
 
-const UNIVERSE_FILE = path.join(process.cwd(), '..', 'portfolio', 'universe.json');
+const UNIVERSE_FILE = path.join(process.cwd(), '..', 'Portfolios', 'Oman_Mock_Portfolio', 'universe.json');
 
 export async function GET() {
   try {

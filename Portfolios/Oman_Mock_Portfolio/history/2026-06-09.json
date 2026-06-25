@@ -1,0 +1,180 @@
+{
+  "portfolio_name": "Agent Oman Aggressive Growth (Day 1 Reset)",
+  "start_date": "2026-05-19",
+  "initial_nav": 3000.0,
+  "current_nav": 2825.384,
+  "currency": "USD",
+  "holdings": [
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co",
+      "shares": 1.7,
+      "average_cost": 340.31,
+      "total_value": 498.56749999999994,
+      "allocation_pct": 17.750423317872198,
+      "position_type": "LONG",
+      "thesis_id": "VRT-2026-001",
+      "current_price": 293.275,
+      "pl_usd": -79.95950000000012,
+      "pl_pct": -13.821221827157611,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "shares": 1.7,
+      "average_cost": 411.06117647058824,
+      "total_value": 642.9825000000001,
+      "allocation_pct": 22.8920087269703,
+      "position_type": "LONG",
+      "thesis_id": "AVGO-2026-001",
+      "current_price": 378.225,
+      "pl_usd": -55.82149999999992,
+      "pl_pct": -7.988148321990132,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 2,
+      "last_trade_date": "2026-06-08"
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "shares": 3.1,
+      "average_cost": 179.4795,
+      "total_value": 542.562,
+      "allocation_pct": 19.31675284929599,
+      "position_type": "LONG",
+      "thesis_id": "CRM-2026-001",
+      "current_price": 175.02,
+      "pl_usd": -13.82444999999998,
+      "pl_pct": -2.4846848804459523,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "shares": 1.5,
+      "average_cost": 398.8,
+      "total_value": 546.045,
+      "allocation_pct": 19.440757571657855,
+      "position_type": "LONG",
+      "thesis_id": "GOOGL-2026-001",
+      "current_price": 364.03,
+      "pl_usd": -52.155000000000015,
+      "pl_pct": -8.718655967903715,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "CCJ",
+      "name": "Cameco Corporation",
+      "shares": 5.7,
+      "average_cost": 105.2,
+      "total_value": 578.6070000000001,
+      "allocation_pct": 20.600057534203657,
+      "position_type": "LONG",
+      "thesis_id": "CCJ-2026-001",
+      "current_price": 101.51,
+      "pl_usd": -21.032999999999994,
+      "pl_pct": -3.5076045627376407,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    }
+  ],
+  "cash_balance": 308.44254999999976,
+  "benchmark_vs_spy": 0.45,
+  "weeks_alive": 0,
+  "recommended_actions": [
+    "OMAN'S STRATEGY (2026-05-23): Daily funding added ($20). Cash is $200.00. Tech sentiment remains strong. Monitoring CRM earnings coming on May 27.",
+    "MALLI-DAILY UPDATE (2026-05-28): Retroactively added missing daily funding for 5 days ($100). Cash is now $300.00.",
+    "OMAN'S STRATEGY (2026-05-30): Added daily funding for 2 days ($40). Cash is $340.00. Holding all positions. CRM earnings massive beat validated Agentic AI thesis. VRT pullback provides future accumulation opportunity.",
+    "MALLI-DAILY UPDATE (2026-05-30): CRM Q1 FY2027 earnings resulted in a 15%+ spike. AVGO running into June 3 earnings. CCJ operations back to normal.",
+    "OMAN'S STRATEGY (2026-06-01): Added daily funding ($40 for 2 days). Cash is $380.00. Holding positions. Bear case analysis noted for all holdings; setting tight stop losses on CRM due to structural SaaS risks.",
+    "OMAN'S STRATEGY (2026-06-02): Added daily funding ($20). Cash is $400.00. Holding positions. Tech sector showing resilience. AVGO momentum building before earnings tomorrow.",
+    "MALLI-DAILY UPDATE (2026-06-02): VRT rebounding from support. CRM finding a floor. CCJ broke out of consolidation.",
+    "OMAN'S STRATEGY (2026-06-03): Added daily funding ($20). Cash is $420.00. AVGO earnings massive beat! AI infra thesis fully validated. Holding all positions. Portfolio reached new all-time high.",
+    "MALLI-DAILY UPDATE (2026-06-03): AVGO Q2 FY26 earnings crushed estimates, stock up 6.5%. GOOGL also showing strong momentum. VRT continuing steady climb.",
+    "OMAN'S STRATEGY (2026-06-05) [RETROACTIVE WEEKLY]: Evaluated portfolio holdings. AVGO, CRM, GOOGL, CCJ thesis rated INTACT. VRT rated EVOLVING due to valuation stretch. No sell actions triggered. Updated investment_thesis.md.",
+    "OMAN'S STRATEGY (2026-06-08): Added daily funding ($60 for 3 days). Cash is $520.00. AVGO and GOOGL pulled back on recent news. VRT showing strength. Executing /oman-daily portfolio re-pricing.",
+    "OMAN'S ACTION (2026-06-08): Executed BUY 1 share of AVGO at $373.80. Rationale: High-conviction on AI custom silicon; recent 7% drop is irrational given +143% YoY AI revenue growth. Cash remaining: $146.20.",
+    "MALLI-DAILY UPDATE (2026-06-09): Added daily funding ($20). Cash is $166.20. Executing automatic price fetch."
+  ],
+  "performance_history": [
+    {
+      "date": "2026-05-21",
+      "oman_return": -1.53,
+      "spy_return": 0.24
+    },
+    {
+      "date": "2026-05-23",
+      "oman_return": 0.1,
+      "spy_return": 0.3
+    },
+    {
+      "date": "2026-05-27",
+      "oman_return": -0.09,
+      "spy_return": 0.45
+    },
+    {
+      "date": "2026-05-28",
+      "oman_return": 0.14,
+      "spy_return": 0.5
+    },
+    {
+      "date": "2026-05-30",
+      "oman_return": 2.45,
+      "spy_return": 0.85
+    },
+    {
+      "date": "2026-06-01",
+      "oman_return": 4.16,
+      "spy_return": 1.25
+    },
+    {
+      "date": "2026-06-02",
+      "oman_return": 5.05,
+      "spy_return": 1.35
+    },
+    {
+      "date": "2026-06-03",
+      "oman_return": 7.22,
+      "spy_return": 1.55
+    },
+    {
+      "date": "2026-06-04",
+      "oman_return": 0.91,
+      "spy_return": 0.0
+    },
+    {
+      "date": "2026-06-05",
+      "oman_return": -0.92,
+      "spy_return": 0.0
+    },
+    {
+      "date": "2026-06-08",
+      "oman_return": -1.240666666666669,
+      "spy_return": 1.1
+    }
+  ],
+  "total_value": 2808.764,
+  "total_cost": 3031.5574500000002,
+  "total_pl": -222.7934500000003,
+  "pl_percentage": -7.349141610362696,
+  "last_updated": "2026-06-09",
+  "stale_tickers": [],
+  "total_deposited": 3340.0,
+  "total_dividends": 0.0,
+  "realized_pl_total": 0.0,
+  "daily_change_usd": -23.005999999999936,
+  "daily_change_pct": -0.8076843409785859
+}

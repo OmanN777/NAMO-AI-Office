@@ -4,16 +4,22 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-const PORTFOLIO_FILE = path.join(process.cwd(), '..', 'portfolio', 'holdings.json');
+const PORTFOLIO_FILE = path.join(process.cwd(), '..', 'Portfolios', 'Oman_Mock_Portfolio', 'holdings.json');
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const date = searchParams.get('date');
   
-  let filePath = path.join(process.cwd(), '..', 'portfolio', 'holdings.json');
+  let filePath = path.join(process.cwd(), '..', 'Portfolios', 'Oman_Mock_Portfolio', 'holdings.json');
   
-  if (date && date !== '2026-05-28') {
-    filePath = path.join(process.cwd(), '..', 'portfolio', 'history', `${date}.json`);
+  if (date) {
+    const historyPath = path.join(process.cwd(), '..', 'Portfolios', 'Oman_Mock_Portfolio', 'history', `${date}.json`);
+    try {
+      await fs.access(historyPath);
+      filePath = historyPath;
+    } catch {
+      // History file not found, fall back to current holdings.json
+    }
   }
 
   try {

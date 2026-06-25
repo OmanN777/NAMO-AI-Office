@@ -13,7 +13,7 @@ export async function GET(
 
   try {
     // 1. Fetch Thesis
-    const thesisPath = path.join(projectRoot, 'portfolio', 'investment_thesis.md');
+    const thesisPath = path.join(projectRoot, 'Portfolios', 'Oman_Mock_Portfolio', 'investment_thesis.md');
     const thesisContent = await fs.readFile(thesisPath, 'utf-8');
     
     const sections = thesisContent.split(/###/);
@@ -23,7 +23,7 @@ export async function GET(
     })?.trim() || "No specific thesis found.";
 
     // 2. Fetch Briefs & Parse Sections
-    const briefPath = path.join(projectRoot, 'briefs', `${ticker}.md`);
+    const briefPath = path.join(projectRoot, 'Knowledge_Base', 'Briefs', `${ticker}.md`);
     let brief = "No detailed brief available yet.";
     let moat = "";
     let financial = "";
@@ -34,17 +34,17 @@ export async function GET(
       const briefContent = await fs.readFile(briefPath, 'utf-8');
       brief = briefContent;
       
-      const briefSections = briefContent.split(/## /);
-      moat = briefSections.find(s => s.includes("Competitive Moat")) || "";
-      financial = briefSections.find(s => s.includes("Financial Health")) || "";
-      sentiment = briefSections.find(s => s.includes("Market Buzz")) || "";
-      segments = briefSections.find(s => s.includes("Strategy Alignment") || s.includes("Segment")) || "";
+      const briefSections = briefContent.split(/(?:##|###) /);
+      moat = briefSections.find(s => s.toLowerCase().includes("moat") || s.toLowerCase().includes("overview") || s.toLowerCase().includes("snapshot")) || "";
+      financial = briefSections.find(s => s.toLowerCase().includes("financial") || s.toLowerCase().includes("earnings") || s.toLowerCase().includes("insight") || s.toLowerCase().includes("fundamentals")) || "";
+      sentiment = briefSections.find(s => s.toLowerCase().includes("sentiment") || s.toLowerCase().includes("risk") || s.toLowerCase().includes("buzz") || s.toLowerCase().includes("bull/bear")) || "";
+      segments = briefSections.find(s => s.toLowerCase().includes("segment") || s.toLowerCase().includes("strategy") || s.toLowerCase().includes("conclusion") || s.toLowerCase().includes("kill conditions")) || "";
     } catch { 
       console.log(`[API] No brief found for ${ticker}`);
     }
 
     // 3. Check for source files
-    const sourceDir = path.join(projectRoot, 'sources', ticker);
+    const sourceDir = path.join(projectRoot, 'Knowledge_Base', 'Sources', ticker);
     let sourceFiles: string[] = [];
     try {
       sourceFiles = await fs.readdir(sourceDir);

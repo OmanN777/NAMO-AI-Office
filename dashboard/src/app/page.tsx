@@ -26,32 +26,129 @@ export default function Dashboard() {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [globalCommands, setGlobalCommands] = useState<Command[]>([]);
   const [portfolio, setPortfolio] = useState<Portfolio | null>(null);
+  const [realPortfolio, setRealPortfolio] = useState<any>(null);
   const [universe, setUniverse] = useState<Universe | null>(null);
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentDate, setCurrentDate] = useState("2026-05-28");
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'about'>('dashboard');
+  const [currentDate, setCurrentDate] = useState("");
+  const [availableDates, setAvailableDates] = useState<string[]>([]);
+  const [liveDate, setLiveDate] = useState<string>("");
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'about' | 'real_dashboard'>('dashboard');
+  const [timeRange, setTimeRange] = useState<'1D' | '5D' | '1M' | '6M' | '1Y' | 'ALL'>('ALL');
+
+  const getFilteredHistory = () => {
+    if (!portfolio?.performance_history) return [];
+    const history = portfolio.performance_history;
+    if (timeRange === 'ALL') return history;
+    
+    const lastDate = new Date(history[history.length - 1].date);
+    const cutoff = new Date(lastDate);
+    
+    if (timeRange === '1D') cutoff.setDate(cutoff.getDate() - 1);
+    if (timeRange === '5D') cutoff.setDate(cutoff.getDate() - 5);
+    if (timeRange === '1M') cutoff.setMonth(cutoff.getMonth() - 1);
+    if (timeRange === '6M') cutoff.setMonth(cutoff.getMonth() - 6);
+    if (timeRange === '1Y') cutoff.setFullYear(cutoff.getFullYear() - 1);
+    
+    return history.filter((h: any) => new Date(h.date) >= cutoff);
+  };
   
-  const availableDates = ["2026-05-19", "2026-05-21", "2026-05-23", "2026-05-28"];
+  // Real Portfolio Transaction State
+  const [showManageModal, setShowManageModal] = useState(false);
+  const [syncHoldings, setSyncHoldings] = useState<any[]>([]);
+  const [syncLoading, setSyncLoading] = useState(false);
+
+  const openManageModal = () => {
+    if (realPortfolio?.holdings) {
+      setSyncHoldings(JSON.parse(JSON.stringify(realPortfolio.holdings)));
+    } else {
+      setSyncHoldings([]);
+    }
+    setShowManageModal(true);
+  };
+
+  const handleSyncSubmit = async () => {
+    setSyncLoading(true);
+    try {
+      const res = await fetch("/api/real_portfolio", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "SYNC",
+          holdings: syncHoldings
+        })
+      });
+      if (res.ok) {
+        const updated = await res.json();
+        setRealPortfolio(updated.portfolio);
+        setShowManageModal(false);
+      } else {
+        const err = await res.json();
+        alert(err.error || "Failed to sync portfolio");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Error syncing portfolio");
+    } finally {
+      setSyncLoading(false);
+    }
+  };
+
+  const updateSyncRow = (index: number, field: string, value: string) => {
+    const updated = [...syncHoldings];
+    updated[index][field] = value;
+    setSyncHoldings(updated);
+  };
+
+  const removeSyncRow = (index: number) => {
+    const updated = [...syncHoldings];
+    updated.splice(index, 1);
+    setSyncHoldings(updated);
+  };
+
+  const addSyncRow = () => {
+    setSyncHoldings([...syncHoldings, { ticker: "", shares: "", average_cost: "", current_price: "" }]);
+  };
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const [agentsRes, portfolioRes, commandsRes, universeRes] = await Promise.all([
+        const [agentsRes, portfolioRes, realPortfolioRes, commandsRes, universeRes, datesRes] = await Promise.all([
           fetch("/api/agents", { cache: "no-store" }),
-          fetch(`/api/portfolio?date=${currentDate}`, { cache: "no-store" }),
+          fetch(`/api/portfolio${currentDate ? `?date=${currentDate}` : ''}`, { cache: "no-store" }),
+          fetch("/api/real_portfolio", { cache: "no-store" }),
           fetch("/api/commands", { cache: "no-store" }),
-          fetch("/api/universe", { cache: "no-store" })
+          fetch("/api/universe", { cache: "no-store" }),
+          fetch("/api/dates", { cache: "no-store" })
         ]);
         const agentsData = await agentsRes.json();
-        const portfolioData = await portfolioRes.json();
+        
+        // Handle portfolio data safely to prevent JSON crashes
+        let portfolioData = null;
+        if (portfolioRes.ok) {
+          try {
+            portfolioData = await portfolioRes.json();
+          } catch (e) {
+            console.error("Failed to parse portfolio JSON");
+          }
+        }
+        
+        const realPortfolioData = await realPortfolioRes.json();
         const commandsData = await commandsRes.json();
         const universeData = await universeRes.json();
+        const datesData = await datesRes.json();
         
         setAgents(agentsData);
-        setPortfolio(portfolioData);
+        if (portfolioData) setPortfolio(portfolioData);
+        setRealPortfolio(realPortfolioData);
         setGlobalCommands(commandsData);
         setUniverse(universeData);
+
+        if (datesData.dates) setAvailableDates(datesData.dates);
+        if (datesData.liveDate) setLiveDate(datesData.liveDate);
+        if (datesData.liveDate && currentDate === "") {
+          setCurrentDate(datesData.liveDate);
+        }
         
         if (!selectedAgent) {
           const oman = agentsData.find((a: Agent) => a.id === "oman");
@@ -88,13 +185,48 @@ export default function Dashboard() {
         </div>
         
         <nav className="flex-1 overflow-y-auto p-4 space-y-2">
-          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 px-2">
+          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 px-2 mt-2">
+            พอร์ตการลงทุน (Portfolios)
+          </div>
+          <button
+            onClick={() => {
+              const oman = agents.find(a => a.id === 'oman');
+              if (oman) setSelectedAgent(oman);
+              setActiveTab('dashboard');
+            }}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${
+              (activeTab === 'dashboard' || activeTab === 'about') && selectedAgent?.id === 'oman'
+                ? "bg-slate-800 text-blue-400 shadow-sm" 
+                : "text-slate-200 hover:bg-slate-800/50 hover:text-white"
+            }`}
+          >
+            <LayoutDashboard size={18} className="text-blue-500" />
+            <span className="text-sm font-bold">พอร์ตจำลอง (Oman)</span>
+            {((activeTab === 'dashboard' || activeTab === 'about') && selectedAgent?.id === 'oman') && <ChevronRight size={14} className="ml-auto" />}
+          </button>
+          
+          <button
+            onClick={() => {
+              setSelectedAgent(null);
+              setActiveTab('real_dashboard');
+            }}
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${
+              activeTab === 'real_dashboard'
+                ? "bg-slate-800 text-emerald-400 shadow-sm" 
+                : "text-slate-200 hover:bg-slate-800/50 hover:text-white"
+            }`}
+          >
+            <User size={18} className="text-emerald-500" />
+            <span className="text-sm font-bold">พอร์ตจริง (Namo)</span>
+            {activeTab === 'real_dashboard' && <ChevronRight size={14} className="ml-auto" />}
+          </button>
+
+          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 px-2 mt-6">
             ทีมงาน AI (Staff)
           </div>
-          {agents.map((agent) => {
+          {agents.filter(a => a.id !== 'oman').map((agent) => {
             const ThemeIcon = agentTheme[agent.id]?.icon || Users;
-            const isSelected = selectedAgent?.id === agent.id;
-            const isOman = agent.id === 'oman';
+            const isSelected = selectedAgent?.id === agent.id && activeTab !== 'real_dashboard';
             const isMalli = agent.id === 'malli';
             
             return (
@@ -102,7 +234,7 @@ export default function Dashboard() {
                 key={agent.id}
                 onClick={() => {
                   setSelectedAgent(agent);
-                  if (agent.id !== 'oman') setActiveTab('dashboard');
+                  setActiveTab('dashboard');
                 }}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${
                   isSelected 
@@ -110,9 +242,9 @@ export default function Dashboard() {
                     : "text-slate-200 hover:bg-slate-800/50 hover:text-white"
                 }`}
               >
-                <ThemeIcon size={18} className={isOman ? "text-blue-500" : isMalli ? "text-rose-400" : "text-slate-400"} />
-                <span className={`text-sm font-medium capitalize ${isOman ? "font-bold" : ""}`}>
-                  {isOman ? 'Oman (พอร์ตจำลอง)' : isMalli ? 'Malli (เลขาบริหาร)' : agent.id === 'scout' ? 'Scout (ผู้เสาะหา)' : agent.id}
+                <ThemeIcon size={18} className={isMalli ? "text-rose-400" : "text-slate-400"} />
+                <span className={`text-sm font-medium capitalize`}>
+                  {isMalli ? 'Malli (เลขาบริหาร)' : agent.id.replace('_', ' ')}
                 </span>
                 {isSelected && <ChevronRight size={14} className="ml-auto" />}
               </button>
@@ -130,7 +262,185 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto bg-slate-950 p-8">
-        {selectedAgent && (
+        {activeTab === 'real_dashboard' && realPortfolio ? (
+            <div className="max-w-7xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500 relative">
+              {/* Portfolio Manager Modal */}
+              {showManageModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+                  <div className="bg-slate-900 border border-slate-700 rounded-3xl w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+                    <div className="p-6 border-b border-slate-800 flex justify-between items-center bg-slate-900/50">
+                      <h3 className="text-xl font-bold flex items-center gap-2 text-emerald-400">
+                        ⚙️ Portfolio Manager (God Mode)
+                      </h3>
+                      <button onClick={() => setShowManageModal(false)} className="text-slate-400 hover:text-white p-2">✕</button>
+                    </div>
+                    <div className="p-6 overflow-y-auto flex-1 custom-scrollbar">
+                      <table className="w-full text-left border-collapse">
+                        <thead>
+                          <tr className="border-b border-slate-800 text-xs uppercase text-slate-500">
+                            <th className="pb-3 font-bold">Ticker</th>
+                            <th className="pb-3 font-bold">Shares</th>
+                            <th className="pb-3 font-bold">Avg Cost ($)</th>
+                            <th className="pb-3 font-bold">Market Price ($)</th>
+                            <th className="pb-3 font-bold text-right">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {syncHoldings.map((h, i) => (
+                            <tr key={i} className="border-b border-slate-800/50 hover:bg-slate-800/20 transition-colors">
+                              <td className="py-3">
+                                <input type="text" value={h.ticker} onChange={e => updateSyncRow(i, 'ticker', e.target.value.toUpperCase())} className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-sm font-bold text-white w-24 uppercase focus:border-emerald-500 outline-none" placeholder="TICKER" />
+                              </td>
+                              <td className="py-3">
+                                <input type="number" step="0.000001" value={h.shares} onChange={e => updateSyncRow(i, 'shares', e.target.value)} className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-sm font-mono text-white w-full max-w-[140px] focus:border-emerald-500 outline-none" />
+                              </td>
+                              <td className="py-3">
+                                <input type="number" step="0.01" value={h.average_cost} onChange={e => updateSyncRow(i, 'average_cost', e.target.value)} className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-sm font-mono text-white w-full max-w-[120px] focus:border-emerald-500 outline-none" />
+                              </td>
+                              <td className="py-3">
+                                {portfolio?.holdings?.find(s => s.ticker === h.ticker.toUpperCase())?.current_price ? (
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-sm font-mono text-emerald-400 font-bold px-3 py-1.5 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
+                                      ${portfolio.holdings.find(s => s.ticker === h.ticker.toUpperCase())?.current_price.toFixed(2)}
+                                    </span>
+                                    <span className="text-[10px] text-slate-500 font-bold uppercase">Auto</span>
+                                  </div>
+                                ) : (
+                                  <input type="number" step="0.01" value={h.current_price} onChange={e => updateSyncRow(i, 'current_price', e.target.value)} className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-sm font-mono text-white w-full max-w-[120px] focus:border-emerald-500 outline-none" placeholder="Manual" />
+                                )}
+                              </td>
+                              <td className="py-3 text-right">
+                                <button onClick={() => updateSyncRow(i, 'shares', '0')} className="px-3 py-1.5 bg-rose-500/10 text-rose-400 border border-rose-500/30 rounded-lg hover:bg-rose-500/20 text-xs font-bold mr-2 transition-colors">Sell All</button>
+                                <button onClick={() => removeSyncRow(i)} className="p-1.5 text-slate-500 hover:text-rose-400 hover:bg-slate-800 rounded-lg transition-colors">🗑️</button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      <button onClick={addSyncRow} className="mt-4 px-4 py-3 bg-slate-800/50 text-slate-400 rounded-xl text-sm font-bold hover:bg-slate-800 hover:text-white transition-colors border border-slate-700 border-dashed w-full flex justify-center items-center gap-2">
+                        ➕ Add Blank Row
+                      </button>
+                    </div>
+                    <div className="p-6 border-t border-slate-800 bg-slate-900/80 flex justify-end gap-4">
+                      <button onClick={() => setShowManageModal(false)} className="px-6 py-2.5 rounded-xl font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">Cancel</button>
+                      <button onClick={handleSyncSubmit} disabled={syncLoading} className="px-6 py-2.5 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-500 transition-colors shadow-lg disabled:opacity-50 flex items-center gap-2">
+                        {syncLoading ? "Saving..." : "💾 Save Portfolio"}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* Real Portfolio Header */}
+              <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-800 pb-4 mb-8">
+                 <div className="flex flex-col gap-4">
+                  <div className="flex items-end gap-4">
+                    <h2 className="text-4xl font-black tracking-tighter flex items-center gap-4 text-emerald-400">
+                      Namo Real Portfolio
+                    </h2>
+                    <button 
+                      onClick={openManageModal}
+                      className="px-4 py-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-xl hover:bg-emerald-500/20 text-sm font-bold transition-colors shadow-lg flex items-center gap-2"
+                    >
+                      ⚙️ Manage Portfolio (God Mode)
+                    </button>
+                  </div>
+                 </div>
+                 <div className="flex items-center gap-6 mb-2 mt-4 md:mt-0">
+                  <div className="flex items-center gap-4 px-4 py-2 bg-slate-900 rounded-2xl border border-slate-800 shadow-inner">
+                    <div className="text-right">
+                      <p className="text-[8px] text-slate-500 font-bold uppercase tracking-widest mb-0.5">Net Asset Value</p>
+                      <div className="flex items-center gap-1.5 justify-end">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <p className="text-xl font-black text-white italic">
+                          ${realPortfolio.total_value?.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={`px-3 py-1.5 h-[46px] flex flex-col justify-center rounded-2xl border ${
+                    realPortfolio.total_value >= realPortfolio.total_cost 
+                      ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" 
+                      : "bg-red-500/10 border-red-500/20 text-red-400"
+                  }`}>
+                    <p className="text-[8px] font-bold uppercase tracking-tighter leading-none mb-0.5">Total Return</p>
+                    <p className="text-sm font-black tracking-tight leading-none">
+                      {realPortfolio.total_value >= realPortfolio.total_cost ? '+' : ''}
+                      {realPortfolio.pl_percentage?.toFixed(2)}%
+                    </p>
+                  </div>
+                  
+                  {/* Daily Change Box (Real Portfolio) */}
+                  <div className={`px-3 py-1.5 h-[46px] flex flex-col justify-center rounded-2xl border ${
+                    (realPortfolio.daily_change_usd ?? 0) >= 0 
+                      ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" 
+                      : "bg-red-500/10 border-red-500/20 text-red-400"
+                  }`}>
+                    <p className="text-[8px] font-bold uppercase tracking-tighter leading-none mb-0.5">Daily Change</p>
+                    <p className="text-sm font-black tracking-tight leading-none flex items-baseline">
+                      {((realPortfolio.daily_change_pct ?? 0) >= 0) ? '+' : ''}{(realPortfolio.daily_change_pct ?? 0).toFixed(2)}%
+                      <span className="text-[8px] ml-1 opacity-80">({((realPortfolio.daily_change_usd ?? 0) >= 0) ? '+' : ''}${(realPortfolio.daily_change_usd ?? 0).toLocaleString(undefined, {minimumFractionDigits: 2})})</span>
+                    </p>
+                  </div>
+                 </div>
+              </div>
+
+              {/* Real Portfolio Holdings */}
+              <section className="bg-slate-900 rounded-3xl border border-slate-800 p-8 shadow-lg overflow-hidden">
+                <div className="flex items-center justify-between mb-8">
+                  <h3 className="font-bold text-lg flex items-center gap-2 text-white">
+                    <Target size={20} className="text-emerald-500" />
+                    หุ้นในพอร์ตปัจจุบัน ({realPortfolio.holdings?.length} ตัว)
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {realPortfolio.holdings?.map((h: any) => {
+                    const currentValue = h.total_value;
+                    const costBasis = h.average_cost * h.shares;
+                    const plValue = currentValue - costBasis;
+                    const plPercent = costBasis !== 0 ? (plValue / costBasis) * 100 : 0;
+                    const isProfit = plValue >= 0;
+
+                    return (
+                      <div 
+                        key={h.ticker} 
+                        className="flex items-center justify-between p-4 bg-slate-950 border border-slate-800 rounded-2xl hover:border-emerald-500/50 transition-all group cursor-default"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className={`w-1 h-8 rounded-full ${isProfit ? 'bg-emerald-500' : 'bg-red-500'}`} />
+                          <div>
+                            <p className="font-bold text-white text-sm group-hover:text-emerald-400 transition-colors">
+                              {h.ticker}
+                            </p>
+                            <div className="mt-1 flex flex-col gap-0.5">
+                              <div className="flex items-center gap-1.5">
+                                <p className="text-[10px] font-bold text-white">${h.current_price?.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+                                <p className="text-[8px] text-slate-500 font-medium uppercase tracking-tighter">Market Price</p>
+                              </div>
+                              <div className="flex items-center gap-1.5">
+                                <p className="text-[10px] font-bold text-slate-400">${h.average_cost?.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+                                <p className="text-[8px] text-slate-600 font-medium uppercase tracking-tighter">Avg Cost</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-right flex flex-col items-end">
+                          <p className="text-sm font-black text-white leading-none">${h.total_value?.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+                          <div className={`mt-1 flex flex-col items-end`}>
+                            <p className={`text-[10px] font-black leading-none ${isProfit ? 'text-emerald-500' : 'text-red-500'}`}>
+                              {isProfit ? '+' : ''}{plPercent.toFixed(2)}%
+                            </p>
+                            <p className={`text-[8px] font-bold leading-tight ${isProfit ? 'text-emerald-600/70' : 'text-red-600/70'}`}>
+                              {isProfit ? '+' : ''}${plValue.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            </div>
+        ) : selectedAgent && (
           <div className="max-w-7xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
             
             {/* Header / Tabs & Metadata for Oman */}
@@ -159,20 +469,18 @@ export default function Dashboard() {
                   {/* Timeline Switcher */}
                   <div className="flex items-center gap-2 mb-2 px-4 py-1.5 bg-slate-900/50 rounded-full border border-slate-800 ml-4">
                     <Calendar size={12} className="text-blue-500" />
-                    <span className="text-[10px] font-bold text-slate-500 uppercase mr-2">Timeline:</span>
-                    {availableDates.map(date => (
-                      <button
-                        key={date}
-                        onClick={() => setCurrentDate(date)}
-                        className={`text-[10px] px-3 py-1 rounded-full font-black transition-all ${
-                          currentDate === date 
-                            ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20" 
-                            : "text-slate-500 hover:text-slate-300"
-                        }`}
-                      >
-                        {date === "2026-05-28" ? "LIVE" : date.split('-').slice(1).join('/')}
-                      </button>
-                    ))}
+                    <span className="text-[10px] font-bold text-slate-500 uppercase">Timeline:</span>
+                    <select
+                      value={currentDate}
+                      onChange={(e) => setCurrentDate(e.target.value)}
+                      className="bg-transparent text-[11px] font-black text-blue-400 outline-none cursor-pointer"
+                    >
+                      {availableDates.map(date => (
+                        <option key={date} value={date} className="bg-slate-900 text-white">
+                          {date === liveDate ? `LIVE (${date.split('-').slice(1).reverse().join('/')})` : date.split('-').slice(1).reverse().join('/')}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
 
@@ -192,15 +500,28 @@ export default function Dashboard() {
                       </div>
                     </div>
                   </div>
-                  <div className={`px-4 py-2 h-[52px] flex flex-col justify-center rounded-2xl border ${
-                    portfolio && portfolio.current_nav >= portfolio.initial_nav 
+                  <div className={`px-3 py-1.5 h-[46px] flex flex-col justify-center rounded-2xl border ${
+                    portfolio && portfolio.current_nav >= (portfolio.total_deposited || portfolio.initial_nav) 
                       ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" 
                       : "bg-red-500/10 border-red-500/20 text-red-400"
                   }`}>
-                    <p className="text-[8px] font-bold uppercase tracking-tighter">Total Return</p>
-                    <p className="text-lg font-black tracking-tight">
-                      {portfolio && portfolio.current_nav >= portfolio.initial_nav ? '+' : ''}
-                      {portfolio ? (((portfolio.current_nav - portfolio.initial_nav) / portfolio.initial_nav) * 100).toFixed(2) : 0}%
+                    <p className="text-[8px] font-bold uppercase tracking-tighter leading-none mb-0.5">Total Return</p>
+                    <p className="text-sm font-black tracking-tight leading-none">
+                      {portfolio && portfolio.current_nav >= (portfolio.total_deposited || portfolio.initial_nav) ? '+' : ''}
+                      {portfolio ? (((portfolio.current_nav - (portfolio.total_deposited || portfolio.initial_nav)) / (portfolio.total_deposited || portfolio.initial_nav)) * 100).toFixed(2) : 0}%
+                    </p>
+                  </div>
+                  
+                  {/* Daily Change Box */}
+                  <div className={`px-3 py-1.5 h-[46px] flex flex-col justify-center rounded-2xl border ${
+                    portfolio && (portfolio.daily_change_usd ?? 0) >= 0 
+                      ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" 
+                      : "bg-red-500/10 border-red-500/20 text-red-400"
+                  }`}>
+                    <p className="text-[8px] font-bold uppercase tracking-tighter leading-none mb-0.5">Daily Change</p>
+                    <p className="text-sm font-black tracking-tight leading-none flex items-baseline">
+                      {portfolio && (portfolio.daily_change_pct ?? 0) >= 0 ? '+' : ''}{(portfolio?.daily_change_pct ?? 0).toFixed(2)}%
+                      <span className="text-[8px] ml-1 opacity-80">({portfolio && (portfolio.daily_change_usd ?? 0) >= 0 ? '+' : ''}${(portfolio?.daily_change_usd ?? 0).toLocaleString(undefined, {minimumFractionDigits: 2})})</span>
                     </p>
                   </div>
                 </div>
@@ -233,7 +554,7 @@ export default function Dashboard() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                   <div className="lg:col-span-2">
                     <section className="bg-slate-900 rounded-3xl border border-slate-800 p-8 shadow-lg">
-                      <div className="flex items-center justify-between mb-8">
+                      <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
                         <div className="flex items-center gap-2">
                           <TrendingUp className="text-blue-500" size={18} />
                           <h3 className="font-bold">Performance History</h3>
@@ -249,9 +570,9 @@ export default function Dashboard() {
                           </div>
                         </div>
                       </div>
-                      <div className="h-64 w-full">
+                      <div className="h-64 w-full mb-4">
                         <ResponsiveContainer width="100%" height="100%">
-                          <LineChart data={portfolio.performance_history}>
+                          <LineChart data={getFilteredHistory()}>
                             <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
                             <XAxis 
                               dataKey="date" 
@@ -259,7 +580,8 @@ export default function Dashboard() {
                               fontSize={10} 
                               tickLine={false} 
                               axisLine={false}
-                              tickFormatter={(val) => val.split('-').slice(1).join('/')}
+                              interval={0}
+                              tickFormatter={(val) => val.split('-').slice(1).reverse().join('/')}
                             />
                             <YAxis 
                               stroke="#64748b" 
@@ -290,6 +612,40 @@ export default function Dashboard() {
                             />
                           </LineChart>
                         </ResponsiveContainer>
+                      </div>
+                      <div className="flex justify-center md:justify-start">
+                        <div className="flex items-center bg-slate-950 rounded-lg p-1 border border-slate-800 inline-flex">
+                          {[
+                            { label: '1D', days: 1, minDays: 1 },
+                            { label: '5D', days: 5, minDays: 5 },
+                            { label: '1M', days: 30, minDays: 20 },
+                            { label: '6M', days: 180, minDays: 120 },
+                            { label: '1Y', days: 365, minDays: 250 },
+                            { label: 'ALL', days: 0, minDays: 0 }
+                          ].map((range) => {
+                            const history = portfolio.performance_history || [];
+                            const first = history.length > 0 ? new Date(history[0].date).getTime() : 0;
+                            const last = history.length > 0 ? new Date(history[history.length - 1].date).getTime() : 0;
+                            const spanDays = (last - first) / (1000 * 3600 * 24);
+                            const isAvailable = spanDays >= range.minDays;
+                            
+                            if (!isAvailable && range.label !== 'ALL') return null;
+                            
+                            return (
+                              <button
+                                key={range.label}
+                                onClick={() => setTimeRange(range.label as any)}
+                                className={`px-4 py-1.5 text-xs font-bold rounded-md transition-colors ${
+                                  timeRange === range.label 
+                                    ? "bg-slate-800 text-blue-400" 
+                                    : "text-slate-500 hover:text-slate-300"
+                                }`}
+                              >
+                                {range.label}
+                              </button>
+                            );
+                          })}
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -589,7 +945,6 @@ export default function Dashboard() {
                       <h3 className="font-bold text-sm">Recent Activity</h3>
                     </div>
                     <div className="space-y-4">
-                      {/* Placeholder for real commands log */}
                       {[
                         "ตรวจสอบข้อมูลตลาดล่าสุด",
                         "สรุปรายงานประจำวัน",
