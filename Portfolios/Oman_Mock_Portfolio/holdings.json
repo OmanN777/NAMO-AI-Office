@@ -2,7 +2,7 @@
   "portfolio_name": "Agent Oman Aggressive Growth (Day 1 Reset)",
   "start_date": "2026-05-19",
   "initial_nav": 3000.0,
-  "current_nav": 3422.74633,
+  "current_nav": 3773.23492,
   "currency": "USD",
   "holdings": [
     {
@@ -10,13 +10,13 @@
       "name": "Vertiv Holdings Co",
       "shares": 1.7,
       "average_cost": 340.31,
-      "total_value": 548.165,
-      "allocation_pct": 19.830128800098805,
+      "total_value": 517.29487,
+      "allocation_pct": 16.44669092142592,
       "position_type": "LONG",
       "thesis_id": "VRT-2026-001",
-      "current_price": 322.45,
-      "pl_usd": -30.36200000000008,
-      "pl_pct": -5.2481560929740665,
+      "current_price": 304.2911,
+      "pl_usd": -61.2321300000001,
+      "pl_pct": -10.5841438688255,
       "days_held": 13,
       "realized_pl": 0.0,
       "trades_count": 1,
@@ -25,32 +25,32 @@
     {
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
-      "shares": 1.7,
-      "average_cost": 411.06117647058824,
-      "total_value": 642.8437799999999,
-      "allocation_pct": 23.255178560729668,
+      "shares": 2.7,
+      "average_cost": 396.03481481481475,
+      "total_value": 1044.306,
+      "allocation_pct": 33.2022971915237,
       "position_type": "LONG",
       "thesis_id": "AVGO-2026-001",
-      "current_price": 378.1434,
-      "pl_usd": -55.96022000000005,
-      "pl_pct": -8.007999381800914,
+      "current_price": 386.78,
+      "pl_usd": -24.98799999999983,
+      "pl_pct": -2.3368689995454788,
       "days_held": 13,
       "realized_pl": 0.0,
-      "trades_count": 2,
-      "last_trade_date": "2026-06-08"
+      "trades_count": 3,
+      "last_trade_date": "2026-06-27"
     },
     {
       "ticker": "CRM",
       "name": "Salesforce, Inc.",
       "shares": 3.1,
       "average_cost": 179.4795,
-      "total_value": 467.29400000000004,
-      "allocation_pct": 16.904582028245823,
+      "total_value": 533.7115,
+      "allocation_pct": 16.9686354742134,
       "position_type": "LONG",
       "thesis_id": "CRM-2026-001",
-      "current_price": 150.74,
-      "pl_usd": -89.09244999999993,
-      "pl_pct": -16.012692257332997,
+      "current_price": 172.165,
+      "pl_usd": -22.674949999999967,
+      "pl_pct": -4.075395797291606,
       "days_held": 13,
       "realized_pl": 0.0,
       "trades_count": 1,
@@ -61,13 +61,13 @@
       "name": "Alphabet Inc.",
       "shares": 1.5,
       "average_cost": 398.8,
-      "total_value": 515.88,
-      "allocation_pct": 18.66220361642019,
+      "total_value": 532.8375000000001,
+      "allocation_pct": 16.940847826009342,
       "position_type": "LONG",
       "thesis_id": "GOOGL-2026-001",
-      "current_price": 343.92,
-      "pl_usd": -82.32000000000005,
-      "pl_pct": -13.761283851554671,
+      "current_price": 355.225,
+      "pl_usd": -65.36249999999995,
+      "pl_pct": -10.92652958876629,
       "days_held": 13,
       "realized_pl": 0.0,
       "trades_count": 1,
@@ -78,20 +78,20 @@
       "name": "Cameco Corporation",
       "shares": 5.7,
       "average_cost": 105.2,
-      "total_value": 590.121,
-      "allocation_pct": 21.3479069945055,
+      "total_value": 517.1324999999999,
+      "allocation_pct": 16.44152858682764,
       "position_type": "LONG",
       "thesis_id": "CCJ-2026-001",
-      "current_price": 103.53,
-      "pl_usd": -9.519000000000005,
-      "pl_pct": -1.5874524714828906,
+      "current_price": 90.725,
+      "pl_usd": -82.50750000000005,
+      "pl_pct": -13.759505703422063,
       "days_held": 13,
       "realized_pl": 0.0,
       "trades_count": 1,
       "last_trade_date": "2026-05-19"
     }
   ],
-  "cash_balance": 658.4425499999998,
+  "cash_balance": 627.9525499999997,
   "benchmark_vs_spy": 0.45,
   "weeks_alive": 0,
   "recommended_actions": [
@@ -117,7 +117,20 @@
     "MALLI-DAILY UPDATE (2026-06-19): Added daily funding ($40 for 2 days). Cash is $508.44. Executing automatic price fetch.",
     "MALLI-DAILY UPDATE (2026-06-20): Added daily funding ($20 for 1 days). Cash is $528.44. Executing automatic price fetch.",
     "MALLI-DAILY UPDATE (2026-06-26): Added daily funding ($120 for 6 days). Cash is $648.44. Executing automatic price fetch.",
-    "SYSTEM ACTION (2026-06-26): Added daily funding of $10.0. New Cash Balance: $658.44"
+    "SYSTEM ACTION (2026-06-26): Added daily funding of $10.0. New Cash Balance: $658.44",
+    "MALLI-DAILY UPDATE (2026-06-27): Added daily funding ($20 for 1 days). Cash is $678.44. Executing automatic price fetch.",
+    "OMAN'S STRATEGY (2026-06-27): Tech pullback in AVGO (-2.67%) and VRT (-6.41%) provides a prime 'Buy the Dip' opportunity. Recommended Action: BUY 1 share of AVGO at $370.49 to lower average cost, utilizing part of the accumulated cash ($678.44).",
+    "OMAN'S ACTION (2026-06-27): Executed BUY 1.0 share of AVGO at $370.49. Rationale: Buy the dip during tech sector rotation to lower cost basis. Cash remaining: $307.95.",
+    "MALLI-DAILY UPDATE (2026-06-29): Added daily funding ($40 for 2 days). Cash is $347.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-06-30): Added daily funding ($20 for 1 days). Cash is $367.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-01): Added daily funding ($20 for 1 days). Cash is $387.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-02): Added daily funding ($20 for 1 days). Cash is $407.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-04): Added daily funding ($40 for 2 days). Cash is $447.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-05): Added daily funding ($20 for 1 days). Cash is $467.95. Executing automatic price fetch.",
+    "OMAN'S WEEKLY STRATEGY (2026-07-05): Reviewed mock portfolio. Thesis for AVGO, CRM, GOOGL, and CCJ remains INTACT, backed by OpenAI/Meta chip partnerships, Agentforce monetization launch, Berkshire's $10B Alphabet stake, and nuclear baseload data center demand. VRT is EVOLVING due to valuation stretch and new thermal competition, despite factory expansion to Malaysia. Recommended Action: Hold all current positions, but look to accumulate GOOGL or CCJ on further pullbacks using the cash buffer ($467.95).",
+    "MALLI-DAILY UPDATE (2026-07-07): Added daily funding ($40 for 2 days). Cash is $507.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-09): Added daily funding ($40 for 2 days). Cash is $547.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-13): Added daily funding ($80 for 4 days). Cash is $627.95. Executing automatic price fetch."
   ],
   "performance_history": [
     {
@@ -214,17 +227,67 @@
       "date": "2026-06-26",
       "oman_return": -0.6546052742178157,
       "spy_return": -0.14320004364191186
+    },
+    {
+      "date": "2026-06-27",
+      "oman_return": -0.7324476195314575,
+      "spy_return": -0.019065776930408056
+    },
+    {
+      "date": "2026-06-29",
+      "oman_return": 0.8192203628709479,
+      "spy_return": 1.2849970507139947
+    },
+    {
+      "date": "2026-06-30",
+      "oman_return": 0.8703418901037852,
+      "spy_return": 0.7125506072874458
+    },
+    {
+      "date": "2026-07-01",
+      "oman_return": -0.858957607551857,
+      "spy_return": 0.286567483964271
+    },
+    {
+      "date": "2026-07-02",
+      "oman_return": -1.4841264280722166,
+      "spy_return": -0.3754559107487603
+    },
+    {
+      "date": "2026-07-04",
+      "oman_return": -1.1287938145017138,
+      "spy_return": -0.13140956876207066
+    },
+    {
+      "date": "2026-07-05",
+      "oman_return": -1.1225184418260958,
+      "spy_return": -0.13140956876207066
+    },
+    {
+      "date": "2026-07-07",
+      "oman_return": 2.6152755184096925,
+      "spy_return": 0.8129917559547872
+    },
+    {
+      "date": "2026-07-09",
+      "oman_return": 0.9661268748687666,
+      "spy_return": 0.6130936409981285
+    },
+    {
+      "date": "2026-07-13",
+      "oman_return": -1.716625465366448,
+      "spy_return": -0.7119676799788065
     }
   ],
-  "total_value": 2764.30378,
-  "total_cost": 3031.55745,
-  "total_pl": -267.2536699999996,
-  "pl_percentage": -8.815721767040886,
-  "last_updated": "2026-06-26",
+  "total_value": 3145.28237,
+  "total_cost": 3402.0474499999996,
+  "total_pl": -256.76507999999967,
+  "pl_percentage": -7.547369158534215,
+  "last_updated": "2026-07-13",
   "stale_tickers": [],
-  "total_deposited": 3690.0,
+  "total_deposited": 4030.0,
   "total_dividends": 0.0,
   "realized_pl_total": 0.0,
-  "daily_change_usd": -22.487219999999905,
-  "daily_change_pct": -0.6546052742178157
+  "daily_change_usd": -65.9036300000002,
+  "daily_change_pct": -1.716625465366448
 }

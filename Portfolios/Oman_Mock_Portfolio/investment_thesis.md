@@ -6,8 +6,8 @@
 ---
 
 ### 1. Broadcom (AVGO) - *The AI Custom Silicon King*
-- **Status:** 🟢 INTACT (Updated: 2026-06-05)
-- **Weekly Note:** Q2 earnings massive beat (+143% YoY in AI chips). Thesis fully validated.
+- **Status:** 🟢 INTACT (Updated: 2026-07-09)
+- **Weekly Note:** Custom silicon and AI networking moat remains highly robust. Gained +3.11% on July 9 on back of an expanded multi-year silicon agreement with Apple valued at $30B+.
 - **Thesis:** เป็นผู้นำในตลาด Custom AI Accelerators (XPUs) ซึ่ง Hyperscalers ต้องการเพื่อลดการพึ่งพา Nvidia และลดต้นทุน 
 - **Scalability:** มี Margin สูงและมี Backlog ยาวเหยียดจากลูกค้ารายใหญ่ (Google, Meta)
 - **Kill Conditions:** 
@@ -15,8 +15,8 @@
   - การแข่งขันจากคู่แข่ง Custom Chip (เช่น Marvell) แย่งส่วนแบ่งตลาดอย่างมีนัยสำคัญ
 
 ### 2. Vertiv (VRT) - *The Liquid Cooling Leader*
-- **Status:** 🟡 EVOLVING (Updated: 2026-06-05)
-- **Weekly Note:** Stock up 87% YTD. Valuation is stretched, monitoring new competitors in liquid cooling.
+- **Status:** 🟡 EVOLVING (Updated: 2026-07-09)
+- **Weekly Note:** Rose +3.43% on July 9. Liquid cooling demand is accelerating as capacity scales via the new Johor, Malaysia facility. High valuation remains a near-term concern but physical infrastructure bottleneck supports backlog visibility.
 - **Thesis:** โครงสร้างพื้นฐานพลังงานและการระบายความร้อนเป็น "คอขวด" ของ AI ในปี 2026 Vertiv ครองตลาดการระบายความร้อนด้วยของเหลว (Liquid Cooling)
 - **Scalability:** Backlog ระดับ $15B+ แสดงถึง Demand ที่ล้นหลาม
 - **Kill Conditions:**
@@ -24,8 +24,8 @@
   - มีเทคโนโลยีระบายความร้อนแบบใหม่ที่ Vertiv ไม่ได้เป็นผู้นำและเข้ามาแย่งตลาด
 
 ### 3. Salesforce (CRM) - *The Agentic Software Pivot*
-- **Status:** 🟢 INTACT (Updated: 2026-06-05)
-- **Weekly Note:** Massive Q1 FY27 earnings beat proves the Agentic AI thesis is monetizable.
+- **Status:** 🟢 INTACT (Updated: 2026-07-09)
+- **Weekly Note:** Dropped -2.06% on July 9 following a KeyBanc downgrade to Sector Weight on skepticism over the near-term monetization speed of 'Agentforce'. The long-term pivot to usage-based pricing remains intact.
 - **Thesis:** การเปลี่ยนโมเดลจาก Seat-based เป็น Usage-based ผ่าน Agentforce ทำให้ CRM สามารถเก็บเงินตามปริมาณงานที่ AI ทำได้จริง
 - **Scalability:** ฐานลูกค้าเดิมมหาศาลพร้อมเปลี่ยนมาใช้ AI Agents
 - **Kill Conditions:**
@@ -40,8 +40,8 @@
   - ปัญหาการผลิต (Yield) ในเทคโนโลยีรุ่นถัดไป
 
 ### 5. Cameco (CCJ) - *The Nuclear Renaissance*
-- **Status:** 🟢 INTACT (Updated: 2026-06-05)
-- **Weekly Note:** Uranium demand remains incredibly strong as data centers secure long-term nuclear power.
+- **Status:** 🟢 INTACT (Updated: 2026-07-09)
+- **Weekly Note:** Gained +1.69% on July 9. Long-term structural demand remains clear as utilities extend nuclear reactor lifespans to secure zero-carbon baseload electricity for AI hyperscaler data centers.
 - **Thesis:** พลังงานนิวเคลียร์เป็นทางออกเดียวสำหรับ AI Data Centers ที่ต้องการพลังงานสะอาด 24/7 CCJ เป็นเจ้าของทรัพยากรยูเรเนียมที่ใหญ่และดีที่สุด
 - **Scalability:** ราคา Uranium ที่อยู่ในระดับสูงช่วยเพิ่ม Margin อย่างมหาศาล
 - **Kill Conditions:**
@@ -49,8 +49,8 @@
   - เกิดอุบัติเหตุทางนิวเคลียร์ร้ายแรงที่กระทบ Sentiment ทั่วโลก
 
 ### 6. Alphabet (GOOGL) - *The AI Vertical Integrator*
-- **Status:** 🟢 INTACT (Updated: 2026-06-05)
-- **Weekly Note:** Berkshire Hathaway's $10B entry confirms deep moat value despite massive capital raise.
+- **Status:** 🟢 INTACT (Updated: 2026-07-09)
+- **Weekly Note:** Slipped -2.55% on July 9 as the market digested massive CapEx concerns. The vertical AI stack moat, Berkshire's $10B position, and strong Google Cloud expansion provide massive long-term support.
 - **Thesis:** คุมทั้ง Stack ตั้งแต่ชิป TPU, โมเดล Gemini ไปจนถึง Cloud และ Application ทำให้มีต้นทุนการรัน AI ต่ำที่สุด
 - **Scalability:** รายได้ Cloud เข้าสู่ช่วงทำกำไรมหาศาลและโตตามปริมาณข้อมูลโลก
 - **Kill Conditions:** 
@@ -165,5 +165,30 @@
   3. **The Exception:** Micron (MU) crushed earnings and raised guidance, proving that the hardware layer is still selling out.
 - **Lesson Learned (EXP Gained):** During an AI infrastructure boom, software/tech stocks with high multiples are vulnerable to interest rate fears and ROI scrutiny. However, the physical infrastructure layer (like Micron, Broadcom, Vertiv) remains resilient if earnings keep beating expectations. Keep accumulating high-conviction hardware/infrastructure on red days (buy the dip).
 
+### EXP Log: July 5, 2026 (Validation of the Physical Infrastructure Moat & Agentic software Monetization)
+- **Event:** Tech sector stabilized, but divergence between high-multiple soft software and high-conviction infrastructure/hardware became clear. Berkshire Hathaway injected $10B into Alphabet (GOOGL), custom silicon partnerships (AVGO) expanded, and outcome-based pricing (CRM Agentforce) was launched.
+- **Root Cause:**
+  1. **Infrastructure Demand Intensifies:** Vertiv (VRT) expanded production to Malaysia and acquired ThermoKey S.p.A. Cameco (CCJ) highlighted structural nuclear demand as utilities bring shut-down reactors online to feed data centers.
+  2. **Software Monetization Validation:** Salesforce launched Agentforce pay-per-resolution pricing ($2 per success), shifting SaaS from license-based to outcome-based AI revenue.
+  3. **Moat Validation:** Alphabet's high CapEx ($175B–$190B) concerns were offset by Berkshire Hathaway taking a massive $10B stake.
+- **Lesson Learned (EXP Gained):** The physical bottleneck of AI (power, cooling, custom silicon) remains the most durable aggressive growth theme. When concerns over CapEx arise, look for validation from institutional giants (like Berkshire). Use red days or accumulated cash to double down on deep-moat, vertical giants (like GOOGL, AVGO, and CCJ).
+
+### EXP Log: July 9, 2026 (Infrastructure Resiliency vs. Software Monetization Scrutiny)
+- **Event:** Tech market mixed. Physical and hardware layers (AVGO +3.11%, VRT +3.43%, CCJ +1.69%) outperformed, leading Oman Portfolio to gain +0.97% ($36.10), beating SPY (+0.61%). Software layer (CRM -2.06%) and vertical search giants (GOOGL -2.55%) slipped.
+- **Root Cause:**
+  1. **Apple Silicon & Networking Tailwinds:** Broadcom (AVGO) surged on a massive $30B+ multi-year custom silicon deal with Apple, highlighting hardware moat.
+  2. **Software Downgrade Scrutiny:** KeyBanc downgraded Salesforce (CRM) to Sector Weight due to slow translation of "Agentic AI" (Agentforce) into near-term revenue, signaling continued market impatience with software monetization models.
+  3. **Nuclear Baseload Consolidation:** Cameco (CCJ) rose as data center nuclear energy expansion remained a primary long-term infrastructure trend.
+- **Lesson Learned (EXP Gained):** Hard infrastructure bottlenecks (thermal cooling, nuclear energy, custom silicon) are still the most resilient aggressive growth themes with immediate, visible cash flows. Enterprise software needs concrete customer billing and translation into direct revenue before the market rewards multiples expansion. Keep holding high-conviction hardware and look to accumulate on structural software pullbacks.
+
+### EXP Log: July 13, 2026 (Geopolitical Oil Shock & AI Capex Valuation Pressure)
+- **Event:** Nasdaq and semiconductor stocks pulled back. Oman Portfolio fell -1.72% (-$65.90 USD), underperforming SPY (-0.71%). Tech sector took the brunt of selling pressure, while energy stocks rose.
+- **Root Cause:**
+  1. **Geopolitical Shock (US-Iran):** Renewed escalation and resumption of US blockade on Iran after ceasefire/MOU talks collapsed pushed crude oil prices up by over 4.5% (futures near $75/bbl). Higher energy prices sparked fears that disinflation trends might stall, matching Fed Governor Christopher Waller's warning that policy is at a "crossroads."
+  2. **AI Valuation Multiples Pressure:** Tactical selling pressure hit high-valuation AI hardware and semiconductors (VRT, AVGO) as the market continues to scrutinize the high infrastructure capital expenditure ($700B+ projected this year) relative to short-term returns.
+  3. **Corporate & Regulatory Noise:** High-profile litigation (Apple suing OpenAI over trade secrets and the Musk-Altman public feud) increased perceived regulatory and corporate risks.
+- **Lesson Learned (EXP Gained):** Macroeconomic shocks (like energy-driven inflation fears) can trigger multiple compression in high-beta AI leaders regardless of their fundamental demand. However, physical expansions (e.g., Intel's €5B factory expansion in Ireland) and the "AI Premium" identified by research show that long-term structural adoption is ongoing. The mock portfolio's cash balance increased to $627.95 (+20% of current assets), positioning it well to buy the dip when tech valuations stabilize.
+
 ---
-*บันทึกโดย: Agent Oman (อัปเดตล่าสุด: 26 มิถุนายน 2026)*
+*บันทึกโดย: Agent Oman (อัปเดตล่าสุด: 13 กรกฎาคม 2026)*
+

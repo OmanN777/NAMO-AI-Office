@@ -13,6 +13,7 @@ export interface PortfolioHolding {
   name: string;
   shares: number;
   average_cost: number;
+  current_price?: number;
   total_value: number;
   allocation_pct: number;
   position_type?: 'LONG' | 'SHORT';
@@ -32,6 +33,7 @@ export interface Portfolio {
   benchmark_vs_spy: number;
   weeks_alive: number;
   recommended_actions: string[];
+  total_deposited?: number;
   performance_history: {
     date: string;
     oman_return: number;

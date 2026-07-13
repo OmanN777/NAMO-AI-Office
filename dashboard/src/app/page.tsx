@@ -301,7 +301,7 @@ export default function Dashboard() {
                                 {portfolio?.holdings?.find(s => s.ticker === h.ticker.toUpperCase())?.current_price ? (
                                   <div className="flex items-center gap-2">
                                     <span className="text-sm font-mono text-emerald-400 font-bold px-3 py-1.5 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
-                                      ${portfolio.holdings.find(s => s.ticker === h.ticker.toUpperCase())?.current_price.toFixed(2)}
+                                      ${portfolio?.holdings?.find(s => s.ticker === h.ticker.toUpperCase())?.current_price?.toFixed(2)}
                                     </span>
                                     <span className="text-[10px] text-slate-500 font-bold uppercase">Auto</span>
                                   </div>
