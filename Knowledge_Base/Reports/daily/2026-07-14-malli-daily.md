@@ -3,6 +3,7 @@
 ## 1. Professional Track Update (งานและอาชีพ)
 
 * **Job Applications & Search Status:**
+  * **KASIKORN LINE (Applied):** บอสได้ทำการยื่นสมัครงานในตำแหน่ง **Junior Quality Assurance (1-Year Contract)** บน LinkedIn เรียบร้อยแล้วค่ะ มอลิจัดสร้างไฟล์สรุปข้อมูลบริษัท `kasikorn_line_brief.md` เพื่อเตรียมตัวสัมภาษณ์ไว้เรียบร้อยแล้วนะคะ 💚
   * **Protoss Technology Interview Rescheduled:** เลื่อนการเรียนหัวข้อที่ 1 (TypeScript & Async/Await) จากวันนี้ไปรวมติวคู่กับหัวข้อที่ 2 (Appium Mobile) ในวันพรุ่งนี้ (พุธ 15 ก.ค.) ตั้งแต่เวลา 14:00 น. เป็นต้นไปค่ะ เพื่อเว้นระยะให้บอสได้ดาวน์โหลดโปรแกรมและเตรียมเครื่องโน้ตบุ๊กให้พร้อมค่ะ
   * **New Job Alert (Quantium Technology Co., Ltd.):** มีตำแหน่งงานที่น่าสนใจมากเปิดรับคือ **QA Automation Engineer (Junior-Mid)** ทำงานรูปแบบ Hybrid ใกล้สถานีบีทีเอสปุณณวิถี (True Digital Park) เน้นการทดสอบอัตโนมัติ 90% (ต้องมีหรือศึกษาทักษะ Playwright, Cypress หรือ Robot Framework) ซึ่งตรงกับสแต็คและความสนใจด้านการลงทุนของบอสมากๆ ค่ะ
   * **New Job Alert (Ziios (Thailand) Limited):** รับตำแหน่ง **Software Tester** ย่านอโศก (อาคาร Interchange 21) ทำงาน Hybrid เน้นการเช็กระบบ SaaS, Bug Tracking, และใช้งานสคริปต์ Playwright & CI/CD

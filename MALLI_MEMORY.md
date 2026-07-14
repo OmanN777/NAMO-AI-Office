@@ -11,6 +11,7 @@
    - **LinkedIn Recruiter Lead (Callback Success):** Recruiter reached out asking about automation experience. Sent professional response highlighting 8-month internship, Robot Framework, Python, and Playwright.
    - **PROTOSS TECHNOLOGY CO., LTD. (Technical Interview Scheduled):** QA team scheduled technical interview for Monday, July 20, 2026. Preparing for 3-stage tech test (Test Case design, API design, Live coding TS/Appium).
    - **Bank of Ayudhya (Krungsri) (Applied):** Created brief `krungsri_brief.md`, copy-pasted simple English cover letter for Jobsdb application.
+   - **KASIKORN LINE (Applied):** Created brief `kasikorn_line_brief.md`, submitted application for Junior Quality Assurance (1-Year Contract) on LinkedIn.
    - **Toyota Motor Asia (Thailand) Co., Ltd. (Applied):** Created brief `toyota_brief.md`, copy-pasted simple English cover letter for Jobsdb application.
    - **Zicure Corporation (Applied):** Created brief `zicure_brief.md`, drafted Software Tester application to trustmail alias using simplified, natural English.
 
