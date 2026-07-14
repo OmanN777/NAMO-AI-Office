@@ -1,15 +1,15 @@
 # MALLI MEMORY BANK (Persistent Session State)
 
 **Status:** ACTIVE  
-**Last Updated:** 2026-07-13  
+**Last Updated:** 2026-07-14  
 **Last_Routine_Executed:** 2026-07-13  
 
 ## Current Context & Ongoing Tasks
 
-1. **Job Application & Search Progress (July 13, 2026)**:
+1. **Job Application & Search Progress (July 14, 2026)**:
    - **FourWD Co., Ltd. (Applied / Drafted):** Created brief `fourwd_brief.md`, saved Gmail application draft for Software Quality Assurance Engineer (Outsource SCB).
    - **LinkedIn Recruiter Lead (Callback Success):** Recruiter reached out asking about automation experience. Sent professional response highlighting 8-month internship, Robot Framework, Python, and Playwright.
-   - **PROTOSS TECHNOLOGY CO., LTD. (Pre-screening Call Success):** HR conducted pre-screening call for Krungsri app testing project (Playwright, Appium, SQL, TS). Preparing for 3-stage tech test.
+   - **PROTOSS TECHNOLOGY CO., LTD. (Technical Interview Scheduled):** QA team scheduled technical interview for Monday, July 20, 2026. Preparing for 3-stage tech test (Test Case design, API design, Live coding TS/Appium).
    - **Bank of Ayudhya (Krungsri) (Applied):** Created brief `krungsri_brief.md`, copy-pasted simple English cover letter for Jobsdb application.
    - **Toyota Motor Asia (Thailand) Co., Ltd. (Applied):** Created brief `toyota_brief.md`, copy-pasted simple English cover letter for Jobsdb application.
    - **Zicure Corporation (Applied):** Created brief `zicure_brief.md`, drafted Software Tester application to trustmail alias using simplified, natural English.
