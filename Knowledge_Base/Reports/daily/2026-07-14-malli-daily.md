@@ -4,10 +4,10 @@
 
 * **Job Applications & Search Status:**
   * **KASIKORN LINE (Applied):** บอสได้ทำการยื่นสมัครงานในตำแหน่ง **Junior Quality Assurance (1-Year Contract)** บน LinkedIn เรียบร้อยแล้วค่ะ มอลิจัดสร้างไฟล์สรุปข้อมูลบริษัท `kasikorn_line_brief.md` เพื่อเตรียมตัวสัมภาษณ์ไว้เรียบร้อยแล้วนะคะ 💚
+  * **Quantium Technology (Applied):** บอสได้เคยทำการยื่นสมัครงานในตำแหน่ง **QA Automation Engineer (Junior-Mid)** ไปเรียบร้อยแล้วค่ะ มอลิย้ายสถานะและอัปเดตไฟล์ประวัติไว้แล้วนะคะ 💼
+  * **Ziios (Thailand) Limited (Applied):** บอสได้ทำการยื่นสมัครงานในตำแหน่ง **Software Tester** บน Jobsdb เรียบร้อยแล้วค่ะ มอลิจัดสร้างไฟล์สรุปข้อมูลบริษัท `ziios_brief.md` ไว้เรียบร้อยแล้วนะคะ 💙
+  * **Purple Ventures Company Limited (Brief Created):** บอสสนใจสมัครตำแหน่ง QA ที่นี่ มอลิได้สร้างไฟล์สรุปประวัติบริษัทและจดหมายแนะนำตัว `purple_ventures_brief.md` เพื่อใช้เตรียมตัวสมัครยื่นใบสมัครทาง LinkedIn/Jobsdb เรียบร้อยแล้วค่ะ 💜
   * **Protoss Technology Interview Rescheduled:** เลื่อนการเรียนหัวข้อที่ 1 (TypeScript & Async/Await) จากวันนี้ไปรวมติวคู่กับหัวข้อที่ 2 (Appium Mobile) ในวันพรุ่งนี้ (พุธ 15 ก.ค.) ตั้งแต่เวลา 14:00 น. เป็นต้นไปค่ะ เพื่อเว้นระยะให้บอสได้ดาวน์โหลดโปรแกรมและเตรียมเครื่องโน้ตบุ๊กให้พร้อมค่ะ
-  * **New Job Alert (Quantium Technology Co., Ltd.):** มีตำแหน่งงานที่น่าสนใจมากเปิดรับคือ **QA Automation Engineer (Junior-Mid)** ทำงานรูปแบบ Hybrid ใกล้สถานีบีทีเอสปุณณวิถี (True Digital Park) เน้นการทดสอบอัตโนมัติ 90% (ต้องมีหรือศึกษาทักษะ Playwright, Cypress หรือ Robot Framework) ซึ่งตรงกับสแต็คและความสนใจด้านการลงทุนของบอสมากๆ ค่ะ
-  * **New Job Alert (Ziios (Thailand) Limited):** รับตำแหน่ง **Software Tester** ย่านอโศก (อาคาร Interchange 21) ทำงาน Hybrid เน้นการเช็กระบบ SaaS, Bug Tracking, และใช้งานสคริปต์ Playwright & CI/CD
-  * *ข้อเสนอแนะ:* บอสสนใจให้มอลิช่วยร่าง Brief ข้อมูลบริษัทเชิงลึกและทำจดหมายแนะนำตัว (Cover Letter) สำหรับสมัครสองที่นี้เพิ่มในวันพรุ่งนี้ไหมคะ? บอกมอลิได้เลยนะคะ
 * **Next Goal:** ดาวน์โหลดโปรแกรม VS Code, Node.js, DBeaver, Postman ลงเครื่องให้พร้อม และเริ่มติว Session 1 & 2 ในวันพรุ่งนี้บ่ายสองค่ะ
 
 ---

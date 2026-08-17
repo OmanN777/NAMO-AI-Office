@@ -1,6 +1,6 @@
 ---
 name: executive-coordination
-description: ประสานงานข้ามทีม Agent เพื่อรวบรวมข้อมูลและสรุปรายงานภาพรวมให้กับ CEO (OmanN777)
+description: ประสานงานข้ามทีม Agent เพื่อรวบรวมข้อมูลและสรุปรายงานภาพรวมให้กับ CEO (Namo)
 ---
 
 # SOP: Executive Coordination (by Malli)
@@ -15,23 +15,22 @@ description: ประสานงานข้ามทีม Agent เพื่
 เมื่อได้รับคำสั่ง `/malli-daily` มอลิจะดำเนินการตามลำดับขั้นจนเสร็จสิ้น "ก่อน" สรุปรายงาน:
 
 1. **Phase 1: Raw Data Scouting**
-   - สั่งให้ **Scout** ทำการหาข้อมูลดิบล่าสุด (Earnings Transcript, 10-K, หรือข่าววิกฤต) ของหุ้นทั้งหมด 3 กลุ่ม:
-     1. พอร์ตจำลอง (Simulated Portfolio)
-     2. หุ้นใน Universe ทั้งหมดที่ติดตามอยู่
-     3. พอร์ตจริง (Real Portfolio)
-   - **เงื่อนไขสำคัญ:** หากวันนั้นไม่มีข้อมูลข่าวสารหรือความเคลื่อนไหวใหม่ๆ สำหรับหุ้นตัวใด ให้ "ข้าม (Skip)" หุ้นตัวนั้นไปได้เลย ไม่ต้องบันทึกข้อมูลซ้ำ
-   - ข้อมูลใหม่ที่พบต้องถูกบันทึกลงใน `sources/` ให้เรียบร้อย
+   - สั่งให้ **Newwy** ทำการหาข้อมูลดิบล่าสุด (Earnings Transcript, 10-K, หรือข่าววิกฤต) ของหุ้นทั้งหมด 3 กลุ่ม:
+     - SELECTED (หุ้นในพอร์ตจริง)
+     - PASSED (หุ้นที่เล็งไว้)
+     - DISQUALIFIED (หุ้นที่ทิ้งไปแล้ว แต่เผื่อฟื้นคืนชีพ)
+   - *หมายเหตุ:* กำชับให้ Newwy เซฟทุกอย่างลง `Knowledge_Base/Sources/[TICKER]/`
 2. **Phase 2: Deep Analysis**
-   - สั่งให้ **Fundamentokung, Earnchan, และ Newwy** อ่านข้อมูลใหม่จาก Scout
-   - ทุก Agent ต้องอัปเดตมุมมอง (Moat, KPI, Sentiment) และส่งต่อให้ **Reese** บันทึกลงใน Briefs
+   - สั่งให้ **Fundamentokung และ Newwy** อ่านข้อมูลใหม่จากแหล่งข้อมูล
+   - ทุก Agent ต้องupdateมุมมอง (Moat, KPI, Sentiment) และส่งต่อให้ **Reese** บันทึกลงใน Briefs
 3. **Phase 3: Portfolio Management**
    - สั่งให้ **Oman** ตรวจสอบ Briefs ล่าสุดเทียบกับ Thesis
    - ให้ Oman คำนวณเงินสมทบรายวัน (Daily +$20) และพิจารณา Action (Buy/Hold/Sell/Short)
 4. **Phase 4: Executive Briefing**
    - เมื่อทุกขั้นตอนเสร็จสิ้น มอลิจะรวบรวม "แก่น" ของงานทั้งหมดมาเขียนรายงานสรุปให้คุณ Namo
 5. **Phase 5: Dashboard Update & Launch**
-   - อัปเดตข้อมูลพอร์ตและราคาสินทรัพย์ล่าสุดลงในฐานข้อมูลของเว็ปแอปพลิเคชัน (Dashboard)
-   - หากเซิร์ฟเวอร์ยังไม่ได้รัน ให้สั่งรันเซิร์ฟเวอร์ทันทีด้วยคำสั่ง `npm run dev` เพื่อให้หน้าเว็ปสะท้อนข้อมูลปัจจุบันเสมอ
+   - updateข้อมูลพอร์ตและราคาสินทรัพย์ล่าสุดลงในฐานข้อมูลของเว็ปapplication (Dashboard)
+   - หากserverยังไม่ได้รัน ให้สั่งรันserverทันทีด้วยคำสั่ง `npm run dev` เพื่อให้หน้าเว็ปสะท้อนข้อมูลปัจจุบันเสมอ
 
 ---
 ## 🔄 [Dynamic Context Injection]

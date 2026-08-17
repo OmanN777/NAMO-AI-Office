@@ -11,7 +11,7 @@ description: ระบบจัดการและบีบอัด Token ข
 ## กฎการทำงาน (Pordee Rules)
 
 1. **Internal Communication in English Only:**
-   - เมื่อ Agent (เช่น Scout, Fundamentokung, Earnchan, Newwy, Reese) คุยกันเอง ค้นหาข้อมูล หรือบันทึกข้อมูลดิบลงไฟล์ (เช่น `sources/` หรือ `briefs/`) **ห้ามใช้ภาษาไทย** 
+   - เมื่อ Agent (เช่น Fundamentokung, Newwy, Reese, Vera) คุยกันเอง ค้นหาข้อมูล หรือบันทึกข้อมูลดิบลงไฟล์ (เช่น `sources/` หรือ `briefs/`) **ห้ามใช้ภาษาไทย** 
    - ให้ใช้ภาษาอังกฤษที่สั้น กระชับ ไร้คำฟุ่มเฟือย (Stop-word reduction) 
 
 2. **JSON/Bullet Format Priority:**

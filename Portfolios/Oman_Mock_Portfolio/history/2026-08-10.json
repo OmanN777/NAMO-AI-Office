@@ -1,0 +1,390 @@
+{
+  "portfolio_name": "Agent Oman Aggressive Growth (Day 1 Reset)",
+  "start_date": "2026-05-19",
+  "initial_nav": 3000.0,
+  "current_nav": 4513.514550000001,
+  "currency": "USD",
+  "holdings": [
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co",
+      "shares": 1.7,
+      "average_cost": 340.31,
+      "total_value": 461.533,
+      "allocation_pct": 13.878345975807996,
+      "position_type": "LONG",
+      "thesis_id": "VRT-2026-001",
+      "current_price": 271.49,
+      "pl_usd": -116.99400000000003,
+      "pl_pct": -20.222738091739885,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "shares": 2.7,
+      "average_cost": 396.03481481481475,
+      "total_value": 1162.3500000000001,
+      "allocation_pct": 34.951987062637826,
+      "position_type": "LONG",
+      "thesis_id": "AVGO-2026-001",
+      "current_price": 430.5,
+      "pl_usd": 93.05600000000027,
+      "pl_pct": 8.702564495826245,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 3,
+      "last_trade_date": "2026-06-27"
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "shares": 3.1,
+      "average_cost": 179.4795,
+      "total_value": 602.392,
+      "allocation_pct": 18.11399095852069,
+      "position_type": "LONG",
+      "thesis_id": "CRM-2026-001",
+      "current_price": 194.32,
+      "pl_usd": 46.005550000000085,
+      "pl_pct": 8.268632350769881,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "shares": 1.5,
+      "average_cost": 398.8,
+      "total_value": 535.215,
+      "allocation_pct": 16.093971485120406,
+      "position_type": "LONG",
+      "thesis_id": "GOOGL-2026-001",
+      "current_price": 356.81,
+      "pl_usd": -62.985000000000014,
+      "pl_pct": -10.529087261785358,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    },
+    {
+      "ticker": "CCJ",
+      "name": "Cameco Corporation",
+      "shares": 5.7,
+      "average_cost": 105.2,
+      "total_value": 564.072,
+      "allocation_pct": 16.96170451791306,
+      "position_type": "LONG",
+      "thesis_id": "CCJ-2026-001",
+      "current_price": 98.96,
+      "pl_usd": -35.567999999999984,
+      "pl_pct": -5.931558935361214,
+      "days_held": 13,
+      "realized_pl": 0.0,
+      "trades_count": 1,
+      "last_trade_date": "2026-05-19"
+    }
+  ],
+  "cash_balance": 1187.9525499999997,
+  "benchmark_vs_spy": 0.45,
+  "weeks_alive": 0,
+  "recommended_actions": [
+    "OMAN'S STRATEGY (2026-05-23): Daily funding added ($20). Cash is $200.00. Tech sentiment remains strong. Monitoring CRM earnings coming on May 27.",
+    "MALLI-DAILY UPDATE (2026-05-28): Retroactively added missing daily funding for 5 days ($100). Cash is now $300.00.",
+    "OMAN'S STRATEGY (2026-05-30): Added daily funding for 2 days ($40). Cash is $340.00. Holding all positions. CRM earnings massive beat validated Agentic AI thesis. VRT pullback provides future accumulation opportunity.",
+    "MALLI-DAILY UPDATE (2026-05-30): CRM Q1 FY2027 earnings resulted in a 15%+ spike. AVGO running into June 3 earnings. CCJ operations back to normal.",
+    "OMAN'S STRATEGY (2026-06-01): Added daily funding ($40 for 2 days). Cash is $380.00. Holding positions. Bear case analysis noted for all holdings; setting tight stop losses on CRM due to structural SaaS risks.",
+    "OMAN'S STRATEGY (2026-06-02): Added daily funding ($20). Cash is $400.00. Holding positions. Tech sector showing resilience. AVGO momentum building before earnings tomorrow.",
+    "MALLI-DAILY UPDATE (2026-06-02): VRT rebounding from support. CRM finding a floor. CCJ broke out of consolidation.",
+    "OMAN'S STRATEGY (2026-06-03): Added daily funding ($20). Cash is $420.00. AVGO earnings massive beat! AI infra thesis fully validated. Holding all positions. Portfolio reached new all-time high.",
+    "MALLI-DAILY UPDATE (2026-06-03): AVGO Q2 FY26 earnings crushed estimates, stock up 6.5%. GOOGL also showing strong momentum. VRT continuing steady climb.",
+    "OMAN'S STRATEGY (2026-06-05) [RETROACTIVE WEEKLY]: Evaluated portfolio holdings. AVGO, CRM, GOOGL, CCJ thesis rated INTACT. VRT rated EVOLVING due to valuation stretch. No sell actions triggered. Updated investment_thesis.md.",
+    "OMAN'S STRATEGY (2026-06-08): Added daily funding ($60 for 3 days). Cash is $520.00. AVGO and GOOGL pulled back on recent news. VRT showing strength. Executing /oman-daily portfolio re-pricing.",
+    "OMAN'S ACTION (2026-06-08): Executed BUY 1 share of AVGO at $373.80. Rationale: High-conviction on AI custom silicon; recent 7% drop is irrational given +143% YoY AI revenue growth. Cash remaining: $146.20.",
+    "MALLI-DAILY UPDATE (2026-06-09): Added daily funding ($20). Cash is $166.20. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-06-10): Added daily funding ($20). Cash is $186.20. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-06-11): Added daily funding ($20). Cash is $206.20. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-06-12): Added daily funding ($20). Cash is $226.20. Executing automatic price fetch.",
+    "OMAN'S WEEKLY STRATEGY (2026-06-12): Reviewed portfolio. All theses (VRT, AVGO, CRM, GOOGL, CCJ) remain INTACT. Tech sector rebound led by SpaceX IPO presents strong momentum for next week. Holding cash (.2) for potential AVGO accumulation.",
+    "MALLI-DAILY UPDATE (2026-06-16): Added daily funding ($80 for 4 days). Cash is $448.44. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-06-17): Added daily funding ($20 for 1 days). Cash is $468.44. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-06-19): Added daily funding ($40 for 2 days). Cash is $508.44. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-06-20): Added daily funding ($20 for 1 days). Cash is $528.44. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-06-26): Added daily funding ($120 for 6 days). Cash is $648.44. Executing automatic price fetch.",
+    "SYSTEM ACTION (2026-06-26): Added daily funding of $10.0. New Cash Balance: $658.44",
+    "MALLI-DAILY UPDATE (2026-06-27): Added daily funding ($20 for 1 days). Cash is $678.44. Executing automatic price fetch.",
+    "OMAN'S STRATEGY (2026-06-27): Tech pullback in AVGO (-2.67%) and VRT (-6.41%) provides a prime 'Buy the Dip' opportunity. Recommended Action: BUY 1 share of AVGO at $370.49 to lower average cost, utilizing part of the accumulated cash ($678.44).",
+    "OMAN'S ACTION (2026-06-27): Executed BUY 1.0 share of AVGO at $370.49. Rationale: Buy the dip during tech sector rotation to lower cost basis. Cash remaining: $307.95.",
+    "MALLI-DAILY UPDATE (2026-06-29): Added daily funding ($40 for 2 days). Cash is $347.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-06-30): Added daily funding ($20 for 1 days). Cash is $367.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-01): Added daily funding ($20 for 1 days). Cash is $387.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-02): Added daily funding ($20 for 1 days). Cash is $407.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-04): Added daily funding ($40 for 2 days). Cash is $447.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-05): Added daily funding ($20 for 1 days). Cash is $467.95. Executing automatic price fetch.",
+    "OMAN'S WEEKLY STRATEGY (2026-07-05): Reviewed mock portfolio. Thesis for AVGO, CRM, GOOGL, and CCJ remains INTACT, backed by OpenAI/Meta chip partnerships, Agentforce monetization launch, Berkshire's $10B Alphabet stake, and nuclear baseload data center demand. VRT is EVOLVING due to valuation stretch and new thermal competition, despite factory expansion to Malaysia. Recommended Action: Hold all current positions, but look to accumulate GOOGL or CCJ on further pullbacks using the cash buffer ($467.95).",
+    "MALLI-DAILY UPDATE (2026-07-07): Added daily funding ($40 for 2 days). Cash is $507.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-09): Added daily funding ($40 for 2 days). Cash is $547.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-13): Added daily funding ($80 for 4 days). Cash is $627.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-14): Added daily funding ($20 for 1 days). Cash is $647.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-15): Added daily funding ($20 for 1 days). Cash is $667.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-17): Added daily funding ($40 for 2 days). Cash is $707.95. Executing automatic price fetch.",
+    "OMAN'S STRATEGY (2026-07-17): Portfolio fell -1.56% vs SPY -0.64% driven by tech sector rotation. High cash position ($707.95) provides dry powder. VRT thesis remains Evolving on thermal competition from nVent/Modine. Hold all positions.",
+    "MALLI-DAILY UPDATE (2026-07-18): Added daily funding ($20 for 1 days). Cash is $727.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-21): Added daily funding ($60 for 3 days). Cash is $787.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-23): Added daily funding ($40 for 2 days). Cash is $827.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-25): Added daily funding ($40 for 2 days). Cash is $867.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-27): Added daily funding ($40 for 2 days). Cash is $907.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-07-28): Added daily funding ($20 for 1 days). Cash is $927.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-08-01): Added daily funding ($80 for 4 days). Cash is $1007.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-08-02): Added daily funding ($20 for 1 days). Cash is $1027.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-08-03): Added daily funding ($20 for 1 days). Cash is $1047.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-08-05): Added daily funding ($40 for 2 days). Cash is $1087.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-08-07): Added daily funding ($40 for 2 days). Cash is $1127.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-08-08): Added daily funding ($20 for 1 days). Cash is $1147.95. Executing automatic price fetch.",
+    "MALLI-DAILY UPDATE (2026-08-10): Added daily funding ($40 for 2 days). Cash is $1187.95. Executing automatic price fetch."
+  ],
+  "performance_history": [
+    {
+      "date": "2026-05-21",
+      "oman_return": -1.53,
+      "spy_return": 0.24
+    },
+    {
+      "date": "2026-05-23",
+      "oman_return": 0.1,
+      "spy_return": 0.3
+    },
+    {
+      "date": "2026-05-27",
+      "oman_return": -0.09,
+      "spy_return": 0.45
+    },
+    {
+      "date": "2026-05-28",
+      "oman_return": 0.14,
+      "spy_return": 0.5
+    },
+    {
+      "date": "2026-05-30",
+      "oman_return": 2.45,
+      "spy_return": 0.85
+    },
+    {
+      "date": "2026-06-01",
+      "oman_return": 4.16,
+      "spy_return": 1.25
+    },
+    {
+      "date": "2026-06-02",
+      "oman_return": 5.05,
+      "spy_return": 1.35
+    },
+    {
+      "date": "2026-06-03",
+      "oman_return": 7.22,
+      "spy_return": 1.55
+    },
+    {
+      "date": "2026-06-04",
+      "oman_return": 0.91,
+      "spy_return": 0.0
+    },
+    {
+      "date": "2026-06-05",
+      "oman_return": -0.92,
+      "spy_return": 0.0
+    },
+    {
+      "date": "2026-06-08",
+      "oman_return": -1.240666666666669,
+      "spy_return": 1.1
+    },
+    {
+      "date": "2026-06-10",
+      "oman_return": -1.5183185458831956,
+      "spy_return": -0.03527576148158075
+    },
+    {
+      "date": "2026-06-11",
+      "oman_return": 0.18097299115179677,
+      "spy_return": 0.4549026094867966
+    },
+    {
+      "date": "2026-06-12",
+      "oman_return": -0.49167625757514605,
+      "spy_return": -0.2846454131424884
+    },
+    {
+      "date": "2026-06-16",
+      "oman_return": -0.8922472575447031,
+      "spy_return": -0.3020547672986085
+    },
+    {
+      "date": "2026-06-17",
+      "oman_return": 1.5813862745658425,
+      "spy_return": -0.02332307118202234
+    },
+    {
+      "date": "2026-06-19",
+      "oman_return": 1.730250694315193,
+      "spy_return": 1.1993813729947402
+    },
+    {
+      "date": "2026-06-20",
+      "oman_return": 1.7431518086136164,
+      "spy_return": 1.0397047043796368
+    },
+    {
+      "date": "2026-06-26",
+      "oman_return": -0.6546052742178157,
+      "spy_return": -0.14320004364191186
+    },
+    {
+      "date": "2026-06-27",
+      "oman_return": -0.7324476195314575,
+      "spy_return": -0.019065776930408056
+    },
+    {
+      "date": "2026-06-29",
+      "oman_return": 0.8192203628709479,
+      "spy_return": 1.2849970507139947
+    },
+    {
+      "date": "2026-06-30",
+      "oman_return": 0.8703418901037852,
+      "spy_return": 0.7125506072874458
+    },
+    {
+      "date": "2026-07-01",
+      "oman_return": -0.858957607551857,
+      "spy_return": 0.286567483964271
+    },
+    {
+      "date": "2026-07-02",
+      "oman_return": -1.4841264280722166,
+      "spy_return": -0.3754559107487603
+    },
+    {
+      "date": "2026-07-04",
+      "oman_return": -1.1287938145017138,
+      "spy_return": -0.13140956876207066
+    },
+    {
+      "date": "2026-07-05",
+      "oman_return": -1.1225184418260958,
+      "spy_return": -0.13140956876207066
+    },
+    {
+      "date": "2026-07-07",
+      "oman_return": 2.6152755184096925,
+      "spy_return": 0.8129917559547872
+    },
+    {
+      "date": "2026-07-09",
+      "oman_return": 0.9661268748687666,
+      "spy_return": 0.6130936409981285
+    },
+    {
+      "date": "2026-07-13",
+      "oman_return": -1.716625465366448,
+      "spy_return": -0.7119676799788065
+    },
+    {
+      "date": "2026-07-14",
+      "oman_return": 0.8602895147536038,
+      "spy_return": 0.258953241587364
+    },
+    {
+      "date": "2026-07-15",
+      "oman_return": -0.4265997862204558,
+      "spy_return": -0.18222204487716698
+    },
+    {
+      "date": "2026-07-17",
+      "oman_return": -1.5559536246758643,
+      "spy_return": -0.643382352941182
+    },
+    {
+      "date": "2026-07-18",
+      "oman_return": -0.3939110406963252,
+      "spy_return": -0.48220375106564417
+    },
+    {
+      "date": "2026-07-21",
+      "oman_return": 1.014765618475737,
+      "spy_return": 0.7532779042973113
+    },
+    {
+      "date": "2026-07-23",
+      "oman_return": -1.6704857545417606,
+      "spy_return": -1.204158360203904
+    },
+    {
+      "date": "2026-07-25",
+      "oman_return": -0.5989204834783214,
+      "spy_return": 0.6705681541087601
+    },
+    {
+      "date": "2026-07-27",
+      "oman_return": 1.0624264866997837,
+      "spy_return": -0.0013533081618002931
+    },
+    {
+      "date": "2026-07-28",
+      "oman_return": -0.16787998069273977,
+      "spy_return": 0.40455154311383035
+    },
+    {
+      "date": "2026-08-01",
+      "oman_return": 1.5794046572607263,
+      "spy_return": 0.4341436449190246
+    },
+    {
+      "date": "2026-08-02",
+      "oman_return": 1.5210139738749402,
+      "spy_return": 0.7199773490272106
+    },
+    {
+      "date": "2026-08-03",
+      "oman_return": 0.7306416259790679,
+      "spy_return": 0.8153945025371885
+    },
+    {
+      "date": "2026-08-05",
+      "oman_return": 0.882630033606583,
+      "spy_return": 0.4952484669337296
+    },
+    {
+      "date": "2026-08-07",
+      "oman_return": -0.34901112173564564,
+      "spy_return": -0.11626547499967288
+    },
+    {
+      "date": "2026-08-08",
+      "oman_return": 0.8395043846080629,
+      "spy_return": 0.3135734360362343
+    },
+    {
+      "date": "2026-08-10",
+      "oman_return": 0.5225552477231575,
+      "spy_return": 0.1435480950779833
+    }
+  ],
+  "total_value": 3325.562000000001,
+  "total_cost": 3402.0474499999996,
+  "total_pl": -76.48544999999876,
+  "pl_percentage": -2.2482182016596735,
+  "last_updated": "2026-08-10",
+  "stale_tickers": [],
+  "total_deposited": 4590.0,
+  "total_dividends": 0.0,
+  "realized_pl_total": 0.0,
+  "daily_change_usd": 23.46299999999998,
+  "daily_change_pct": 0.5225552477231575
+}

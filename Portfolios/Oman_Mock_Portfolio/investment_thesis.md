@@ -6,8 +6,8 @@
 ---
 
 ### 1. Broadcom (AVGO) - *The AI Custom Silicon King*
-- **Status:** 🟢 INTACT (Updated: 2026-07-09)
-- **Weekly Note:** Custom silicon and AI networking moat remains highly robust. Gained +3.11% on July 9 on back of an expanded multi-year silicon agreement with Apple valued at $30B+.
+- **Status:** 🟢 INTACT (Updated: 2026-07-17)
+- **Weekly Note:** Declined on July 17 amid a broad Philadelphia Semiconductor Index (SOX) bear market reset. However, the custom silicon and AI networking moat remains highly robust following the Apple agreement.
 - **Thesis:** เป็นผู้นำในตลาด Custom AI Accelerators (XPUs) ซึ่ง Hyperscalers ต้องการเพื่อลดการพึ่งพา Nvidia และลดต้นทุน 
 - **Scalability:** มี Margin สูงและมี Backlog ยาวเหยียดจากลูกค้ารายใหญ่ (Google, Meta)
 - **Kill Conditions:** 
@@ -15,8 +15,8 @@
   - การแข่งขันจากคู่แข่ง Custom Chip (เช่น Marvell) แย่งส่วนแบ่งตลาดอย่างมีนัยสำคัญ
 
 ### 2. Vertiv (VRT) - *The Liquid Cooling Leader*
-- **Status:** 🟡 EVOLVING (Updated: 2026-07-09)
-- **Weekly Note:** Rose +3.43% on July 9. Liquid cooling demand is accelerating as capacity scales via the new Johor, Malaysia facility. High valuation remains a near-term concern but physical infrastructure bottleneck supports backlog visibility.
+- **Status:** 🟡 EVOLVING (Updated: 2026-07-17)
+- **Weekly Note:** Under pressure from a broader tech rotation and rising liquid cooling competition from nVent and Modine. High valuation multiples remain a concern, but Johor expansion supports physical capacity.
 - **Thesis:** โครงสร้างพื้นฐานพลังงานและการระบายความร้อนเป็น "คอขวด" ของ AI ในปี 2026 Vertiv ครองตลาดการระบายความร้อนด้วยของเหลว (Liquid Cooling)
 - **Scalability:** Backlog ระดับ $15B+ แสดงถึง Demand ที่ล้นหลาม
 - **Kill Conditions:**
@@ -24,8 +24,8 @@
   - มีเทคโนโลยีระบายความร้อนแบบใหม่ที่ Vertiv ไม่ได้เป็นผู้นำและเข้ามาแย่งตลาด
 
 ### 3. Salesforce (CRM) - *The Agentic Software Pivot*
-- **Status:** 🟢 INTACT (Updated: 2026-07-09)
-- **Weekly Note:** Dropped -2.06% on July 9 following a KeyBanc downgrade to Sector Weight on skepticism over the near-term monetization speed of 'Agentforce'. The long-term pivot to usage-based pricing remains intact.
+- **Status:** 🟢 INTACT (Updated: 2026-07-17)
+- **Weekly Note:** Dragged down by the tech sector rotation. The structural transition to Agentic AI and outcome-based pricing model (Agentforce) is unchanged, pending near-term monetization results.
 - **Thesis:** การเปลี่ยนโมเดลจาก Seat-based เป็น Usage-based ผ่าน Agentforce ทำให้ CRM สามารถเก็บเงินตามปริมาณงานที่ AI ทำได้จริง
 - **Scalability:** ฐานลูกค้าเดิมมหาศาลพร้อมเปลี่ยนมาใช้ AI Agents
 - **Kill Conditions:**
@@ -40,8 +40,8 @@
   - ปัญหาการผลิต (Yield) ในเทคโนโลยีรุ่นถัดไป
 
 ### 5. Cameco (CCJ) - *The Nuclear Renaissance*
-- **Status:** 🟢 INTACT (Updated: 2026-07-09)
-- **Weekly Note:** Gained +1.69% on July 9. Long-term structural demand remains clear as utilities extend nuclear reactor lifespans to secure zero-carbon baseload electricity for AI hyperscaler data centers.
+- **Status:** 🟢 INTACT (Updated: 2026-07-17)
+- **Weekly Note:** Retraced slightly on macro rotation, but long-term nuclear baseload demand remains structural for AI hyperscaler data centers requiring zero-carbon 24/7 power.
 - **Thesis:** พลังงานนิวเคลียร์เป็นทางออกเดียวสำหรับ AI Data Centers ที่ต้องการพลังงานสะอาด 24/7 CCJ เป็นเจ้าของทรัพยากรยูเรเนียมที่ใหญ่และดีที่สุด
 - **Scalability:** ราคา Uranium ที่อยู่ในระดับสูงช่วยเพิ่ม Margin อย่างมหาศาล
 - **Kill Conditions:**
@@ -49,8 +49,8 @@
   - เกิดอุบัติเหตุทางนิวเคลียร์ร้ายแรงที่กระทบ Sentiment ทั่วโลก
 
 ### 6. Alphabet (GOOGL) - *The AI Vertical Integrator*
-- **Status:** 🟢 INTACT (Updated: 2026-07-09)
-- **Weekly Note:** Slipped -2.55% on July 9 as the market digested massive CapEx concerns. The vertical AI stack moat, Berkshire's $10B position, and strong Google Cloud expansion provide massive long-term support.
+- **Status:** 🟢 INTACT (Updated: 2026-07-17)
+- **Weekly Note:** Slipped amid tech rotation and hyperscaler capex return concerns. Moat is defended by the vertical AI stack and Berkshire's $10B long-term backing.
 - **Thesis:** คุมทั้ง Stack ตั้งแต่ชิป TPU, โมเดล Gemini ไปจนถึง Cloud และ Application ทำให้มีต้นทุนการรัน AI ต่ำที่สุด
 - **Scalability:** รายได้ Cloud เข้าสู่ช่วงทำกำไรมหาศาลและโตตามปริมาณข้อมูลโลก
 - **Kill Conditions:** 
@@ -189,6 +189,15 @@
   3. **Corporate & Regulatory Noise:** High-profile litigation (Apple suing OpenAI over trade secrets and the Musk-Altman public feud) increased perceived regulatory and corporate risks.
 - **Lesson Learned (EXP Gained):** Macroeconomic shocks (like energy-driven inflation fears) can trigger multiple compression in high-beta AI leaders regardless of their fundamental demand. However, physical expansions (e.g., Intel's €5B factory expansion in Ireland) and the "AI Premium" identified by research show that long-term structural adoption is ongoing. The mock portfolio's cash balance increased to $627.95 (+20% of current assets), positioning it well to buy the dip when tech valuations stabilize.
 
+### EXP Log: July 17, 2026 (Tech Sector Rotation & AI Capex Valuation Pressure)
+- **Event:** Tech sector rotation and semiconductor bear market correction. Oman Portfolio fell -1.56% (-$58.88 USD), underperforming SPY (-0.64%). High-multiple leaders were pressured.
+- **Root Cause:**
+  1. **Semiconductor Correction & AI Capex Fears:** The Philadelphia Semiconductor Index (SOX) fell into bear market territory as investors scrutinized hyperscaler AI CapEx returns, questioning near-term ROI on massive infrastructure spending.
+  2. **Thermal Cooling Competition:** Vertiv (VRT) faced valuation compression as rising density demands drew new cooling competitors (like nVent and Modine) to the market, questioning the durability of VRT's near-monopoly.
+  3. **High Defensive Cash Balance:** Automatic daily funding increased the portfolio cash balance to $707.95 USD (19.01% of NAV), providing a substantial defensive buffer.
+- **Lesson Learned (EXP Gained):** During high-valuation tech rotations and sector resets, having a significant cash buffer (Dry Powder) protects the portfolio NAV from maximum drawdowns and positions it to accumulate deep-moat assets (like AVGO or GOOGL) at lower multiples once sentiment stabilizes.
+
 ---
-*บันทึกโดย: Agent Oman (อัปเดตล่าสุด: 13 กรกฎาคม 2026)*
+*บันทึกโดย: Agent Oman (อัปเดตล่าสุด: 17 กรกฎาคม 2026)*
+
 

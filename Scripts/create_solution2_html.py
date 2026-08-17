@@ -1,0 +1,171 @@
+import os
+
+workspace_dir = r"C:\Users\namo_\OneDrive\เอกสาร\gemini-cli\antigravity-office-workspace"
+output_path = os.path.join(workspace_dir, "Work_Brief", "TrueMoney_QA_Test_Answers", "solution2_facebook_login_testcases.html")
+
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook Mobile Login Test Cases - TrueMoney QA Test</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background-color: #f8f9fa; }
+        h2 { color: #1b365d; margin-bottom: 5px; }
+        p { color: #555; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 6px; overflow: hidden; }
+        th { background-color: #1b365d; color: #ffffff; padding: 12px 10px; font-size: 14px; text-align: left; border: 1px solid #102442; }
+        td { padding: 10px; border: 1px solid #e0e0e0; font-size: 13px; vertical-align: top; line-height: 1.5; }
+        tr:nth-child(even) { background-color: #fcfcfc; }
+        tr:hover { background-color: #f1f5f9; }
+        .tc-name { font-weight: bold; color: #0f172a; text-align: center; }
+        .priority-high { background-color: #fde8e8; color: #9b1c1c; font-weight: bold; text-align: center; border-radius: 4px; padding: 4px 8px; display: inline-block; }
+        .priority-med { background-color: #fef3c7; color: #92400e; font-weight: bold; text-align: center; border-radius: 4px; padding: 4px 8px; display: inline-block; }
+        .priority-low { background-color: #def7ec; color: #03543f; font-weight: bold; text-align: center; border-radius: 4px; padding: 4px 8px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h2>📋 Problem 2: Test Scenarios for Facebook Log-in Feature on Mobile Applications</h2>
+    <p><b>Candidate:</b> Natawat Tephassadin na Ayutaya (Namo) | <b>Role:</b> Quality Assurance Engineer (TrueMoney)</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 15%;">Test case name</th>
+                <th style="width: 20%;">Objective</th>
+                <th style="width: 18%;">Prerequisite</th>
+                <th style="width: 22%;">Test Steps</th>
+                <th style="width: 20%;">Expected Result</th>
+                <th style="width: 5%; text-align: center;">Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tc-name">Valid Login with Email</td>
+                <td>To verify that user can login successfully when they put a correct registered email and password.</td>
+                <td>1. Facebook Mobile App installed.<br>2. Active internet connection.<br>3. Registered account with email.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter registered email.<br>3. Enter correct password.<br>4. Tap 'Log In' button.</td>
+                <td>1. Login successful.<br>2. Redirected to Facebook News Feed.<br>3. User session token saved.</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Valid Login with Phone Number</td>
+                <td>To verify that user can login successfully when they put a correct registered phone number and password.</td>
+                <td>1. Facebook Mobile App installed.<br>2. Active internet connection.<br>3. Registered account with phone number.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter registered phone number.<br>3. Enter correct password.<br>4. Tap 'Log In' button.</td>
+                <td>1. Login successful.<br>2. Redirected to Facebook News Feed.</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Valid Login with Leading/Trailing Spaces in Email</td>
+                <td>To verify that app automatically trims leading and trailing whitespaces when user enters email with spaces.</td>
+                <td>1. Facebook Mobile App installed.<br>2. Active internet connection.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter email with leading/trailing spaces.<br>3. Enter correct password.<br>4. Tap 'Log In' button.</td>
+                <td>1. App automatically trims whitespace.<br>2. User logs in successfully to News Feed.</td>
+                <td style="text-align: center;"><span class="priority-med">Medium</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Invalid Login - Password Incorrect</td>
+                <td>To verify that user can login unsuccessfully when they put a correct username but wrong password.</td>
+                <td>1. Facebook Mobile App installed.<br>2. Active internet connection.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter valid email/phone.<br>3. Enter incorrect password.<br>4. Tap 'Log In' button.</td>
+                <td>1. Login failed.<br>2. Alert message displayed: 'Incorrect Password'.<br>3. Password field cleared.</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Invalid Login - Password Case Sensitive</td>
+                <td>To verify that password field is strictly case-sensitive when user enters password with wrong letter case.</td>
+                <td>1. Facebook Mobile App installed.<br>2. Active internet connection.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter valid email.<br>3. Enter password with wrong case.<br>4. Tap 'Log In' button.</td>
+                <td>1. Login failed.<br>2. Alert message displayed: 'Incorrect Password' (confirming case-sensitivity).</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Invalid Login - Username Not Found</td>
+                <td>To verify that user can login unsuccessfully when they put an unregistered email or phone number.</td>
+                <td>1. Facebook Mobile App installed.<br>2. Active internet connection.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter non-existent email.<br>3. Enter any password.<br>4. Tap 'Log In' button.</td>
+                <td>1. Login failed.<br>2. Alert message displayed: 'Invalid Credentials' or 'Account Not Found'.</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Invalid Login - Invalid Email Format</td>
+                <td>To verify app validation message when user enters an email with invalid format (missing '@' or domain).</td>
+                <td>1. Facebook Mobile App installed.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter email with invalid format.<br>3. Enter any password.<br>4. Tap 'Log In' button.</td>
+                <td>1. Login action prevented.<br>2. Validation message displayed: 'Please enter a valid email address'.</td>
+                <td style="text-align: center;"><span class="priority-med">Medium</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Invalid Login - Blank Email Field</td>
+                <td>To verify inline validation when user leaves email/phone field blank while entering password.</td>
+                <td>1. Facebook Mobile App installed.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Leave Email/Phone field empty.<br>3. Enter valid password.<br>4. Tap 'Log In' button.</td>
+                <td>1. Login action prevented.<br>2. Inline error displayed: 'Please enter your email address or phone number'.</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Invalid Login - Blank Password Field</td>
+                <td>To verify inline validation when user enters valid email/phone while leaving password field blank.</td>
+                <td>1. Facebook Mobile App installed.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter valid registered email.<br>3. Leave Password field empty.<br>4. Tap 'Log In' button.</td>
+                <td>1. Login action prevented.<br>2. Inline error displayed: 'Please enter your password'.</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Invalid Login - Blank Both Fields</td>
+                <td>To verify inline validation when tapping Log In with both email/phone and password fields blank.</td>
+                <td>1. Facebook Mobile App installed.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Leave both Email/Phone and Password fields empty.<br>3. Tap 'Log In' button.</td>
+                <td>1. Login action prevented.<br>2. Prompt message displays: 'Please enter your email and password'.</td>
+                <td style="text-align: center;"><span class="priority-med">Medium</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Forgot Password Flow</td>
+                <td>To verify password recovery flow via 'Forgot Password?' link.</td>
+                <td>1. Facebook Mobile App installed.<br>2. Active internet connection.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Tap 'Forgot Password?' link.<br>3. Enter registered email/phone.<br>4. Tap 'Search Account'.</td>
+                <td>1. User account identified.<br>2. Displays options to send OTP code via SMS or Email.</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Two-Factor Authentication (2FA)</td>
+                <td>To verify 2FA prompt when logging in from a new unrecognized mobile device.</td>
+                <td>1. Account has 2FA enabled.<br>2. New unrecognized device.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter valid email and password.<br>3. Tap 'Log In' button.</td>
+                <td>1. 2FA verification screen is displayed.<br>2. Prompts for 6-digit OTP code sent via SMS or Authenticator App.</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Offline Network Handling</td>
+                <td>To verify app behavior when attempting to login without internet connection.</td>
+                <td>1. Mobile Wi-Fi and Cellular Data turned OFF.</td>
+                <td>1. Open Facebook Mobile App.<br>2. Enter valid credentials.<br>3. Tap 'Log In' button.</td>
+                <td>Error popup displays: 'No Internet Connection. Please check your network and try again.'</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">Show/Hide Password Toggle</td>
+                <td>To verify visibility toggle icon in password input field.</td>
+                <td>1. Facebook Mobile App installed.</td>
+                <td>1. Open App.<br>2. Enter password text.<br>3. Tap eye icon (Show password).<br>4. Tap eye icon again (Hide password).</td>
+                <td>1. Password text becomes visible.<br>2. Password text gets masked again (••••••).</td>
+                <td style="text-align: center;"><span class="priority-low">Low</span></td>
+            </tr>
+            <tr>
+                <td class="tc-name">App Relaunch Session Persistence</td>
+                <td>To verify that user remains logged in after closing and reopening the app.</td>
+                <td>1. User logged in successfully.</td>
+                <td>1. Close Facebook App from Recent Apps (Kill process).<br>2. Relaunch Facebook App.</td>
+                <td>App opens directly to News Feed without requiring re-login.</td>
+                <td style="text-align: center;"><span class="priority-high">High</span></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+"""
+
+with open(output_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("Updated HTML table file successfully.")

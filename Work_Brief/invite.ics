@@ -1,0 +1,105 @@
+BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:SE Asia Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T000000
+TZOFFSETFROM:+0700
+TZOFFSETTO:+0700
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T000000
+TZOFFSETFROM:+0700
+TZOFFSETTO:+0700
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN=Noppakes Boonkasem:mailto:noppakes_b@protossgroup.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=namo.nanon
+ 5@gmail.com:mailto:namo.nanon5@gmail.com
+ATTENDEE;ROLE=OPT-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Recruitmen
+ t:mailto:recruitment@protossgroup.com
+ATTACH:CID:image001.png@01DD13B0.DC704520
+DESCRIPTION;LANGUAGE=en-US:Dear Khun Natawat\,\n\n\nPlease be invited to at
+ tend the interview with detail below.\n\n\n\nDate\n\n:\n\nJul 20th\, 2026\
+ n\nTime\n\n:\n\n3.00 PM – 4:00 PM\n\nVenue\n\n:\n\nMS Team Link below.\n
+ \nhttps://teams.microsoft.com/meet/47331209414814?p=W1csS8Luk4NKTTGSqH\n\n
+ Key Responsibilities & Requirements\n\n  *   Experience: 1–3 years of ex
+ perience in software testing\, with hands-on automation testing experience
+ .\n  *   Test Execution: Design\, execute\, and maintain automated and man
+ ual test cases for Mobile Applications (Native) and APIs\, ensuring qualit
+ y across core and edge-case scenarios.\nAutomation Testing (Core Requireme
+ nt):\n\n  *   Hands-on experience in test automation using Appium with Typ
+ eScript.\n  *   Good understanding of async / await and asynchronous execu
+ tion in JavaScript/TypeScript.\n  *   Familiarity with Playwright for web 
+ or hybrid testing is required.\nMobile & Architecture Understanding:\n\n  
+ *   Experience in testing native mobile applications\; familiarity with mi
+ ni app / embedded app environments is a plus.\n  *   Good understanding of
+  solution design\, system flow\, and sequence diagrams.\nTechnical Investi
+ gation (Special Consideration):\n\n  *   Experience in reviewing applicati
+ on logs and observability tools such as Kibana and Dynatrace.\n  *   Abili
+ ty to analyze issues across App\, API\, and Backend layers.\n  *   Basic u
+ nderstanding of backend data flow and ability to run simple database queri
+ es for data verification.\n  *   Test Artifacts: Design\, execute\, and ma
+ intain test cases and automation scripts based on complex business and tec
+ hnical requirements.\n  *   Defect Management: Identify\, log\, and track 
+ defects in Jira using proper evidence (Logs\, Screenshots\, Recordings) an
+ d follow up until resolution.\n  *   Domain Knowledge: Background in Banki
+ ng\, Financial Services (Business Banking)\, or Payment systems is a plus.
+ \n\nKey Expectations\n\n  *   Deep Investigation: Not limited to test exec
+ ution - expected to understand system behavior\, API interactions\, and as
+ ynchronous flows behind the scenes.\n  *   Communication: Strong communica
+ tion skills are essential. Must be able to coordinate effectively with Dev
+ elopers\, QA\, and Business teams across different squads.\n  *   Logical 
+ Thinking: Good understanding of system flows and business logic to design 
+ meaningful automation and cover edge cases.\n  *   Proactive: Able to work
+  independently with minimal supervision and proactively follow up on block
+ ers\, defects\, or test gaps.\n\n\nWorkday & Time: Mon – Fri\, 8.30 AM 
+ – 5.30 PM\nWork Arrangement: Able to work on-site 3 days a week (Hybrid)
+ \nLocation: Krungsri Rama 3 Head Office\n\n** รบกวนทางผ
+ ู้สมัครเตรียมความพร้อม เร
+ ื่องของ Notebook เนื่องจากจะมีก
+ ารทดสอบด้วยค่ะ **\n\n\n\n\n\nNOTE : Please pre
+ pare yourself\, log in Meeting 15 minutes in advance and turn on camera du
+ ring the interview.\n\nIf there’re any question or concern\, please kind
+ ly contact me ka.\n\nBest regards\,\nNoppakes Boonkasem (Oom)\nIT Recruite
+ r\nMobile : 063-245-3947\nE-mail : noppakes_b@protossgroup.com<mailto:nopp
+ akes_b@protossgroup.com>\n[Logo\, company name  Description automatically 
+ generated]\n\n
+UID:040000008200E00074C5B7101A82E0080000000080DE4987B013DD01000000000000000
+ 01000000020031D19A2407C46AC63CF1BD4005965
+SUMMARY;LANGUAGE=en-US:Protoss Technology_Interview with BAY (KSN) on Jul 2
+ 0th\, 2026 (Automate Tester - 1KS Project)
+DTSTART;TZID=SE Asia Standard Time:20260720T150000
+DTEND;TZID=SE Asia Standard Time:20260720T160000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20260714T095724Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION;LANGUAGE=en-US:
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-OWNERAPPTID:-1758562326
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-SKYPETEAMSMEETINGURL:
+X-MICROSOFT-SCHEDULINGSERVICEUPDATEURL:
+X-MICROSOFT-SKYPETEAMSPROPERTIES:
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:TRUE
+X-MICROSOFT-LOCATIONS:[]
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

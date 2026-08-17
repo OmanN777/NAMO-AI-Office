@@ -18,7 +18,8 @@ import {
   Info,
   Shield,
   Lightbulb,
-  Calendar
+  Calendar,
+  RefreshCw
 } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -30,14 +31,34 @@ export default function Dashboard() {
   const [universe, setUniverse] = useState<Universe | null>(null);
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isRefreshingPrices, setIsRefreshingPrices] = useState(false);
   const [currentDate, setCurrentDate] = useState("");
   const [availableDates, setAvailableDates] = useState<string[]>([]);
   const [liveDate, setLiveDate] = useState<string>("");
   const [activeTab, setActiveTab] = useState<'dashboard' | 'about' | 'real_dashboard'>('dashboard');
-  const [timeRange, setTimeRange] = useState<'1D' | '5D' | '1M' | '6M' | '1Y' | 'ALL'>('ALL');
+  const [timeRange, setTimeRange] = useState<'1D' | '5D' | '1M' | '6M' | 'YTD' | '1Y' | 'ALL'>('ALL');
+
+  const handleSyncLivePrices = async () => {
+    setIsRefreshingPrices(true);
+    try {
+      const res = await fetch("/api/sync_prices", { method: "POST" });
+      const data = await res.json();
+      if (data.success) {
+        if (data.realPortfolio) setRealPortfolio(data.realPortfolio);
+        if (data.omanPortfolio) setPortfolio(data.omanPortfolio);
+      } else {
+        alert(data.error || "Failed to sync prices");
+      }
+    } catch (e) {
+      console.error("Error syncing prices:", e);
+      alert("Error triggering price sync");
+    } finally {
+      setIsRefreshingPrices(false);
+    }
+  };
 
   const getFilteredHistory = () => {
-    if (!portfolio?.performance_history) return [];
+    if (!portfolio?.performance_history || portfolio.performance_history.length === 0) return [];
     const history = portfolio.performance_history;
     if (timeRange === 'ALL') return history;
     
@@ -48,9 +69,15 @@ export default function Dashboard() {
     if (timeRange === '5D') cutoff.setDate(cutoff.getDate() - 5);
     if (timeRange === '1M') cutoff.setMonth(cutoff.getMonth() - 1);
     if (timeRange === '6M') cutoff.setMonth(cutoff.getMonth() - 6);
+    if (timeRange === 'YTD') {
+      const startOfYear = new Date(lastDate.getFullYear(), 0, 1);
+      const filtered = history.filter((h: any) => new Date(h.date) >= startOfYear);
+      return filtered.length > 0 ? filtered : history;
+    }
     if (timeRange === '1Y') cutoff.setFullYear(cutoff.getFullYear() - 1);
     
-    return history.filter((h: any) => new Date(h.date) >= cutoff);
+    const filtered = history.filter((h: any) => new Date(h.date) >= cutoff);
+    return filtered.length > 0 ? filtered : history;
   };
   
   // Real Portfolio Transaction State
@@ -150,10 +177,12 @@ export default function Dashboard() {
           setCurrentDate(datesData.liveDate);
         }
         
-        if (!selectedAgent) {
-          const oman = agentsData.find((a: Agent) => a.id === "oman");
-          if (oman) setSelectedAgent(oman);
-        }
+        setSelectedAgent((prev) => {
+          if (!prev) {
+            return agentsData.find((a: Agent) => a.id === "oman") || null;
+          }
+          return prev;
+        });
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -161,7 +190,7 @@ export default function Dashboard() {
       }
     }
     fetchData();
-  }, [currentDate, selectedAgent]);
+  }, [currentDate]);
 
   if (loading) {
     return (
@@ -343,6 +372,14 @@ export default function Dashboard() {
                     >
                       ⚙️ Manage Portfolio (God Mode)
                     </button>
+                    <button 
+                      onClick={handleSyncLivePrices}
+                      disabled={isRefreshingPrices}
+                      className="px-4 py-2 bg-blue-500/10 text-blue-400 border border-blue-500/30 rounded-xl hover:bg-blue-500/20 text-sm font-bold transition-colors shadow-lg flex items-center gap-2 disabled:opacity-50"
+                    >
+                      <RefreshCw size={14} className={isRefreshingPrices ? "animate-spin" : ""} />
+                      {isRefreshingPrices ? "Syncing Prices..." : "🔄 Live Sync Prices"}
+                    </button>
                   </div>
                  </div>
                  <div className="flex items-center gap-6 mb-2 mt-4 md:mt-0">
@@ -401,9 +438,10 @@ export default function Dashboard() {
                     const isProfit = plValue >= 0;
 
                     return (
-                      <div 
+                      <Link 
                         key={h.ticker} 
-                        className="flex items-center justify-between p-4 bg-slate-950 border border-slate-800 rounded-2xl hover:border-emerald-500/50 transition-all group cursor-default"
+                        href={`/stock/${h.ticker}`}
+                        className="flex items-center justify-between p-4 bg-slate-950 border border-slate-800 rounded-2xl hover:border-emerald-500/50 transition-all group cursor-pointer"
                       >
                         <div className="flex items-center gap-3">
                           <div className={`w-1 h-8 rounded-full ${isProfit ? 'bg-emerald-500' : 'bg-red-500'}`} />
@@ -434,7 +472,7 @@ export default function Dashboard() {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </Link>
                     );
                   })}
                 </div>
@@ -482,6 +520,15 @@ export default function Dashboard() {
                       ))}
                     </select>
                   </div>
+
+                  <button 
+                    onClick={handleSyncLivePrices}
+                    disabled={isRefreshingPrices}
+                    className="mb-2 ml-2 px-3 py-1.5 bg-blue-500/10 text-blue-400 border border-blue-500/30 rounded-xl hover:bg-blue-500/20 text-xs font-bold transition-colors shadow-lg flex items-center gap-2 disabled:opacity-50"
+                  >
+                    <RefreshCw size={12} className={isRefreshingPrices ? "animate-spin" : ""} />
+                    {isRefreshingPrices ? "Syncing..." : "🔄 Live Sync"}
+                  </button>
                 </div>
 
                 <div className="flex items-center gap-6 mb-2">
@@ -580,8 +627,13 @@ export default function Dashboard() {
                               fontSize={10} 
                               tickLine={false} 
                               axisLine={false}
-                              interval={0}
-                              tickFormatter={(val) => val.split('-').slice(1).reverse().join('/')}
+                              interval="preserveStartEnd"
+                              minTickGap={35}
+                              tickFormatter={(val) => {
+                                const parts = val.split('-');
+                                if (parts.length === 3) return `${parts[2]}/${parts[1]}`;
+                                return val;
+                              }}
                             />
                             <YAxis 
                               stroke="#64748b" 
@@ -598,53 +650,44 @@ export default function Dashboard() {
                               type="monotone" 
                               dataKey="oman_return" 
                               stroke="#3b82f6" 
-                              strokeWidth={3} 
-                              dot={{ fill: '#3b82f6', r: 4 }}
-                              activeDot={{ r: 6, strokeWidth: 0 }}
+                              strokeWidth={2.5} 
+                              dot={false}
+                              activeDot={{ r: 5, strokeWidth: 0, fill: '#3b82f6' }}
                             />
                             <Line 
                               type="monotone" 
                               dataKey="spy_return" 
                               stroke="#334155" 
-                              strokeWidth={2} 
-                              strokeDasharray="5 5"
+                              strokeWidth={1.5} 
+                              strokeDasharray="4 4"
                               dot={false}
                             />
                           </LineChart>
                         </ResponsiveContainer>
                       </div>
                       <div className="flex justify-center md:justify-start">
-                        <div className="flex items-center bg-slate-950 rounded-lg p-1 border border-slate-800 inline-flex">
+                        <div className="flex items-center bg-slate-950 rounded-lg p-1 border border-slate-800 inline-flex gap-1">
                           {[
-                            { label: '1D', days: 1, minDays: 1 },
-                            { label: '5D', days: 5, minDays: 5 },
-                            { label: '1M', days: 30, minDays: 20 },
-                            { label: '6M', days: 180, minDays: 120 },
-                            { label: '1Y', days: 365, minDays: 250 },
-                            { label: 'ALL', days: 0, minDays: 0 }
-                          ].map((range) => {
-                            const history = portfolio.performance_history || [];
-                            const first = history.length > 0 ? new Date(history[0].date).getTime() : 0;
-                            const last = history.length > 0 ? new Date(history[history.length - 1].date).getTime() : 0;
-                            const spanDays = (last - first) / (1000 * 3600 * 24);
-                            const isAvailable = spanDays >= range.minDays;
-                            
-                            if (!isAvailable && range.label !== 'ALL') return null;
-                            
-                            return (
-                              <button
-                                key={range.label}
-                                onClick={() => setTimeRange(range.label as any)}
-                                className={`px-4 py-1.5 text-xs font-bold rounded-md transition-colors ${
-                                  timeRange === range.label 
-                                    ? "bg-slate-800 text-blue-400" 
-                                    : "text-slate-500 hover:text-slate-300"
-                                }`}
-                              >
-                                {range.label}
-                              </button>
-                            );
-                          })}
+                            { label: '1D' },
+                            { label: '5D' },
+                            { label: '1M' },
+                            { label: '6M' },
+                            { label: 'YTD' },
+                            { label: '1Y' },
+                            { label: 'ALL' }
+                          ].map((range) => (
+                            <button
+                              key={range.label}
+                              onClick={() => setTimeRange(range.label as any)}
+                              className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all ${
+                                timeRange === range.label 
+                                  ? "bg-slate-800 text-blue-400 shadow-sm" 
+                                  : "text-slate-500 hover:text-slate-300"
+                              }`}
+                            >
+                              {range.label}
+                            </button>
+                          ))}
                         </div>
                       </div>
                     </section>
@@ -945,16 +988,51 @@ export default function Dashboard() {
                       <h3 className="font-bold text-sm">Recent Activity</h3>
                     </div>
                     <div className="space-y-4">
-                      {[
-                        "ตรวจสอบข้อมูลตลาดล่าสุด",
-                        "สรุปรายงานประจำวัน",
-                        "วิเคราะห์ปัจจัยพื้นฐานหุ้นกลุ่มใหม่"
-                      ].map((activity, i) => (
-                        <div key={i} className="flex items-center gap-3">
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-500/50" />
-                          <p className="text-xs text-slate-400 font-medium">{activity}</p>
-                        </div>
-                      ))}
+                      {(() => {
+                        const activitiesByAgent: Record<string, string[]> = {
+                          malli: [
+                            "ตรวจสอบรายงานประจำวัน /malli-daily & ดึงอีเมลงาน",
+                            "ประสานงานทีมงาน 7 Agent & นัดสัมภาษณ์ (Agoda/Ascend)",
+                            "ดูแลสุขอนามัยระบบ Office & เคลียร์ดิสก์"
+                          ],
+                          fundamentokung: [
+                            "เจาะลึกงบการเงิน 10-K & โมเดลรายได้ Big Tech",
+                            "ประเมินมูลค่าหุ้นกลุ่ม Semiconductor & Cloud",
+                            "วิเคราะห์ผลกระทบ Gross Margin และ Free Cash Flow"
+                          ],
+                          newwy: [
+                            "สแกนข่าวสารและดีลเทคโนโลยี AI $500B Compute Fund",
+                            "ตรวจสอบความเคลื่อนไหว OpenAI & IBM Enterprise",
+                            "เฝ้าระวังปัจจัยเศรษฐกิจมหภาค (Macro Wildcard)"
+                          ],
+                          reese: [
+                            "จัดเก็บบันทึกรายงานประจำวันลง Obsidian Knowledge Base",
+                            "เชื่อมโยง [[Wikilinks]] ข้ามสายงาน QA/Finance",
+                            "ดูแลโครงสร้าง Case Study และ Post-Mortems"
+                          ],
+                          tubemaster: [
+                            "วิเคราะห์แนวโน้ม SEO สำหรับคลิป Shorts เกม",
+                            "มอนิเตอร์ประสิทธิภาพช่อง Gaming",
+                            "พัฒนาไอเดียคอนเทนต์ลดระยะเวลาตัดต่อ"
+                          ],
+                          vera: [
+                            "คำนวณ Exposure และ Max Drawdown ของพอร์ต",
+                            "ประเมิน Position Sizing ตามระดับความเสี่ยง",
+                            "ตรวจสอบความปลอดภัยด้านคณิตศาสตร์และตัวเลข NAV"
+                          ]
+                        };
+                        const activities = activitiesByAgent[selectedAgent.id] || [
+                          "ตรวจสอบข้อมูลตลาดล่าสุด",
+                          "สรุปรายงานประจำวัน",
+                          "วิเคราะห์ปัจจัยพื้นฐานหุ้นกลุ่มใหม่"
+                        ];
+                        return activities.map((activity, i) => (
+                          <div key={i} className="flex items-center gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500/50" />
+                            <p className="text-xs text-slate-400 font-medium">{activity}</p>
+                          </div>
+                        ));
+                      })()}
                     </div>
                   </div>
 

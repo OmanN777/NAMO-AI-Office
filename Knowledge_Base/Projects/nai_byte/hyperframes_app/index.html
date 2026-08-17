@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Nai Byte - Tech Disaster</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: white;
+      font-family: 'Tahoma', sans-serif;
+    }
+    
+    #stage {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background-color: #111;
+    }
+
+        #avatar {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 1000px;
+      z-index: 10;
+    }
+
+    #idle-img, #talking-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      /* Remove the background color of the image? 
+         If the image is a PNG with alpha, great. But it has a green background.
+         Actually, we can use CSS mix-blend-mode: multiply if the background was white.
+         For a dirty green background, we can use an SVG filter or just 
+         let CapCut handle the final output by keeping the green bg in Hyperframes! */
+    }
+
+    .subtitle {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 110px;
+      font-weight: bold;
+      color: #FFD700;
+      text-shadow: 6px 6px 0px #000, -6px 6px 0px #000, 6px -6px 0px #000, -6px -6px 0px #000;
+      text-align: center;
+      width: 95%;
+      z-index: 20;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="stage" data-composition-id="nai_byte_viral" data-start="0" data-duration="39.29" data-width="1080" data-height="1920">
+    
+    <!-- Audio Track -->
+    <audio
+      data-start="0"
+      data-duration="39.29"
+      data-track-index="0"
+      src="assets/voiceover_fast.mp3"
+    ></audio>
+
+    <!-- Background (B-Roll) -->
+    <div style="position:absolute; width:100%; height:100%; background: #000; z-index: 1;">
+      <img id="bg1" src="assets/rocket_launchpad.png" style="position:absolute; width:100%; height:100%; object-fit:cover; opacity:1; filter: brightness(0.5); transform: scale(1.0);">
+      <img id="bg2" src="assets/ariane_launch.png" style="position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; filter: brightness(0.5); transform: scale(1.0);">
+      <img id="bg3" src="assets/retro_code.png" style="position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; filter: brightness(0.5); transform: scale(1.0);">
+      <img id="bg4" src="assets/sad_engineer.png" style="position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; filter: brightness(0.5); transform: scale(1.0);">
+      <img id="bg5" src="assets/rocket_explosion.png" style="position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; filter: brightness(0.5); transform: scale(1.0);">
+    </div>
+
+    <svg width="0" height="0" style="position:absolute;z-index:-1;">
+      <defs>
+        <filter id="chroma-key">
+          <!-- Convert #00FF00 (Pure Green) to transparent -->
+          <feColorMatrix type="matrix" values="
+            1 0 0 0 0
+            0 1 0 0 0
+            0 0 1 0 0
+            1.5 -2 1.5 1 0
+          " />
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Avatar Video with Chroma Key Filter -->
+    <div id="avatar" style="filter: url(#chroma-key);">
+      <video
+        class="clip"
+        data-start="0"
+        data-duration="39.29"
+        data-track-index="1"
+        src="assets/avatar_fast.mp4"
+        muted
+        playsinline
+        style="width: 100%; height: 100%;"
+      ></video>
+    </div>
+
+    <!-- Subtitles -->
+    <div id="sub0" class="subtitle" data-start="0.00" data-duration="0.70">รู้ไหมครับว่า</div>
+    <div id="sub1" class="subtitle" data-start="0.70" data-duration="0.59">ความผิดพลาด</div>
+    <div id="sub2" class="subtitle" data-start="1.29" data-duration="0.38">ของโค้ด</div>
+    <div id="sub3" class="subtitle" data-start="1.67" data-duration="1.02">เพียงแค่บรรทัดเดียว</div>
+    <div id="sub4" class="subtitle" data-start="2.69" data-duration="0.85">เคยทำเงิน</div>
+    <div id="sub5" class="subtitle" data-start="3.53" data-duration="1.04">หายวับไปถึง</div>
+    <div id="sub6" class="subtitle" data-start="4.57" data-duration="0.77">17,000</div>
+    <div id="sub7" class="subtitle" data-start="5.35" data-duration="0.90">ล้านบาท</div>
+    <div id="sub8" class="subtitle" data-start="6.25" data-duration="1.16">ในเวลาแค่</div>
+    <div id="sub9" class="subtitle" data-start="7.41" data-duration="0.26">37</div>
+    <div id="sub10" class="subtitle" data-start="7.67" data-duration="0.90">วินาที!</div>
+    <div id="sub11" class="subtitle" data-start="8.57" data-duration="0.56">นี่คือ</div>
+    <div id="sub12" class="subtitle" data-start="9.14" data-duration="1.13">เรื่องราวของ</div>
+    <div id="sub13" class="subtitle" data-start="10.26" data-duration="0.38">จรวด</div>
+    <div id="sub14" class="subtitle" data-start="10.64" data-duration="0.56">Ariane</div>
+    <div id="sub15" class="subtitle" data-start="11.20" data-duration="0.09">5</div>
+    <div id="sub16" class="subtitle" data-start="11.30" data-duration="0.75">ของยุโรป</div>
+    <div id="sub17" class="subtitle" data-start="12.05" data-duration="0.38">ในปี</div>
+    <div id="sub18" class="subtitle" data-start="12.43" data-duration="0.66">1996...</div>
+    <div id="sub19" class="subtitle" data-start="13.09" data-duration="0.59">ปัญหาเกิดจาก</div>
+    <div id="sub20" class="subtitle" data-start="13.67" data-duration="0.34">สิ่งที่</div>
+    <div id="sub21" class="subtitle" data-start="14.02" data-duration="0.98">โปรแกรมเมอร์เรียกว่า</div>
+    <div id="sub22" class="subtitle" data-start="15.00" data-duration="0.67">'Integer</div>
+    <div id="sub23" class="subtitle" data-start="15.67" data-duration="0.76">Overflow'</div>
+    <div id="sub24" class="subtitle" data-start="16.43" data-duration="0.93">หรือการพยายาม</div>
+    <div id="sub25" class="subtitle" data-start="17.36" data-duration="1.07">เอาข้อมูลตัวเลข</div>
+    <div id="sub26" class="subtitle" data-start="18.43" data-duration="0.43">64-bit</div>
+    <div id="sub27" class="subtitle" data-start="18.86" data-duration="0.71">ไปยัดใส่</div>
+    <div id="sub28" class="subtitle" data-start="19.56" data-duration="0.62">พื้นที่</div>
+    <div id="sub29" class="subtitle" data-start="20.18" data-duration="0.53">16-bit</div>
+    <div id="sub30" class="subtitle" data-start="20.71" data-duration="0.59">ผลก็คือ</div>
+    <div id="sub31" class="subtitle" data-start="21.30" data-duration="0.76">ระบบคำนวณ</div>
+    <div id="sub32" class="subtitle" data-start="22.06" data-duration="1.18">ทิศทางพังพินาศ</div>
+    <div id="sub33" class="subtitle" data-start="23.24" data-duration="1.09">จรวดหักเลี้ยว</div>
+    <div id="sub34" class="subtitle" data-start="24.33" data-duration="0.67">ผิดปรกติ</div>
+    <div id="sub35" class="subtitle" data-start="25.00" data-duration="0.88">และระเบิด</div>
+    <div id="sub36" class="subtitle" data-start="25.88" data-duration="1.27">ตู้มกลางอากาศ</div>
+    <div id="sub37" class="subtitle" data-start="27.14" data-duration="0.58">หลังจาก</div>
+    <div id="sub38" class="subtitle" data-start="27.72" data-duration="0.66">ปล่อยตัว</div>
+    <div id="sub39" class="subtitle" data-start="28.38" data-duration="0.91">ไม่ถึงนาที!</div>
+    <div id="sub40" class="subtitle" data-start="29.29" data-duration="0.38">ครั้งหน้า</div>
+    <div id="sub41" class="subtitle" data-start="29.66" data-duration="0.63">ถ้าคุณทำงานพลาด</div>
+    <div id="sub42" class="subtitle" data-start="30.29" data-duration="0.38">ให้นึกถึง</div>
+    <div id="sub43" class="subtitle" data-start="30.67" data-duration="0.76">จรวดลำนี้นะครับ...</div>
+    <div id="sub44" class="subtitle" data-start="31.43" data-duration="0.60">พลาดแค่ไหน</div>
+    <div id="sub45" class="subtitle" data-start="32.02" data-duration="0.54">ก็ไม่เท่า</div>
+    <div id="sub46" class="subtitle" data-start="32.56" data-duration="0.36">17,000</div>
+    <div id="sub47" class="subtitle" data-start="32.92" data-duration="0.65">ล้านแน่นอน!</div>
+    <div id="sub48" class="subtitle" data-start="33.57" data-duration="0.90">กดติดตาม</div>
+    <div id="sub49" class="subtitle" data-start="34.47" data-duration="0.45">ช่อง</div>
+    <div id="sub50" class="subtitle" data-start="34.92" data-duration="0.79">Elm0000</div>
+    <div id="sub51" class="subtitle" data-start="35.71" data-duration="1.50">สำหรับเรื่องไอที</div>
+    <div id="sub52" class="subtitle" data-start="37.22" data-duration="0.47">สนุกๆ</div>
+    <div id="sub53" class="subtitle" data-start="37.69" data-duration="0.56">แบบนี้</div>
+    <div id="sub54" class="subtitle" data-start="38.25" data-duration="1.03">ทุกวันครับ!</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      
+            // B-Roll Crossfades & Zooms
+      tl.to("#bg1", { scale: 1.15, duration: 8.0, ease: "none" }, 0);
+      tl.to("#bg2", { opacity: 1, duration: 0.5 }, 8.0);
+      tl.to("#bg2", { scale: 1.15, duration: 8.0, ease: "none" }, 8.0);
+      tl.to("#bg3", { opacity: 1, duration: 0.5 }, 16.0);
+      tl.to("#bg3", { scale: 1.15, duration: 8.0, ease: "none" }, 16.0);
+      tl.to("#bg4", { opacity: 1, duration: 0.5 }, 24.0);
+      tl.to("#bg4", { scale: 1.15, duration: 8.0, ease: "none" }, 24.0);
+      tl.to("#bg5", { opacity: 1, duration: 0.5 }, 32.0);
+      tl.to("#bg5", { scale: 1.15, duration: 8.0, ease: "none" }, 32.0);
+
+      // Simple subtitle pop animations
+      tl.to("#sub0", { opacity: 1, scale: 1.1, duration: 0.1 }, 0.00);
+      tl.to("#sub0", { opacity: 0, scale: 1, duration: 0.1 }, 0.60);
+      tl.to("#sub1", { opacity: 1, scale: 1.1, duration: 0.1 }, 0.70);
+      tl.to("#sub1", { opacity: 0, scale: 1, duration: 0.1 }, 1.19);
+      tl.to("#sub2", { opacity: 1, scale: 1.1, duration: 0.1 }, 1.29);
+      tl.to("#sub2", { opacity: 0, scale: 1, duration: 0.1 }, 1.57);
+      tl.to("#sub3", { opacity: 1, scale: 1.1, duration: 0.1 }, 1.67);
+      tl.to("#sub3", { opacity: 0, scale: 1, duration: 0.1 }, 2.59);
+      tl.to("#sub4", { opacity: 1, scale: 1.1, duration: 0.1 }, 2.69);
+      tl.to("#sub4", { opacity: 0, scale: 1, duration: 0.1 }, 3.43);
+      tl.to("#sub5", { opacity: 1, scale: 1.1, duration: 0.1 }, 3.53);
+      tl.to("#sub5", { opacity: 0, scale: 1, duration: 0.1 }, 4.47);
+      tl.to("#sub6", { opacity: 1, scale: 1.1, duration: 0.1 }, 4.57);
+      tl.to("#sub6", { opacity: 0, scale: 1, duration: 0.1 }, 5.25);
+      tl.to("#sub7", { opacity: 1, scale: 1.1, duration: 0.1 }, 5.35);
+      tl.to("#sub7", { opacity: 0, scale: 1, duration: 0.1 }, 6.15);
+      tl.to("#sub8", { opacity: 1, scale: 1.1, duration: 0.1 }, 6.25);
+      tl.to("#sub8", { opacity: 0, scale: 1, duration: 0.1 }, 7.31);
+      tl.to("#sub9", { opacity: 1, scale: 1.1, duration: 0.1 }, 7.41);
+      tl.to("#sub9", { opacity: 0, scale: 1, duration: 0.1 }, 7.57);
+      tl.to("#sub10", { opacity: 1, scale: 1.1, duration: 0.1 }, 7.67);
+      tl.to("#sub10", { opacity: 0, scale: 1, duration: 0.1 }, 8.47);
+      tl.to("#sub11", { opacity: 1, scale: 1.1, duration: 0.1 }, 8.57);
+      tl.to("#sub11", { opacity: 0, scale: 1, duration: 0.1 }, 9.04);
+      tl.to("#sub12", { opacity: 1, scale: 1.1, duration: 0.1 }, 9.14);
+      tl.to("#sub12", { opacity: 0, scale: 1, duration: 0.1 }, 10.16);
+      tl.to("#sub13", { opacity: 1, scale: 1.1, duration: 0.1 }, 10.26);
+      tl.to("#sub13", { opacity: 0, scale: 1, duration: 0.1 }, 10.54);
+      tl.to("#sub14", { opacity: 1, scale: 1.1, duration: 0.1 }, 10.64);
+      tl.to("#sub14", { opacity: 0, scale: 1, duration: 0.1 }, 11.10);
+      tl.to("#sub15", { opacity: 1, scale: 1.1, duration: 0.1 }, 11.20);
+      tl.to("#sub15", { opacity: 0, scale: 1, duration: 0.1 }, 11.30);
+      tl.to("#sub16", { opacity: 1, scale: 1.1, duration: 0.1 }, 11.30);
+      tl.to("#sub16", { opacity: 0, scale: 1, duration: 0.1 }, 11.95);
+      tl.to("#sub17", { opacity: 1, scale: 1.1, duration: 0.1 }, 12.05);
+      tl.to("#sub17", { opacity: 0, scale: 1, duration: 0.1 }, 12.33);
+      tl.to("#sub18", { opacity: 1, scale: 1.1, duration: 0.1 }, 12.43);
+      tl.to("#sub18", { opacity: 0, scale: 1, duration: 0.1 }, 12.99);
+      tl.to("#sub19", { opacity: 1, scale: 1.1, duration: 0.1 }, 13.09);
+      tl.to("#sub19", { opacity: 0, scale: 1, duration: 0.1 }, 13.57);
+      tl.to("#sub20", { opacity: 1, scale: 1.1, duration: 0.1 }, 13.67);
+      tl.to("#sub20", { opacity: 0, scale: 1, duration: 0.1 }, 13.92);
+      tl.to("#sub21", { opacity: 1, scale: 1.1, duration: 0.1 }, 14.02);
+      tl.to("#sub21", { opacity: 0, scale: 1, duration: 0.1 }, 14.90);
+      tl.to("#sub22", { opacity: 1, scale: 1.1, duration: 0.1 }, 15.00);
+      tl.to("#sub22", { opacity: 0, scale: 1, duration: 0.1 }, 15.57);
+      tl.to("#sub23", { opacity: 1, scale: 1.1, duration: 0.1 }, 15.67);
+      tl.to("#sub23", { opacity: 0, scale: 1, duration: 0.1 }, 16.33);
+      tl.to("#sub24", { opacity: 1, scale: 1.1, duration: 0.1 }, 16.43);
+      tl.to("#sub24", { opacity: 0, scale: 1, duration: 0.1 }, 17.26);
+      tl.to("#sub25", { opacity: 1, scale: 1.1, duration: 0.1 }, 17.36);
+      tl.to("#sub25", { opacity: 0, scale: 1, duration: 0.1 }, 18.33);
+      tl.to("#sub26", { opacity: 1, scale: 1.1, duration: 0.1 }, 18.43);
+      tl.to("#sub26", { opacity: 0, scale: 1, duration: 0.1 }, 18.76);
+      tl.to("#sub27", { opacity: 1, scale: 1.1, duration: 0.1 }, 18.86);
+      tl.to("#sub27", { opacity: 0, scale: 1, duration: 0.1 }, 19.46);
+      tl.to("#sub28", { opacity: 1, scale: 1.1, duration: 0.1 }, 19.56);
+      tl.to("#sub28", { opacity: 0, scale: 1, duration: 0.1 }, 20.08);
+      tl.to("#sub29", { opacity: 1, scale: 1.1, duration: 0.1 }, 20.18);
+      tl.to("#sub29", { opacity: 0, scale: 1, duration: 0.1 }, 20.61);
+      tl.to("#sub30", { opacity: 1, scale: 1.1, duration: 0.1 }, 20.71);
+      tl.to("#sub30", { opacity: 0, scale: 1, duration: 0.1 }, 21.20);
+      tl.to("#sub31", { opacity: 1, scale: 1.1, duration: 0.1 }, 21.30);
+      tl.to("#sub31", { opacity: 0, scale: 1, duration: 0.1 }, 21.96);
+      tl.to("#sub32", { opacity: 1, scale: 1.1, duration: 0.1 }, 22.06);
+      tl.to("#sub32", { opacity: 0, scale: 1, duration: 0.1 }, 23.14);
+      tl.to("#sub33", { opacity: 1, scale: 1.1, duration: 0.1 }, 23.24);
+      tl.to("#sub33", { opacity: 0, scale: 1, duration: 0.1 }, 24.23);
+      tl.to("#sub34", { opacity: 1, scale: 1.1, duration: 0.1 }, 24.33);
+      tl.to("#sub34", { opacity: 0, scale: 1, duration: 0.1 }, 24.90);
+      tl.to("#sub35", { opacity: 1, scale: 1.1, duration: 0.1 }, 25.00);
+      tl.to("#sub35", { opacity: 0, scale: 1, duration: 0.1 }, 25.78);
+      tl.to("#sub36", { opacity: 1, scale: 1.1, duration: 0.1 }, 25.88);
+      tl.to("#sub36", { opacity: 0, scale: 1, duration: 0.1 }, 27.04);
+      tl.to("#sub37", { opacity: 1, scale: 1.1, duration: 0.1 }, 27.14);
+      tl.to("#sub37", { opacity: 0, scale: 1, duration: 0.1 }, 27.62);
+      tl.to("#sub38", { opacity: 1, scale: 1.1, duration: 0.1 }, 27.72);
+      tl.to("#sub38", { opacity: 0, scale: 1, duration: 0.1 }, 28.28);
+      tl.to("#sub39", { opacity: 1, scale: 1.1, duration: 0.1 }, 28.38);
+      tl.to("#sub39", { opacity: 0, scale: 1, duration: 0.1 }, 29.19);
+      tl.to("#sub40", { opacity: 1, scale: 1.1, duration: 0.1 }, 29.29);
+      tl.to("#sub40", { opacity: 0, scale: 1, duration: 0.1 }, 29.56);
+      tl.to("#sub41", { opacity: 1, scale: 1.1, duration: 0.1 }, 29.66);
+      tl.to("#sub41", { opacity: 0, scale: 1, duration: 0.1 }, 30.19);
+      tl.to("#sub42", { opacity: 1, scale: 1.1, duration: 0.1 }, 30.29);
+      tl.to("#sub42", { opacity: 0, scale: 1, duration: 0.1 }, 30.57);
+      tl.to("#sub43", { opacity: 1, scale: 1.1, duration: 0.1 }, 30.67);
+      tl.to("#sub43", { opacity: 0, scale: 1, duration: 0.1 }, 31.33);
+      tl.to("#sub44", { opacity: 1, scale: 1.1, duration: 0.1 }, 31.43);
+      tl.to("#sub44", { opacity: 0, scale: 1, duration: 0.1 }, 31.92);
+      tl.to("#sub45", { opacity: 1, scale: 1.1, duration: 0.1 }, 32.02);
+      tl.to("#sub45", { opacity: 0, scale: 1, duration: 0.1 }, 32.46);
+      tl.to("#sub46", { opacity: 1, scale: 1.1, duration: 0.1 }, 32.56);
+      tl.to("#sub46", { opacity: 0, scale: 1, duration: 0.1 }, 32.82);
+      tl.to("#sub47", { opacity: 1, scale: 1.1, duration: 0.1 }, 32.92);
+      tl.to("#sub47", { opacity: 0, scale: 1, duration: 0.1 }, 33.47);
+      tl.to("#sub48", { opacity: 1, scale: 1.1, duration: 0.1 }, 33.57);
+      tl.to("#sub48", { opacity: 0, scale: 1, duration: 0.1 }, 34.37);
+      tl.to("#sub49", { opacity: 1, scale: 1.1, duration: 0.1 }, 34.47);
+      tl.to("#sub49", { opacity: 0, scale: 1, duration: 0.1 }, 34.82);
+      tl.to("#sub50", { opacity: 1, scale: 1.1, duration: 0.1 }, 34.92);
+      tl.to("#sub50", { opacity: 0, scale: 1, duration: 0.1 }, 35.61);
+      tl.to("#sub51", { opacity: 1, scale: 1.1, duration: 0.1 }, 35.71);
+      tl.to("#sub51", { opacity: 0, scale: 1, duration: 0.1 }, 37.12);
+      tl.to("#sub52", { opacity: 1, scale: 1.1, duration: 0.1 }, 37.22);
+      tl.to("#sub52", { opacity: 0, scale: 1, duration: 0.1 }, 37.59);
+      tl.to("#sub53", { opacity: 1, scale: 1.1, duration: 0.1 }, 37.69);
+      tl.to("#sub53", { opacity: 0, scale: 1, duration: 0.1 }, 38.15);
+      tl.to("#sub54", { opacity: 1, scale: 1.1, duration: 0.1 }, 38.25);
+      tl.to("#sub54", { opacity: 0, scale: 1, duration: 0.1 }, 39.19);
+
+      window.__timelines.nai_byte_viral = tl;
+    </script>
+  </div>
+
+</body>
+</html>

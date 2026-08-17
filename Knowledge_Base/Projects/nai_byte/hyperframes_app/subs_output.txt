@@ -1,0 +1,47 @@
+    <div id="sub0" class="subtitle" data-start="0.00" data-duration="3.76">ความผิดพลาดของโคตรเพียงแค่บันทัดเดียว</div>
+    <div id="sub1" class="subtitle" data-start="3.76" data-duration="2.64">เคยทำเงินหายวับไปถึง</div>
+    <div id="sub2" class="subtitle" data-start="6.40" data-duration="5.60">17,000 ล้านบาทในเวลาแค่ 37 วินาที</div>
+    <div id="sub3" class="subtitle" data-start="12.00" data-duration="6.32">มีคือเรื่องราคของจรวด อริอัน 5 ของ Europe ในปี 1996</div>
+    <div id="sub4" class="subtitle" data-start="18.32" data-duration="2.68">ปัญหาเกิดจากสิ่งที่ปรโกรเมอร์เรกว่า</div>
+    <div id="sub5" class="subtitle" data-start="21.00" data-duration="2.00">Integer Overflow</div>
+    <div id="sub6" class="subtitle" data-start="23.00" data-duration="3.40">พยายามเอาข้อมูลตัวเลก 64 บิด</div>
+    <div id="sub7" class="subtitle" data-start="26.40" data-duration="2.60">ไปยัดใส่พื้นที่ 16 บิด</div>
+    <div id="sub8" class="subtitle" data-start="29.00" data-duration="6.00">ความผินาด หากเรียบผิดปรากติ</div>
+    <div id="sub9" class="subtitle" data-start="35.00" data-duration="3.00">และระเบิดต้มอากาศ</div>
+    <div id="sub10" class="subtitle" data-start="38.00" data-duration="3.00">หาต่อไม่ถึงนาที</div>
+    <div id="sub11" class="subtitle" data-start="41.00" data-duration="3.00">คลางน่า ถ้าคุณทำงานพลาด</div>
+    <div id="sub12" class="subtitle" data-start="44.00" data-duration="3.00">พลาดแค่ไหน</div>
+    <div id="sub13" class="subtitle" data-start="47.00" data-duration="3.00">ไม่เท่า 17,000 ล้านแน่นอน</div>
+    <div id="sub14" class="subtitle" data-start="50.00" data-duration="5.00">โชคในบาท อิทีสนุก สนุกแบบนี้</div>
+
+--------------------------------------------------
+      tl.to("#sub0", { opacity: 1, scale: 1.1, duration: 0.2 }, 0.00);
+      tl.to("#sub0", { opacity: 0, scale: 1, duration: 0.2 }, 3.56);
+      tl.to("#sub1", { opacity: 1, scale: 1.1, duration: 0.2 }, 3.76);
+      tl.to("#sub1", { opacity: 0, scale: 1, duration: 0.2 }, 6.20);
+      tl.to("#sub2", { opacity: 1, scale: 1.1, duration: 0.2 }, 6.40);
+      tl.to("#sub2", { opacity: 0, scale: 1, duration: 0.2 }, 11.80);
+      tl.to("#sub3", { opacity: 1, scale: 1.1, duration: 0.2 }, 12.00);
+      tl.to("#sub3", { opacity: 0, scale: 1, duration: 0.2 }, 18.12);
+      tl.to("#sub4", { opacity: 1, scale: 1.1, duration: 0.2 }, 18.32);
+      tl.to("#sub4", { opacity: 0, scale: 1, duration: 0.2 }, 20.80);
+      tl.to("#sub5", { opacity: 1, scale: 1.1, duration: 0.2 }, 21.00);
+      tl.to("#sub5", { opacity: 0, scale: 1, duration: 0.2 }, 22.80);
+      tl.to("#sub6", { opacity: 1, scale: 1.1, duration: 0.2 }, 23.00);
+      tl.to("#sub6", { opacity: 0, scale: 1, duration: 0.2 }, 26.20);
+      tl.to("#sub7", { opacity: 1, scale: 1.1, duration: 0.2 }, 26.40);
+      tl.to("#sub7", { opacity: 0, scale: 1, duration: 0.2 }, 28.80);
+      tl.to("#sub8", { opacity: 1, scale: 1.1, duration: 0.2 }, 29.00);
+      tl.to("#sub8", { opacity: 0, scale: 1, duration: 0.2 }, 34.80);
+      tl.to("#sub9", { opacity: 1, scale: 1.1, duration: 0.2 }, 35.00);
+      tl.to("#sub9", { opacity: 0, scale: 1, duration: 0.2 }, 37.80);
+      tl.to("#sub10", { opacity: 1, scale: 1.1, duration: 0.2 }, 38.00);
+      tl.to("#sub10", { opacity: 0, scale: 1, duration: 0.2 }, 40.80);
+      tl.to("#sub11", { opacity: 1, scale: 1.1, duration: 0.2 }, 41.00);
+      tl.to("#sub11", { opacity: 0, scale: 1, duration: 0.2 }, 43.80);
+      tl.to("#sub12", { opacity: 1, scale: 1.1, duration: 0.2 }, 44.00);
+      tl.to("#sub12", { opacity: 0, scale: 1, duration: 0.2 }, 46.80);
+      tl.to("#sub13", { opacity: 1, scale: 1.1, duration: 0.2 }, 47.00);
+      tl.to("#sub13", { opacity: 0, scale: 1, duration: 0.2 }, 49.80);
+      tl.to("#sub14", { opacity: 1, scale: 1.1, duration: 0.2 }, 50.00);
+      tl.to("#sub14", { opacity: 0, scale: 1, duration: 0.2 }, 54.80);

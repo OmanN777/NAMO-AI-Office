@@ -1,8 +1,9 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import os from 'os';
 import { NextResponse } from 'next/server';
 
-const COMMANDS_DIR = path.join(process.cwd(), '..', '..', '.gemini', 'commands');
+const COMMANDS_DIR = path.join(os.homedir(), '.gemini', 'commands');
 
 export async function GET() {
   try {

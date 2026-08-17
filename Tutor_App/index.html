@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protoss QA Tutor - Advanced Study Guide</title>
+    <meta name="description" content="Detailed, comprehensive study guide and exercises for Namo's QA Interview. Built by Malli.">
+    <!-- Google Fonts: Albert Sans & Playfair Display / Fraunces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #141413; /* Premium dark warm charcoal */
+            --bg-card: #1d1d1c; /* Lighter dark warm charcoal */
+            --border-color: #2e2d2a;
+            --border-hover: #454440;
+            --primary: #a3be8c; /* Premium Sage Green */
+            --primary-light: #222a24; /* Dark Sage bg for active states */
+            --accent: #d0b894; /* Light warm gold */
+            --text-main: #e2ded5; /* Soft warm white text */
+            --text-muted: #96938a;
+            --text-highlight: #ffffff;
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-sans: 'Albert Sans', -apple-system, sans-serif;
+            --font-code: 'Fira Code', monospace;
+            --sidebar-width: 280px;
+            --transition-speed: 0.2s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+            display: flex;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-main);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2b2a28;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Sidebar Styling (Clean and Minimalist) */
+        aside {
+            width: var(--sidebar-width);
+            background-color: var(--bg-card);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 10;
+        }
+
+        .sidebar-header {
+            padding: 35px 28px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-header h1 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--text-highlight);
+            letter-spacing: -0.01em;
+        }
+
+        .sidebar-header p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .nav-item {
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all var(--transition-speed) ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-item:hover {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .nav-item.active {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .session-badge {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background-color: var(--border-color);
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+            font-weight: 600;
+        }
+
+        .active .session-badge {
+            background-color: var(--primary);
+            color: #141413;
+        }
+
+        .sidebar-footer {
+            padding: 24px 28px;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-main);
+        }
+
+        /* Main Content Container */
+        main {
+            margin-left: var(--sidebar-width);
+            flex-grow: 1;
+            padding: 50px 60px;
+            max-width: 1000px;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        /* Premium Content Cards (Solid & Clean, No Glassmorphism) */
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+            transition: border var(--transition-speed) ease;
+        }
+
+        .content-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .section-header {
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 1.85rem;
+            font-weight: 400;
+            color: var(--text-highlight);
+            letter-spacing: -0.02em;
+        }
+
+        .section-header .tagline {
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* Markdown/Tutorial styles */
+        p {
+            line-height: 1.7;
+            margin-bottom: 18px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            margin: 32px 0 16px;
+            color: var(--text-highlight);
+            font-weight: 400;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        h4 {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            margin: 24px 0 12px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 22px;
+            line-height: 1.7;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        strong {
+            color: var(--text-highlight);
+            font-weight: 600;
+        }
+
+        /* Code Blocks (High Contrast, Clean Layout) */
+        pre {
+            background-color: #111114; /* Deep premium slate block */
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin-bottom: 22px;
+        }
+
+        code {
+            font-family: var(--font-code);
+            font-size: 0.88rem;
+        }
+
+        pre code {
+            color: #d8dee9;
+        }
+
+        /* Inline code */
+        :not(pre) > code {
+            background-color: rgba(255, 255, 255, 0.08);
+            padding: 3px 6px;
+            border-radius: 4px;
+            color: #e5b0b0;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+        }
+
+        /* Interactive Textarea Workspace (Solid and Structured) */
+        .workspace {
+            margin-top: 28px;
+            background-color: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .workspace label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 220px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px;
+            color: var(--text-highlight);
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            line-height: 1.55;
+            resize: vertical;
+            outline: none;
+            transition: all var(--transition-speed) ease;
+        }
+
+        textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(163, 190, 140, 0.15);
+        }
+
+        /* Buttons and Controls */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #141413;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #b3cca1;
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: #141413;
+            font-weight: 600;
+        }
+
+        .btn-accent:hover {
+            background-color: #e5cdab;
+        }
+
+        /* Floating Utility Bar */
+        .utility-bar {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 24px;
+            position: fixed;
+            bottom: 24px;
+            right: 40px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Toast Alerts */
+        .toast {
+            position: fixed;
+            top: 24px;
+            right: 40px;
+            background-color: var(--primary);
+            color: #141413;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transform: translateY(-100px);
+            opacity: 0;
+            transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 0.9rem;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* UI Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 22px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: var(--bg-main);
+            color: var(--text-highlight);
+            font-weight: 600;
+        }
+
+        /* Highlight boxes */
+        .tip-box {
+            background-color: var(--primary-light);
+            border-left: 3px solid var(--primary);
+            padding: 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 22px 0;
+        }
+
+        .warning-box {
+            background-color: rgba(208, 184, 148, 0.08);
+            border-left: 3px solid var(--accent);
+            padding: 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 22px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside>
+        <div class="sidebar-header">
+            <h1>Protoss QA Tutor</h1>
+            <p>1KS Project Training Program</p>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item active" onclick="switchTab(1)">
+                <span>Session 1: TS Async</span>
+                <span class="session-badge">S1</span>
+            </li>
+            <li class="nav-item" onclick="switchTab(2)">
+                <span>Session 2: Appium Mobile</span>
+                <span class="session-badge">S2</span>
+            </li>
+            <li class="nav-item" onclick="switchTab(3)">
+                <span>Session 3: Playwright POM</span>
+                <span class="session-badge">S3</span>
+            </li>
+            <li class="nav-item" onclick="switchTab(4)">
+                <span>Session 4: API & SQL</span>
+                <span class="session-badge">S4</span>
+            </li>
+            <li class="nav-item" onclick="switchTab(5)">
+                <span>Session 5: Observability</span>
+                <span class="session-badge">S5</span>
+            </li>
+            <li class="nav-item" onclick="switchTab(6)">
+                <span>Session 6: Mock Interview</span>
+                <span class="session-badge">S6</span>
+            </li>
+            <li class="nav-item" onclick="switchTab(7)">
+                <span>Session 7: Setup Checklist</span>
+                <span class="session-badge">S7</span>
+            </li>
+            <li class="nav-item" onclick="switchTab(8)">
+                <span>Session 8: Kasikorn Line</span>
+                <span class="session-badge" style="background-color: #00c300; color: #ffffff;">LINE</span>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <p style="font-size: 0.72rem; color: var(--text-muted);">พัฒนาโดย มอลิ 🌸</p>
+            <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">สำหรับบอส นะโม</p>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Tab 1: TypeScript Async -->
+        <div id="tab-1" class="tab-content">
+            <div class="content-card">
+                <div class="section-header">
+                    <h2>Session 1: TypeScript Basics & Asynchronous Execution</h2>
+                    <p class="tagline">คู่มือลงลึกโครงสร้างไวยากรณ์ TypeScript และกระบวนการทำงานแบบ Async/Await</p>
+                </div>
+                
+                <h3>1. พื้นฐานไวยากรณ์ TypeScript (TypeScript Syntax Basics)</h3>
+                <p>TypeScript เป็นภาษาที่เป็น <strong>Static Typing</strong> (ระบุชนิดตัวแปรชัดเจน) ซึ่งแตกต่างจาก JavaScript ที่เป็น <strong>Dynamic Typing</strong> (ตัวแปรเปลี่ยนชนิดไปมาได้อิสระ) การระบุชนิดของข้อมูลช่วยตรวจจับบั๊กได้ตั้งแต่ตอนเขียนโค้ด (Compile-time) ป้องกันค่าประเภท <code>undefined</code> หรือ <code>null</code> หลุดไปรันจริง</p>
+
+                <h4>1.1 การระบุชนิดตัวแปรพื้นฐาน (Basic Variable Types)</h4>
+                <pre><code style="color: #d8dee9;">// ระบุชนิดชัดเจน (Explicit Typing)
+const username: string = "namo_tester";
+const age: number = 24;
+const isQA: boolean = true;
+
+// กรณีเป็น List/Array
+const skillList: string[] = ["Playwright", "Robot Framework", "Appium"];
+const scoreList: Array<number> = [100, 95, 98];</code></pre>
+
+                <h4>1.2 โครงสร้างข้อมูลแบบ Object (Type Alias & Interface)</h4>
+                <p>ในงานเทสระบบธนาคาร เรามักจะส่งหรือรับข้อมูลที่มีโครงสร้างซับซ้อน เช่น ข้อมูลบัญชี ข้อมูลผู้ใช้ เราสามารถควบคุมโครงสร้างนี้ได้ด้วย <code>interface</code> หรือ <code>type</code>:</p>
+                <pre><code style="color: #d8dee9;">interface UserAccount {
+    accountNo: string;
+    holderName: string;
+    balance: number;
+    status: "active" | "suspended"; // กำหนดค่าเฉพาะตัว (Union Type)
+}
+
+const client: UserAccount = {
+    accountNo: "004-1-23456-7",
+    holderName: "Namo Mahidol",
+    balance: 50000.00,
+    status: "active"
+};</code></pre>
+
+                <h4>1.3 การระบุประเภทข้อมูลสำหรับฟังก์ชัน (Function Types)</h4>
+                <p>ฟังก์ชันใน TS จะต้องระบุประเภทพารามิเตอร์ขาเข้า และประเภทข้อมูลที่จะส่งกลับ (Return Type) เสมอ:</p>
+                <pre><code style="color: #d8dee9;">// ฟังก์ชันปกติ (Synchronous) รับ string 2 ตัว ส่งกลับเป็น boolean
+function checkCredentials(user: string, pass: string): boolean {
+    return user === "boss" && pass === "pass123";
+}</code></pre>
+
+                <h3>2. กระบวนการทำงานแบบ Asynchronous (Async/Await)</h3>
+                <p>เนื่องจากตัวรัน JavaScript (Event Loop) ทำงานแบบ Single Thread (มีสมองสั่งงานเดียว) ทำให้กระบวนการที่กินเวลา เช่น การดาวน์โหลดเว็บ การเชื่อมต่อฐานข้อมูล หรือการดึงข้อมูลจาก API ต้องถูกส่งไปประมวลผลเบื้องหลังในรูปแบบของ <strong>Promise</strong> เพื่อไม่ให้แอปพลิเคชันค้าง</p>
+
+                <div class="tip-box">
+                    <strong>💡 Promise คืออะไร?</strong><br>
+                    คือ วัตถุ (Object) ที่เป็นตัวแทนของผลลัพธ์การทำงานแบบ Async โดยมี 3 สถานะ:
+                    <ul style="margin-top: 5px; margin-left: 20px;">
+                        <li><strong>Pending:</strong> อยู่ระหว่างดำเนินงาน (กำลังดาวน์โหลด หรือรอผลลัพธ์)</li>
+                        <li><strong>Fulfilled (Resolved):</strong> ทำงานเสร็จสมบูรณ์ ได้ข้อมูลกลับมา</li>
+                        <li><strong>Rejected:</strong> เกิดข้อผิดพลาด (เช่น ลิงก์ล่ม, พอร์ตปิด)</li>
+                    </ul>
+                </div>
+
+                <h4>2.1 การเขียน Async/Await และการจัดการ Error</h4>
+                <p>ในการเขียนโปรแกรมเทสอัตโนมัติ เราใช้ <code>await</code> เพื่อรอให้ Promise ทำงานสำเร็จก่อนรันคำสั่งถัดไป และเมื่อใช้ <code>await</code> เราจะต้องครอบด้วยบล็อก <code>try / catch</code> เพื่อป้องกันแอปพลิเคชันแครชเมื่อพบสถานะ Rejected เสมอ:</p>
+                <pre><code style="color: #a3be8c;">// ฟังก์ชัน Async ดึงยอดเงินบัญชี
+async function fetchBalanceFromAPI(accountNo: string): Promise<number> {
+    // สมมติว่ายิง API ข้ามเน็ตเวิร์ก
+    return 15000.00;
+}
+
+// การเรียกใช้งานแบบมีโครงสร้างรับมือ Error
+async function runVerificationProcess(accountNo: string) {
+    try {
+        console.log("Starting account verification...");
+        // รอผลลัพธ์ด้วย await
+        const balance = await fetchBalanceFromAPI(accountNo); 
+        console.log(`Verification success. Balance: ${balance}`);
+    } catch (error) {
+        console.error("Verification failed! Details: ", error);
+    }
+}</code></pre>
+
+                <div class="workspace">
+                    <label for="ans-s1-q1">✍️ แบบฝึกหัดที่ 1.1 (ระดับท้าทาย): พัฒนาระบบตรวจสอบยอดเงินรวมจากหลายบัญชีแบบขนาน (Parallel) พร้อมกลไกการลองใหม่ (Retry)</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>โจทย์ระดับ Senior:</strong> บอสต้องเขียนสคริปต์ตรวจสอบยอดเงินรวมของบัญชีผู้ใช้จำนวน 3 บัญชี:
+                        1. ยิงดึงข้อมูลยอดเงินแต่ละบัญชีขนานกันโดยใช้ <code>Promise.all()</code> เพื่อไม่ให้บล็อกระบบ (ประหยัดเวลา)
+                        2. บัญชีที่ 3 มักพบข้อขัดข้องและส่งผลลัพธ์ล้มเหลวแบบสุ่ม (Flaky API) บอสต้องเขียนฟังก์ชันย่อยสำหรับการดึงข้อมูลบัญชีแบบมีกลไก <strong>Retry (ลองใหม่ได้สูงสุด 3 ครั้ง)</strong> หากลองครบแล้วยังพังจึงโยน Error
+                        3. ประกาศ Type ตัวแปรและฟังก์ชันให้ถูกต้องตามมาตรฐาน TypeScript ทั้งหมด (ครอบคลุมการจัดการ <code>try/catch</code> และชนิดข้อมูลส่งกลับ)
+                    </p>
+                    <pre><code style="color: #88c0d0;">interface AccountRequest {
+    accountNo: string;
+    type: "savings" | "current" | "fixed";
+}
+
+// ฟังก์ชันดึงเงินจำลองจาก API ที่ส่งข้อมูลกลับช้าและอาจพัง (บอสห้ามแก้ไขฟังก์ชันนี้)
+async function fetchBalanceFromAPI(account: AccountRequest): Promise<number> {
+    if (account.accountNo === "004-3-INVALID-9" && Math.random() > 0.3) {
+        throw new Error("API Timeout");
+    }
+    return 15000.00;
+}
+
+// ⚠️ งานของบอส: เขียนฟังก์ชัน 2 ฟังก์ชันนี้ให้สมบูรณ์ด้วย TS & Async/Await:
+// 1. ดึงเงินแบบมี Retry (ทวนคำสั่งซ้ำสูงสุด maxRetries รอบ)
+async function fetchBalanceWithRetry(account: AccountRequest, maxRetries: number): Promise<number> {
+    // เขียนโค้ดของบอสตรงนี้
+}
+
+// 2. ดึงเงินรวมของบัญชีทั้งหมดขนานกัน และรวมยอดส่งกลับ
+async function verifyAggregateBalance(accounts: AccountRequest[]): Promise<number> {
+    // เขียนโค้ดของบอสตรงนี้
+}</code></pre>
+                    <textarea id="ans-s1-q1" placeholder="เขียนโค้ดท้าทายสไตล์ Senior QA TS ของบอสตรงนี้..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Appium Mobile -->
+        <div id="tab-2" class="tab-content" style="display: none;">
+            <div class="content-card">
+                <div class="section-header">
+                    <h2>Session 2: Appium Mobile Testing with TS</h2>
+                    <p class="tagline">เจาะลึกการระบุตำแหน่งอ็อบเจกต์และกระบวนการรันคำสั่งบน Mobile Automation</p>
+                </div>
+
+                <h3>1. กลยุทธ์การระบุ Locators บน Native Mobile App</h3>
+                <p>สถาปัตยกรรมของแอปมือถือ (iOS และ Android) มีวิธีการแสดงผลแอปต่างจากหน้าเว็บเบราว์เซอร์ การระบุตำแหน่ง Element จึงต้องอาศัยกลยุทธ์ที่เร็วและเสถียรที่สุดเรียงตามลำดับความสำคัญ:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ชื่อ Locator</th>
+                            <th>เครื่องหมาย/ไวยากรณ์</th>
+                            <th>ความเร็วและความเสถียร</th>
+                            <th>คำอธิบาย</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Accessibility ID</strong></td>
+                            <td><code>~accessibility-id</code></td>
+                            <td>⭐⭐⭐⭐⭐ (ดีที่สุด)</td>
+                            <td>รันเร็วและเสถียรที่สุด ทำงานข้ามแพลตฟอร์มได้ทั้ง iOS (Accessibility Identifier) และ Android (Content Description)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Resource ID</strong></td>
+                            <td><code>id/element_id</code></td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>ใช้สำหรับ Android เป็นหลัก โดยระบุตำแหน่งตรงไปยัง ID ของปุ่มในโค้ด UI XML</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XPath</strong></td>
+                            <td><code>//android.widget.Button[...]</code></td>
+                            <td>⭐ (ควรหลีกเลี่ยง)</td>
+                            <td>ทำงานช้ามากเนื่องจาก Appium ต้องไล่แกะโครงสร้าง UI Tree ทั้งหน้า หากโครงสร้างหน้าจอขยับนิดเดียว สคริปต์จะพังทันที</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>2. โครงสร้างคำสั่ง Appium (WebdriverIO Framework)</h3>
+                <p>ชุดคำสั่งพื้นฐานของการโต้ตอบกับแอปมือถือที่ควรรู้:</p>
+                <ul>
+                    <li><code>const el = await $('~selector')</code>: ค้นหา Element เดี่ยว</li>
+                    <li><code>await el.setValue('text')</code>: ป้อนข้อความลงใน Input Field</li>
+                    <li><code>await el.click()</code>: คลิกองค์ประกอบบนหน้าจอ</li>
+                    <li><code>await el.isDisplayed()</code>: ตรวจเช็กว่า element แสดงผลบนหน้าจอหรือไม่ (คืนค่าเป็น true/false)</li>
+                    <li><code>await el.waitForDisplayed({ timeout: 5000 })</code>: สั่งให้หยุดรอให้ Element ปรากฏขึ้นมาภายในเวลาที่กำหนด (มักใช้จัดการหน้าจอที่รอการดาวน์โหลด)</li>
+                </ul>
+
+                <h3>3. ตัวอย่างการเขียนสคริปต์ทดสอบ Appium TS (Mocha Test Case)</h3>
+                <p>ในการทำ Automated Test ด้วย Appium (ผ่านเฟรมเวิร์ก WebdriverIO) สคริปต์การทำเทสจะมีโครงสร้างคล้ายการเขียน Mocha/Jasmine ที่ใช้ <code>describe</code> ในการจัดกลุ่ม และ <code>it</code> ในแต่ละเทสเคสย่อย ดังตัวอย่างด้านล่างนี้ค่ะ:</p>
+                
+                <pre><code style="color: #e5e9f0;">import { expect } from 'chai'; // ตัวเปรียบเทียบค่าความถูกต้อง
+
+describe('Krungsri 1KS Mobile App - Payment Suite', () => {
+    
+    // ทำงานก่อนเริ่มทุกเทสเคส (มักใช้ล็อกอินเข้าระบบไว้รอ)
+    before(async () => {
+        console.log('App launch initiated.');
+    });
+
+    it('should complete bill payment successfully', async () => {
+        // 1. ค้นหาช่องระบุเลขบิลชำระเงินโดยใช้ Accessibility ID
+        const billNumberInput = await $('~input-bill-number');
+        
+        // 2. สั่งให้โปรแกรมหยุดรอจนกว่าช่องป้อนข้อมูลจะแสดงขึ้นมาบนหน้าจอจริง (ไม่เกิน 10 วินาที)
+        await billNumberInput.waitForDisplayed({ timeout: 10000 });
+        
+        // 3. ป้อนหมายเลขบิลจำลอง
+        await billNumberInput.setValue('1234567890');
+        
+        // 4. ค้นหาช่องป้อนยอดเงินและระบุจำนวนเงิน
+        const amountInput = await $('~input-pay-amount');
+        await amountInput.setValue('500');
+        
+        // 5. ซ่อนคีย์บอร์ดโมบายล์หลังจากพิมพ์เสร็จ เพื่อป้องกันการบล็อกปุ่มยืนยัน
+        if (await driver.isKeyboardShown()) {
+            await driver.hideKeyboard();
+        }
+
+        // 6. คลิกปุ่มยืนยันการชำระเงิน
+        const confirmButton = await $('~btn-confirm-payment');
+        await confirmButton.click();
+
+        // 7. รอให้กล่องข้อความตอบรับสำเร็จแสดงผล
+        const successMessage = await $('~txt-success-alert');
+        await successMessage.waitForDisplayed({ timeout: 15000 });
+        
+        // 8. ดึงข้อความและ Assert ตรวจยืนยันความถูกต้อง
+        const actualText = await successMessage.getText();
+        expect(actualText).to.equal('ชำระเงินสำเร็จ');
+    });
+});</code></pre>
+
+                <div class="tip-box">
+                    <strong>⚠️ การทดสอบบนแอปธนาคารที่ต้องระวัง:</strong><br>
+                    ระบบธุรกรรมธนาคารมักมีหน้าจอแจ้งเตือนขอสิทธิ์ (System Permissions dialog) เช่น การเข้าถึงกล้อง/คลังภาพ บอสควรใช้สคริปต์จัดการปุ่มแจ้งเตือนของระบบโดยอัตโนมัติด้วยคำสั่ง:
+                    <code>await driver.acceptAlert();</code> หรือระบุปุ่มตกลงในระบบของ OS
+                </div>
+
+                <div class="workspace">
+                    <label for="ans-s2-q1">✍️ แบบฝึกหัดที่ 2.1 (ระดับท้าทาย): เขียนสคริปต์ Appium TS ค้นหา Biller แบบไดนามิก, รอโหลดข้อมูล และกดปุ่ม PIN รหัสความปลอดภัย</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>โจทย์ระดับ Senior:</strong> บอสต้องเขียนสคริปต์ทดสอบอัตโนมัติบน Appium สำหรับขั้นตอนการชำระเงินที่ซับซ้อนขึ้น ดังนี้:
+                        1. หน้าจอมีรายการ Biller หลายสิบเจ้า บอสต้องเขียนลูป <strong>Swipe Down</strong> ค้นหาจนเจอปุ่ม Biller ชื่อ <code>"Krungsri Card"</code> ที่มี ID <code>~biller-krungsri-card</code> แล้วคลิก (แนะนำให้ใช้ลูปตรวจสอบด้วย <code>isDisplayed()</code> และใช้ <code>driver.touchAction()</code> หรือคำสั่ง swipe ของ WebdriverIO ในการสไลด์หน้าจอ)
+                        2. หลังจากคลิกแล้ว ระบบจะแสดงตัวโหลดหมุนกลมๆ <code>~loading-spinner</code> บอสต้องเขียนคำสั่งหยุดรอจนกว่า <strong>ตัวหมุนจะหายไปจากหน้าจอ (Invisibility Wait)</strong>
+                        3. หน้าถัดไปเป็น Security PIN Keypad! บอสต้องเขียนคำสั่งคลิกรหัส PIN <code>"1234"</code> ทีละตัวผ่านปุ่มตัวเลข เช่น <code>~pin-key-1</code>, <code>~pin-key-2</code>... ตามลำดับ
+                        4. ตรวจเช็กว่าหน้าชำระเงินสำเร็จขึ้นข้อความ <code>~txt-payment-success</code> มีข้อความแสดงสถานะชำระเงินเรียบร้อยแล้วจริงหรือไม่ (กรุณา Assert ผลลัพธ์ที่ถูกต้อง)
+                    </p>
+                    <textarea id="ans-s2-q1" placeholder="เขียนโค้ดสคริปต์ Appium TS ลูปเลื่อนและตรวจสอบสถานะแบบท้าทายของบอส..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Playwright POM -->
+        <div id="tab-3" class="tab-content" style="display: none;">
+            <div class="content-card">
+                <div class="section-header">
+                    <h2>Session 3: Playwright Web Testing & Page Object Model (POM)</h2>
+                    <p class="tagline">แนวคิดการทำ Page Object Model ใน TypeScript เพื่อความง่ายในการรักษาโค้ดเทส</p>
+                </div>
+
+                <h3>1. แนวคิด Page Object Model (POM) คืออะไร?</h3>
+                <p>POM เป็นรูปแบบการออกแบบสคริปต์เทส (Design Pattern) ยอดนิยมในวงการ Automation โดยหลักการคือการแบ่งแยกหน้าที่ในโค้ดออกเป็น 2 ชั้นหลัก:</p>
+                <ol>
+                    <li><strong>Page Object Class:</strong> เก็บตำแหน่ง Selector และพฤติกรรม (Action Methods) ทั้งหมดของหน้าเว็บหน้านั้นๆ</li>
+                    <li><strong>Test Script:</strong> ไฟล์สคริปต์เทสจริงที่เขียนเรียงลำดับ User Journey โดยใช้วิธีเรียกใช้งาน Method จาก Page Object Class แทนการหา Selector ในไฟล์เทสโดยตรง</li>
+                </ol>
+
+                <div class="tip-box">
+                    <strong>ประโยชน์ของ POM:</strong> เมื่อผู้พัฒนา (Dev) ปรับเปลี่ยนหน้าเว็บหรือ ID ของปุ่ม เราเพียงแก้ไข Selector ที่ไฟล์ Page Object Class ที่เดียว โดยไม่ต้องไล่ตามแก้ไขสคริปต์เทสที่มีเป็นร้อยๆ ไฟล์ค่ะ
+                </div>
+
+                <h3>2. เปรียบเทียบโครงสร้าง: Python Playwright vs TypeScript Playwright</h3>
+                <p>ในภาษา TypeScript (TS) จะแตกต่างจาก Python ตรงที่มีความเข้มงวดเรื่องชนิดข้อมูล (Type Safety) ซึ่งช่วยให้ระบบ IDE แนะนำฟังก์ชันการพิมพ์ (Autocomplete) ได้แม่นยำยิ่งขึ้น:</p>
+                
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
+                            <th style="padding: 10px; color: var(--text-main); font-weight: bold;">หัวข้อ</th>
+                            <th style="padding: 10px; color: var(--text-main); font-weight: bold;">Python Playwright</th>
+                            <th style="padding: 10px; color: var(--text-main); font-weight: bold;">TypeScript Playwright</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 10px; font-weight: bold; color: var(--text-main);">การประกาศ Properties</td>
+                            <td style="padding: 10px; color: var(--text-muted);">ไม่ต้องระบุประเภทข้อมูลล่วงหน้า</td>
+                            <td style="padding: 10px; color: #a3be8c; font-weight: bold;">ต้องระบุ เช่น <code>readonly page: Page;</code> และ <code>readonly usernameInput: Locator;</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 10px; font-weight: bold; color: var(--text-main);">Constructor</td>
+                            <td style="padding: 10px; color: var(--text-muted);"><code>def __init__(self, page):</code></td>
+                            <td style="padding: 10px; color: #a3be8c; font-weight: bold;"><code>constructor(page: Page) { ... }</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 10px; font-weight: bold; color: var(--text-main);">การชี้ตำแหน่ง Locator</td>
+                            <td style="padding: 10px; color: var(--text-muted);"><code>self.username = page.locator("#user")</code></td>
+                            <td style="padding: 10px; color: #a3be8c; font-weight: bold;"><code>this.usernameInput = page.locator('#user');</code></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 10px; font-weight: bold; color: var(--text-main);">การเรียก Action</td>
+                            <td style="padding: 10px; color: var(--text-muted);"><code>self.username.fill("value")</code></td>
+                            <td style="padding: 10px; color: #a3be8c; font-weight: bold;"><code>await this.usernameInput.fill('value');</code> (ต้องมี await)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>3. ตัวอย่างโครงสร้าง Page Object Class & Test Spec ใน TypeScript</h3>
+                
+                <p><strong>ตัวอย่างคลาส <code>LoginPage.ts</code>:</strong></p>
+                <pre><code style="color: #d8dee9;">import { Page, Locator } from '@playwright/test';
+
+export class LoginPage {
+    // 1. ประกาศ Property และชนิดข้อมูลล่วงหน้า
+    readonly page: Page;
+    readonly usernameInput: Locator;
+    readonly passwordInput: Locator;
+    readonly loginButton: Locator;
+
+    // 2. กำหนด Locator ใน Constructor
+    constructor(page: Page) {
+        this.page = page;
+        this.usernameInput = page.locator('#username');
+        this.passwordInput = page.locator('#password');
+        this.loginButton = page.locator('#btn-submit');
+    }
+
+    // 3. สร้าง Action Method
+    async login(user: string, pass: string) {
+        await this.usernameInput.fill(user);
+        await this.passwordInput.fill(pass);
+        await this.loginButton.click();
+    }
+}</code></pre>
+
+                <p><strong>ตัวอย่างการเรียกใช้งานในสคริปต์เทส <code>login.spec.ts</code>:</strong></p>
+                <pre><code style="color: #d8dee9;">import { test, expect } from '@playwright/test';
+import { LoginPage } from './LoginPage';
+
+test('ทดสอบการเข้าสู่ระบบสำเร็จ', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    
+    await page.goto('https://example.com/login');
+    await loginPage.login('namo_qa', 'secured_pass');
+    
+    // ยืนยันผลลัพธ์
+    await expect(page.locator('#welcome-message')).toHaveText('ยินดีต้อนรับบอส!');
+});</code></pre>
+
+                <div class="tip-box" style="background-color: rgba(163, 190, 140, 0.1); border-left: 4px solid #a3be8c; margin-top: 20px;">
+                    <strong>💡 ทริคระดับ Mid-Level - การล้างและดึงยอดเงินพลวัต (Extracting Dynamic Balance):</strong><br>
+                    ในระบบงานธนาคาร ยอดเงินมักแสดงเป็นข้อความเช่น <code>"ยอดคงเหลือ: 5,000.00 บาท"</code> เพื่อจะนำมาคำนวณเปรียบเทียบ บอสสามารถดึงข้อความเป็น string แล้วตัดส่วนอักษรอื่นด้วย Regular Expression (Regex) และแปลงเป็น float ดังนี้ค่ะ:
+                    <pre><code style="color: #a3be8c; display: block; margin-top: 5px;">const rawText = await page.locator('#txt-balance').innerText(); // "ยอดคงเหลือ: 5,000.00 บาท"
+const cleanedText = rawText.replace(/[^0-9.-]+/g, ""); // "5000.00"
+const balance = parseFloat(cleanedText); // 5000.00</code></pre>
+                </div>
+
+                <div class="workspace" style="margin-bottom: 30px;">
+                    <label for="ans-s3-q1">✍️ แบบฝึกหัดที่ 3.1 (ระดับท้าทาย): เขียน Page Object Class และ Test Spec ด้วย Playwright TS พร้อมทวนสอบยอดเงินพลวัต</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>โจทย์ระดับ Senior:</strong> บอสต้องแปลงและยกระดับโค้ดการทำรายการโอนเงินด้านล่างนี้ ให้กลายเป็นโครงสร้าง Page Object Model (POM) ที่ถูกต้องตามมาตรฐาน TypeScript:
+                        1. สร้างคลาส <code>PaymentPage</code> เพื่อหุ้ม Element และพฤติกรรมต่างๆ ของหน้าจอชำระเงิน
+                        2. ภายในคลาสต้องมีฟังก์ชัน <code>performPayment(cardNo: string, amount: number)</code> ที่คอยจัดการกรอกข้อมูลเลขบัตร ยอดเงิน และกดปุ่มยืนยัน
+                        3. เขียนไฟล์เทสหลัก <code>payment.spec.ts</code> โดยนำเข้าคลาส <code>PaymentPage</code> มาใช้งาน ร่วมกับการตรวจสอบว่าหลังการจ่ายเงิน ยอดเงินคงเหลือรวม (ดึงข้อความเป็น string แล้วแปลงเป็น number) ถูกหักออกตามจำนวนที่จ่ายไปจริงหรือไม่
+                    </p>
+                    <pre><code style="color: #88c0d0;">// 💡 ตัวอย่างโครงสร้างหน้าเว็บชำระเงินที่ต้องการจำลอง:
+// - ช่องกรอกเลขบัตร: "#input-card-no"
+// - ช่องกรอกยอดเงิน: "#input-amount"
+// - ปุ่มยืนยัน: "#btn-confirm"
+// - ยอดเงินคงเหลือก่อนทำรายการ: "#txt-balance" (แสดงข้อความเช่น "ยอดคงเหลือ: 5,000.00 บาท")
+// - ข้อความยืนยันผลธุรกรรม: "#txt-status" (แสดงข้อความ "Payment Completed" หลังทำรายการเสร็จ)</code></pre>
+                    <textarea id="ans-s3-q1" placeholder="เขียน Page Object Class และ Test Spec ฉบับ TypeScript Playwright ที่นี่..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: API & SQL -->
+        <div id="tab-4" class="tab-content" style="display: none;">
+            <div class="content-card">
+                <div class="section-header">
+                    <h2>Session 4: API Integration Design & Database Verification</h2>
+                    <p class="tagline">การเชื่อมโยงข้อมูลข้าม API และการตรวจสอบผลลัพธ์ที่ระดับฐานข้อมูล (SQL)</p>
+                </div>
+
+                <h3>1. ออกแบบ API และทดสอบ JSON Schema Validation</h3>
+                <p>ในการทำธุรกรรมชำระเงิน (Bill Payment) ข้อมูลจะต้องถูกส่งข้ามแอปพลิเคชันอย่างปลอดภัย โดยใช้ HTTP Method: <code>POST</code> และส่งพารามิเตอร์สำคัญผ่าน Request Body (JSON Format)</p>
+
+                <div class="tip-box">
+                    <strong>โครงสร้าง JSON Schema:</strong> เป็นเครื่องมือที่ใช้ตรวจสอบความถูกต้องของประเภทข้อมูลที่ตอบกลับมาจาก API (Response Body) เพื่อยืนยันว่าโครงสร้าง ชนิดข้อมูล และเงื่อนไขตรงตามเอกสารข้อกำหนดเชิงเทคนิคค่ะ
+                </div>
+
+                <h4>💡 ตัวอย่างโครงสร้าง JSON Request Payload:</h4>
+                <pre><code style="color: #d8dee9;">{
+    "payer_account_no": "111-2-33333-4",
+    "payee_biller_code": "9999",
+    "amount": 2500.50,
+    "currency": "THB"
+}</code></pre>
+
+                <h4>💡 ตัวอย่างการเขียน JSON Schema Validation:</h4>
+                <pre><code style="color: #d8dee9;">{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "transaction_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" // Regex เช็ค UUID ฟอร์แมต
+        },
+        "status": {
+            "type": "string",
+            "enum": ["SUCCESS", "PENDING", "FAILED"] // จำกัดสถานะโอนเงิน
+        },
+        "amount": {
+            "type": "number",
+            "minimum": 0 // ยอดเงินห้ามติดลบ
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "required": ["transaction_id", "status", "amount"] // ฟิลด์ที่บังคับตอบกลับมาเสมอ
+}</code></pre>
+
+                <div class="workspace" style="margin-bottom: 30px;">
+                    <label for="ans-s4-q1">✍️ แบบฝึกหัดที่ 4.1 (ระดับท้าทาย): ออกแบบ API Request (JSON) และเขียนโครงสร้าง JSON Schema เพื่อตรวจสอบข้อมูลเชิงลึก</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>โจทย์ระดับ Senior:</strong> บอสต้องออกแบบ API และการทวนสอบการตอบกลับ (Response Verification) สำหรับระบบโอนเงินข้ามประเทศ (Cross-Border Transfer):
+                        1. ร่างตัวอย่าง JSON Body ของ <code>POST /api/v2/transfers</code> โดยต้องมีฟิลด์ข้อมูลลูกค้า (Payer Name, Account Number) และข้อมูลผู้รับ (Payee Name, Account, SWIFT Code) พร้อมยอดเงินและสกุลเงินที่ต้องการโอน (เช่น USD, THB)
+                        2. เขียนโครงสร้าง JSON Schema เพื่อตรวจสอบผลลัพธ์การตอบกลับที่ได้รับหลังจากส่งคำสั่งสำเร็จ โดยต้องระบุเงื่อนไข:
+                           - ฟิลด์ <code>transaction_id</code> ต้องเป็นประเภท string และตรงตามแพทเทิร์น UUID เท่านั้น (เช่น มี regex pattern)
+                           - ฟิลด์ <code>transfer_status</code> ต้องมีค่าเป็นหนึ่งใน enum: <code>"PENDING"</code>, <code>"SUCCESS"</code>, <code>"FAILED"</code> เท่านั้น
+                           - ฟิลด์ <code>fee_amount</code> ต้องเป็นประเภทตัวเลข (number) ที่มีค่าไม่ต่ำกว่า 0
+                           - ต้องบังคับ (required) ว่าต้องมีฟิลด์ <code>transaction_id</code>, <code>transfer_status</code>, และ <code>processed_at</code> เสมอค่ะ
+                    </p>
+                    <textarea id="ans-s4-q1" placeholder="ร่าง JSON Request Payload และเขียน Response Validation JSON Schema ของบอสที่นี่..."></textarea>
+                </div>
+
+                <h3>2. การตรวจสอบข้อมูลผ่านคำสั่ง SQL (Database Verification)</h3>
+                <p>QA Automation ที่ดีต้องไม่ละเลยข้อมูลหลังบ้าน (Database) เพื่อให้มั่นใจว่าเมื่อหน้าจอบอกว่าชำระเงินสำเร็จแล้ว ยอดเงินได้ถูกหักออกจากบัญชีของผู้จ่าย และรายการธุรกรรมถูกบันทึกลงฐานข้อมูลถูกต้องจริง</p>
+
+                <h4>💡 ตัวอย่างคำสั่ง SQL Query แบบ JOIN พื้นฐาน:</h4>
+                <pre><code style="color: #d8dee9;">-- ดึงข้อมูลยอดโอนเงินของลูกค้าโดย JOIN ตารางผู้ใช้และบัญชีเข้าด้วยกัน
+SELECT u.first_name, a.account_no, p.amount, p.created_at
+FROM users u
+INNER JOIN accounts a ON u.user_id = a.user_id
+INNER JOIN payments p ON a.account_id = p.account_id
+WHERE a.account_no = '004-1-23456-7'
+ORDER BY p.created_at DESC;</code></pre>
+
+                <h4>💡 ตัวอย่างคำสั่ง SQL ค้นหารายการซ้ำซ้อนภายในช่วงเวลา (Self-JOIN / Double Payment Check):</h4>
+                <pre><code style="color: #d8dee9;">-- ค้นหาธุรกรรมโอนเงินที่กดซ้ำ (ยอดเงินเท่ากัน บัญชีเดียวกัน โอนห่างกันไม่เกิน 5 นาที)
+SELECT 
+    p1.payment_id AS first_payment_id,
+    p2.payment_id AS duplicate_payment_id,
+    p1.account_id,
+    p1.amount,
+    p1.created_at AS first_time,
+    p2.created_at AS duplicate_time
+FROM payments p1
+INNER JOIN payments p2 ON p1.account_id = p2.account_id
+    AND p1.amount = p2.amount
+    AND p1.payment_id < p2.payment_id -- ป้องกันการสลับคู่เดิมซ้ำ และไม่จับคู่ตัวเอง
+WHERE 
+    -- ใน PostgreSQL เช็คช่วงเวลา 5 นาที:
+    p2.created_at <= p1.created_at + INTERVAL '5 minutes'
+    -- (หากใช้ MySQL: TIMESTAMPDIFF(SECOND, p1.created_at, p2.created_at) <= 300)</code></pre>
+
+                <div class="workspace">
+                    <label for="ans-s4-q2">✍️ แบบฝึกหัดที่ 4.2 (ระดับท้าทาย): เขียน SQL Query เพื่อดักจับและตรวจสอบความผิดปกติของข้อมูลการจ่ายเงินซ้ำซ้อน (Double Payment Anomaly)</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>โจทย์ระดับ Senior:</strong> บอสต้องเขียนคำสั่ง SQL Query เพื่อสืบสวนหาบั๊กหลังบ้านของธนาคารที่มีการจ่ายเงินซ้ำซ้อน:
+                        1. ค้นหาข้อมูลธุรกรรมชำระเงินที่เกิดขึ้นซ้ำ โดยตรวจสอบจากลูกค้าคนเดิม (<code>account_id</code> เดียวกัน) ยอดเงินเท่ากัน (<code>amount</code> เท่ากัน) และจ่ายให้ผู้รับเดียวกัน (<code>biller_code</code> เดียวกัน) ที่เกิดขึ้นห่างกัน <strong>ไม่เกิน 60 วินาที (1 Minute Interval)</strong>
+                        2. ให้เชื่อมโยงข้อมูล (JOIN) 3 ตารางคือ <code>users</code>, <code>accounts</code>, และ <code>payments</code>
+                        3. ผลลัพธ์ต้องแสดง: ชื่อผู้ใช้ (<code>first_name</code>), เลขบัญชีต้นทาง (<code>account_no</code>), จำนวนเงิน (<code>amount</code>), รหัสธุรกรรมครั้งแรก (<code>payment_id</code> ตัวแรก), และรหัสธุรกรรมตัวที่สองที่ซ้ำ (<code>payment_id</code> ตัวที่สอง) เพื่อส่งข้อมูลนี้ไปวิเคราะห์หาบั๊กต่อไปค่ะ
+                    </p>
+                    <textarea id="ans-s4-q2" placeholder="เขียนคำสั่ง SQL Query (JOIN / Self-JOIN / Timestamp conditions)..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 5: Observability -->
+        <div id="tab-5" class="tab-content" style="display: none;">
+            <div class="content-card">
+                <div class="section-header">
+                    <h2>Session 5: Observability, Kibana Logs & Jira Defect Standard</h2>
+                    <p class="tagline">การดึงและวิเคราะห์ข้อผิดพลาดจาก Log Viewer ตลอดจนการเปิดการ์ดรายงานบั๊กที่มีประสิทธิภาพ</p>
+                </div>
+
+                <h3>1. ทักษะการสืบค้น Log ผ่าน Kibana (Log Search Tool)</h3>
+                <p>เมื่อรันระบบทดสอบอัตโนมัติแล้วพบข้อผิดพลาดที่ตอบกลับเป็น <code>500 Internal Server Error</code> เราต้องสวมบทนักสืบไปหาจุดบกพร่องใน Kibana โดยค้นจากค่า <code>correlation_id</code> (รหัสประจำธุรกรรมที่ส่งผ่านไปทุกระบบย่อย) เพื่อวิเคราะห์หาจุดที่แอปพลิเคชันพัง</p>
+
+                <h4>ตัวอย่างคำสั่งสืบค้นข้อผิดพลาดพื้นฐาน in Kibana (KQL Syntax):</h4>
+                <ul>
+                    <li><code>correlation_id: "cc402c89-bb33-4ef1-ac7f-e2d92120e2ef"</code> (ค้นหารายการธุรกรรมที่พังโดยเฉพาะ)</li>
+                    <li><code>level: "ERROR" AND service_name: "payment-api"</code> (กรองหาเฉพาะข้อผิดพลาดในบริการจ่ายเงิน)</li>
+                </ul>
+
+                <h3>2. การเขียนบั๊กตามหลักมาตรฐาน Jira Defect (7 สเต็ปรายงานปัญหาระดับสากล)</h3>
+                <p>รายงานบั๊กที่ดีของ QA ต้องสั้น กระชับ ชัดเจน และมีข้อมูลทางเทคนิคครบถ้วนเพื่อให้ทีมพัฒนาแก้ไขได้ทันทีโดยไม่ต้องถามเพิ่ม:</p>
+                <ol>
+                    <li><strong>Summary (หัวข้อบั๊ก):</strong> สรุประบบที่พังและสถานการณ์สั้นๆ (เช่น [API] [Payment] 500 Internal Server Error)</li>
+                    <li><strong>Description (คำอธิบาย):</strong> รายละเอียดภาพรวมของผลกระทบ</li>
+                    <li><strong>Pre-conditions (เงื่อนไขตั้งต้น):</strong> เช่น บัญชีที่ใช้ ข้อมูลพารามิเตอร์เบื้องต้น</li>
+                    <li><strong>Steps to Reproduce (ขั้นตอนทดสอบ):</strong> ลำดับ 1, 2, 3 เพื่อให้ Dev ทำตามแล้วพังเหมือนกัน</li>
+                    <li><strong>Expected Result (ผลที่คาดหวัง):</strong> เช่น ระบบต้องทำรายการสำเร็จ หรือส่งข้อความเตือนที่เหมาะสม</li>
+                    <li><strong>Actual Result (ผลที่เกิดขึ้นจริง):</strong> เช่น ระบบส่ง HTTP 500 error กลับมา</li>
+                    <li><strong>Technical Evidence (หลักฐานทางเทคนิค):</strong> สำคัญที่สุด เช่น ค่า Correlation ID, Trace Log, JSON Payload</li>
+                </ol>
+
+                <h4>💡 ตัวอย่างรายงานบั๊ก Jira Defect Ticket มาตรฐานสากล:</h4>
+                <pre><code style="color: #d8dee9;">*Summary:* [API] [Payment-Gateway] HTTP 504 Gateway Timeout during Omise CC Payment
+================================================================================
+
+*Description:*
+When executing a credit card payment via Omise, the payment service hangs for 15 seconds and returns HTTP 504 Gateway Timeout back to the mobile client.
+
+*Pre-conditions:*
+- Payer account has sufficient balance.
+- Credit card is in Active status.
+
+*Steps to Reproduce:*
+1. Login to the application sandbox.
+2. Navigate to the Payment screen.
+3. Select "Credit Card via Omise" and enter payment amount = 1000.00 THB.
+4. Click "Confirm Payment".
+
+*Expected Result:*
+The payment is processed successfully within 5 seconds, and user is redirected to the success screen.
+
+*Actual Result:*
+The screen hangs for 15 seconds and returns HTTP 504 Gateway Timeout.
+
+*Technical Evidence:*
+- Correlation ID: `tx-omise-999`
+- Kibana Log Traceback:
+[ERROR] service="payment-orchestrator" correlation_id="tx-omise-999" - Downstream Omise service failed to respond in 15000ms. Code: 504 Gateway Timeout.</code></pre>
+
+                <div class="workspace">
+                    <label for="ans-s5-q1">✍️ แบบฝึกหัดที่ 5.1 (ระดับท้าทาย): วิเคราะห์ Log จาก 3 บริการย่อย (Microservices Trace) เพื่อหา Root Cause และเขียน Jira Defect Report</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>สถานการณ์:</strong> บอสทดสอบระบบโอนเงินข้ามธนาคารด้วย Automation Script แล้วพบว่าธุรกรรมถูกแจ้งเตือนว่า "Transaction failed" บนหน้าจอ บอสจึงไปค้นหา log ใน Kibana โดยใช้ <code>correlation_id: "tx-xborder-888"</code> และพบ Log จาก 3 microservices เรียงลำดับตามเวลาดังนี้:
+                    </p>
+                    <code style="display:block; margin: 10px 0; background: #2e3440; padding: 12px; border-radius: 6px; color: #bf616a; font-family: var(--font-code); font-size: 0.85rem; line-height: 1.5;">
+[10:00:00.120] [INFO] service="mobile-gateway" correlation_id="tx-xborder-888" - Received POST /api/v2/transfers from IP 182.16.1.4. Forwarding payload to payment-orchestrator.<br>
+[10:00:00.250] [INFO] service="payment-orchestrator" correlation_id="tx-xborder-888" - Validated token successfully. Calling core-ledger service `/accounts/deduct-balance` for amount=50000.00 THB.<br>
+[10:00:01.890] [ERROR] service="core-ledger" correlation_id="tx-xborder-888" - Failed to execute UPDATE statement on account_id=9981. Error details: "Transaction rollback due to deadlock/lock contention on DB row. Concurrent modification detected (Optimistic Locking failure)."<br>
+[10:00:02.010] [WARN] service="payment-orchestrator" correlation_id="tx-xborder-888" - Received 409 Conflict from core-ledger. Returning HTTP 500 to mobile-gateway.
+                    </code>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>โจทย์ระดับ Senior:</strong> 
+                        1. วิเคราะห์และอธิบาย <strong>Root Cause (สาเหตุที่แท้จริง)</strong> ของปัญหานี้ (ไม่ใช่แค่บอกว่าระบบส่ง 500 กลับมา แต่ให้อธิบายว่ามันเกิดจากสาเหตุใดที่ระบบส่วนไหน)
+                        2. เขียนรายงานบั๊ก <strong>Jira Defect Report</strong> ที่มีรายละเอียดครบถ้วนทั้ง 7 สเต็ป (Summary, Description, Pre-conditions, Steps to Reproduce, Expected, Actual, Technical Evidence) โดยใช้ข้อมูล Logs ด้านบนประกอบให้ทีม Dev สามารถแก้ไขได้ทันทีค่ะ
+                    </p>
+                    <textarea id="ans-s5-q1" placeholder="เขียน Root Cause Analysis และ Jira Defect Report ของบอสที่นี่..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 6: Mock Interview -->
+        <div id="tab-6" class="tab-content" style="display: none;">
+            <div class="content-card">
+                <div class="section-header">
+                    <h2>Session 6: Mock Interview & Behavioral Questions</h2>
+                    <p class="tagline">ฝึกทักษะการตอบคำถามพฤติกรรมและการทำงานร่วมกับทีมสำหรับโปรเจกต์ธนาคาร</p>
+                </div>
+
+                <div class="warning-box">
+                    <strong>💡 เทคนิค STAR Method ในการเล่าเรื่อง:</strong><br>
+                    * <strong>S (Situation):</strong> เล่าสถานการณ์หรือปัญหาที่เจอตอนนั้นสั้นๆ<br>
+                    * <strong>T (Task):</strong> เป้าหมายหรือโจทย์ที่บอสต้องแก้ไขคืออะไร<br>
+                    * <strong>A (Action):</strong> บอสใช้ทักษะ ความรู้ หรือแนวคิดอะไรในการเข้าจัดการปัญหานั้น<br>
+                    * <strong>R (Result):</strong> ผลลัพธ์ที่ได้จากการลงมือทำวัดผลได้อย่างไร
+                </div>
+
+                <div class="workspace" style="margin-bottom: 30px;">
+                    <label for="ans-s6-q1">💬 คำถามที่ 6.1: "ลองเล่าสถานการณ์ที่บอสเจองานยากที่สุดในโปรเจกต์เดิม และบอสผ่านมันมาได้อย่างไรคะ?"</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>แนวการตอบที่ดี:</strong> เล่าเรื่องช่วงฝึกงานที่ต้องขึ้นโครงคิวเทสอัตโนมัติ (Playwright/Robot Framework) ในระบบที่ไม่มี API หรือ Element เลือกยาก บอสแก้ปัญหานั้นโดยการคุยกับ Dev หรือดีไซน์โครงสร้าง POM อย่างไร
+                    </p>
+                    <textarea id="ans-s6-q1" placeholder="พิมพ์ร่างคำตอบตอบผู้สัมภาษณ์ตามหลักความจริงและเป็นกลาง..."></textarea>
+                </div>
+
+                <div class="workspace" style="margin-bottom: 30px;">
+                    <label for="ans-s6-q2">💬 คำถามที่ 6.2: "ถ้ามีบั๊กหลุดรอดไปถึงระดับผลิตการจริง (Production Bug) แล้วคนในทีมเริ่มหาสาเหตุ บอสจะคุยประสานงานอย่างไรคะ?"</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>แนวการตอบที่ดี:</strong> มุ่งเน้นการช่วยกันแก้ไขปัญหาและพิจารณาความจริง ไม่กล่าวโทษกันในทีม (No Blame Culture) หาสาเหตุการหลุดและเพิ่มสคริปต์แก้ทางใน Automated Test Suite เพื่อไม่ให้เกิดขึ้นซ้ำ
+                    </p>
+                    <textarea id="ans-s6-q2" placeholder="พิมพ์ร่างคำตอบเพื่อแสดงความเป็นมืออาชีพและทักษะการทำงานร่วมกับทีม..."></textarea>
+                </div>
+
+                <div class="workspace">
+                    <label for="ans-s6-q3">💬 คำถามที่ 6.3: "หากเจอ Requirement ที่ไม่ชัดเจน คลุมเครือ และคนออกแบบระบบก็ไม่อยู่ตอบคำถาม บอสจะทำอย่างไรให้งานเทสไปต่อได้คะ?"</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>แนวการตอบที่ดี:</strong> รวบรวมคำถามที่จำเป็น คุยหาแนวทางร่วมกับทีม Developer และ Product Owner เพื่อเคลียร์สมมติฐานร่วมกันก่อนเริ่มเขียนเทสเคสเพื่อไม่ให้เสียเวลาทำเทสในทิศทางที่ผิดค่ะ
+                    </p>
+                    <textarea id="ans-s6-q3" placeholder="พิมพ์ร่างทิศทางการทำงานเชิงรุกเพื่อหาทางออกให้ทีม..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 7: Setup Checklist -->
+        <div id="tab-7" class="tab-content" style="display: none;">
+            <div class="content-card">
+                <div class="section-header">
+                    <h2>Session 7: Final Setup & Verification Checklist</h2>
+                    <p class="tagline">การเตรียมสภาพแวดล้อมระบบและเช็คลิสต์สิ่งสำคัญสำหรับการสอบสัมภาษณ์ทางเทคนิค</p>
+                </div>
+
+                <div class="workspace">
+                    <label>🛠️ รายการโปรแกรมในเครื่องที่ต้องเตรียมให้พร้อมสำหรับด่านเขียนโค้ดสด (Technical Test):</label>
+                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+                        <label style="display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" id="chk-node" style="width: 20px; height: 20px;">
+                            <span><strong>Node.js (LTS Version):</strong> เพื่อรันสคริปต์ Playwright/Appium ภาษา JavaScript/TypeScript</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" id="chk-vscode" style="width: 20px; height: 20px;">
+                            <span><strong>VS Code:</strong> พร้อมติดตั้ง Extension: <i>Playwright Test for VSCode, Prettier</i></span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" id="chk-postman" style="width: 20px; height: 20px;">
+                            <span><strong>Postman:</strong> พร้อมลงชื่อเข้าใช้งานสำหรับส่องและทดสอบเส้น API</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" id="chk-dbeaver" style="width: 20px; height: 20px;">
+                            <span><strong>DBeaver / SQL Client:</strong> สำหรับจัดการการเชื่อมต่อฐานข้อมูลและซ้อมรัน SQL Query</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="workspace" style="margin-top: 30px;">
+                    <label for="ans-s7-notes">📝 โน้ต/ข้อควรจำเพิ่มเติมของบอส นะโม:</label>
+                    <textarea id="ans-s7-notes" style="min-height: 120px;" placeholder="พิมพ์สิ่งสำคัญที่ได้เรียนรู้เพิ่มเติมหรือแผนเตรียมความพร้อมได้ตรงนี้ค่ะ..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 8: Kasikorn Line Interview Brief & Manual QA Practice -->
+        <div id="tab-8" class="tab-content" style="display: none;">
+            <div class="content-card">
+                <div class="section-header">
+                    <h2>Session 8: KASIKORN LINE (LINE BK) Interview Brief</h2>
+                    <p class="tagline">คู่มือเตรียมตัวสัมภาษณ์ตำแหน่ง Junior Quality Assurance (1-Year Contract) เน้น Manual QA Excellence</p>
+                </div>
+
+                <div class="tip-box" style="border-left-color: #00c300; background-color: #172419;">
+                    <strong style="color: #00c300;">📌 ข้อมูลนัดสัมภาษณ์ (CONFIRMED):</strong><br>
+                    • <strong>วัน-เวลา:</strong> วันพุธที่ 22 กรกฎาคม 2569 เวลา 15:30 - 16:30 น.<br>
+                    • <strong>ผู้สัมภาษณ์:</strong> พี่อ้อม (QA Manager)<br>
+                    • <strong>ผู้ติดต่อ HR:</strong> คุณแพร (Yutika Shinthawanna) | Tel: 084-550-0054 | LINE ID: pearc<br>
+                    • <strong>MS Teams Meeting Link:</strong> <a href="https://teams.microsoft.com/meet/439853535772507?p=qJdY3bBey8NoO3m3MW" target="_blank" style="color: #a3be8c;">เข้าห้อง MS Teams Meeting</a> (Meeting ID: 439 853 535 772 507 | Passcode: LL2QP69p)
+                </div>
+
+                <h3>1. ภาพรวมผลิตภัณฑ์ LINE BK (Social Banking Domain)</h3>
+                <p>LINE BK เป็นบริการทางการเงินบนแอป LINE (Joint Venture ระหว่าง KBank & LINE) มี 4 บริการหลักที่ต้องเน้นทดสอบแบบ Manual QA:</p>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li><strong>1. Credit Line & Personal Loan:</strong> วงเงินให้ยืมดิจิทัล (การสมัคร, อนุมัติวงเงิน, ถอนเงินสินเชื่อเข้าบัญชี, การผ่อนชำระ)</li>
+                    <li><strong>2. Savings & Special Rate Account:</strong> บัญชีเงินฝากประหยัด และบัญชีดอกเบี้ยพิเศษ</li>
+                    <li><strong>3. LINE BK Debit Card:</strong> บัตรเดบิตออนไลน์ / บัตรเดบิตพร้อมอายัด และการผูกบัญชี</li>
+                    <li><strong>4. Transfer & LINE Alerts:</strong> การโอนเงินแชทผ่าน LINE และข้อความแจ้งเตือนเงินเข้า-ออก</li>
+                </ul>
+
+                <h3>2. 4 จุดแข็งเน้นย้ำสำหรับการสัมภาษณ์เน้น Manual QA</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
+                    <div style="background: var(--bg-main); padding: 18px; border-radius: 8px; border-left: 3px solid var(--primary);">
+                        <strong style="color: var(--primary);">🔹 1. Test Design Techniques (EP & BVA):</strong><br>
+                        อธิบายการใช้ Equivalence Partitioning และ Boundary Value Analysis ในการออกแบบเทสเคสระบบสินเชื่อและโอนเงิน (เช่น ยอดขอสินเชื่อขั้นต่ำ 1,000 ถึง 500,000 บาท, ยอดโอน 0.01 บาท) เพื่อให้ได้เทสเคสที่ครอบคลุมและไม่ซ้ำซ้อน
+                    </div>
+                    <div style="background: var(--bg-main); padding: 18px; border-radius: 8px; border-left: 3px solid var(--accent);">
+                        <strong style="color: var(--accent);">🔹 2. Mobile Exploratory & Interruption Scenarios:</strong><br>
+                        การทดสอบเคสเฉพาะของ Mobile Banking บนแอป LINE เช่น เน็ตหลุดระหว่างกดยืนยันโอนเงิน (Network Interruption), มีสายโทรเข้าขณะป้อน PIN (App Interruption), และการพับแอปแล้วกลับเข้ามาต้องล็อก PIN ป้องกันความปลอดภัย
+                    </div>
+                    <div style="background: var(--bg-main); padding: 18px; border-radius: 8px; border-left: 3px solid var(--primary);">
+                        <strong style="color: var(--primary);">🔹 3. Root Cause Verification (Postman API & SQL DB):</strong><br>
+                        แม้งานหลักจะเป็น Manual Test แต่เมื่อพบข้อผิดพลาด บอสสามารถยิง Postman ตรวจสอบ API และรัน SQL Query ส่องฐานข้อมูลเพื่อวิเคราะห์สาเหตุเบื้องต้นและแจ้งทีม Dev ได้อย่างแม่นยำ
+                    </div>
+                    <div style="background: var(--bg-main); padding: 18px; border-radius: 8px; border-left: 3px solid var(--accent);">
+                        <strong style="color: var(--accent);">🔹 4. AI-Augmented Manual QA Advantage:</strong><br>
+                        นำ AI มาช่วยคิดหา Edge Cases และเงื่อนไขย่อยแปลกๆ เพิ่มเติมได้อย่างรวดเร็ว ทำให้การทำ Manual Test มีความครอบคลุม (Test Coverage) สูงสุด
+                    </div>
+                </div>
+
+                <div class="workspace">
+                    <label for="ans-s8-q1">✍️ แบบฝึกหัดเตรียมคำตอบสัมภาษณ์ LINE BK: ร่างกลยุทธ์การทดสอบฟีเจอร์ "โอนเงินในแชท LINE" (LINE Transfer Interruption Testing)</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>โจทย์:</strong> หากพี่อ้อม (QA Manager) ถามว่า "หากต้องการออกแบบ Manual Test Cases สำหรับฟีเจอร์โอนเงินให้เพื่อนในแชท LINE คุณจะทดสอบเคสขอบเขตและเคสเน็ตหลุดอย่างไร?"
+                    </p>
+                    <textarea id="ans-s8-q1" placeholder="ร่างคำตอบเน้น Test Design (EP/BVA) และ Interruption Scenarios ของบอสที่นี่..."></textarea>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Floating Utility Bar -->
+    <div class="utility-bar">
+        <span style="font-size: 0.88rem; color: var(--text-muted);" id="save-status">บันทึกอัตโนมัติล่าสุด: -</span>
+        <button class="btn-secondary" onclick="saveToLocalStorage()">💾 Save Progress</button>
+        <button class="btn-primary" onclick="copyAnswersForMalli()">📋 Copy Answers for Malli</button>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast" id="toast">บันทึกความคืบหน้าเรียบร้อยแล้วค่ะบอส! 💚</div>
+
+    <script>
+        // Active tab switching
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            document.getElementById('tab-' + tabId).style.display = 'block';
+            document.querySelectorAll('.nav-list .nav-item')[tabId - 1].classList.add('active');
+            
+            // Auto scroll to top of page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Local Storage Auto-save & Load keys
+        const textFields = [
+            'ans-s1-q1', 'ans-s2-q1', 'ans-s3-q1', 'ans-s4-q1', 'ans-s4-q2',
+            'ans-s5-q1', 'ans-s6-q1', 'ans-s6-q2', 'ans-s6-q3', 'ans-s7-notes', 'ans-s8-q1'
+        ];
+        
+        const checkboxes = ['chk-node', 'chk-vscode', 'chk-postman', 'chk-dbeaver'];
+
+        // Save progress to local storage
+        function saveToLocalStorage() {
+            textFields.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    localStorage.setItem('protoss_qa_' + id, element.value);
+                }
+            });
+            
+            checkboxes.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    localStorage.setItem('protoss_qa_' + id, element.checked ? 'true' : 'false');
+                }
+            });
+
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('th-TH');
+            document.getElementById('save-status').innerText = 'บันทึกอัตโนมัติล่าสุด: ' + timeString;
+            
+            // Show Success Toast
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Load progress
+        function loadFromLocalStorage() {
+            textFields.forEach(id => {
+                const savedVal = localStorage.getItem('protoss_qa_' + id);
+                const element = document.getElementById(id);
+                if (savedVal && element) {
+                    element.value = savedVal;
+                }
+            });
+            
+            checkboxes.forEach(id => {
+                const savedVal = localStorage.getItem('protoss_qa_' + id);
+                const element = document.getElementById(id);
+                if (savedVal && element) {
+                    element.checked = (savedVal === 'true');
+                }
+            });
+
+            // Set initial status if data exists
+            if (localStorage.getItem('protoss_qa_ans-s1-q1')) {
+                document.getElementById('save-status').innerText = 'โหลดข้อมูลความก้าวหน้าล่าสุดเรียบร้อย';
+            }
+        }
+
+        // Copy formatted answers as Markdown for Malli check
+        function copyAnswersForMalli() {
+            saveToLocalStorage(); // Auto-save first
+            
+            let markdown = "# 📝 ใบงานคำตอบติวสอบ Protoss QA - บอส นะโม\n\n";
+            
+            const titles = {
+                'ans-s1-q1': 'Session 1: TypeScript Async (โค้ดจำลอง Async/Await)',
+                'ans-s2-q1': 'Session 2: Appium Mobile Code (จำลองการทดสอบเข้าสู่ระบบ)',
+                'ans-s3-q1': 'Session 3: Playwright POM translation (Python to TS)',
+                'ans-s4-q1': 'Session 4.1: API Design (JSON Payment Payload)',
+                'ans-s4-q2': 'Session 4.2: SQL Query Verification',
+                'ans-s5-q1': 'Session 5: Observability Defect Report (Kibana error)',
+                'ans-s6-q1': 'Session 6.1: Behavioral (โปรเจกต์ยากสุดและการแก้ไข)',
+                'ans-s6-q2': 'Session 6.2: Behavioral (ข้อขัดแย้ง Requirement กับ Dev)',
+                'ans-s6-q3': 'Session 6.3: Behavioral (เดดไลน์จำกัดและลำดับความสำคัญ)',
+                'ans-s7-notes': 'Session 7: บันทึกช่วยจำเพิ่มเติมของบอส'
+            };
+
+            textFields.forEach(id => {
+                const element = document.getElementById(id);
+                if (element && element.value.trim()) {
+                    markdown += `### 📌 ${titles[id]}\n\`\`\`typescript\n${element.value}\n\`\`\`\n\n`;
+                } else {
+                    markdown += `### 📌 ${titles[id]}\n*(ยังไม่ได้เขียนคำตอบ)*\n\n`;
+                }
+            });
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(markdown).then(() => {
+                alert('ก็อปปี้คำตอบฟอร์แทต Markdown เรียบร้อยแล้วค่ะบอส! นำไปส่งในแชทบอกให้มอลิช่วยตรวจคำตอบได้ทันทีเลยนะคะ 💚');
+            }).catch(err => {
+                console.error('Error copying text: ', err);
+                alert('ไม่สามารถคัดลอกข้อมูลลงคลิปบอร์ดได้อัตโนมัติ บอสสามารถคัดลอกคำตอบในกล่องข้อความเหล่านี้ส่งได้โดยตรงเลยนะคะ');
+            });
+        }
+
+        // Run load on start
+        window.onload = loadFromLocalStorage;
+
+        // Auto save every 60 seconds
+        setInterval(saveToLocalStorage, 60000);
+    </script>
+</body>
+</html>

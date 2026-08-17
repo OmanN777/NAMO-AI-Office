@@ -1,0 +1,231 @@
+{
+  "main": {
+    "id": "09e5660b35ef5911",
+    "type": "split",
+    "children": [
+      {
+        "id": "9450660093deccf3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "db174613954721cb",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fe8a1803d733e4cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "a80d62ecbcb603ab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3a8b25adbd0d502e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5078e6799d99a902",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "a95cb94aa06fbd3f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9c211962518c708b",
+    "type": "split",
+    "children": [
+      {
+        "id": "922ee161da67ad34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "05801c420ce7ecac",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Knowledge_Base/Reports/daily/2026-06-12-malli-daily.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2026-06-12-malli-daily"
+            }
+          },
+          {
+            "id": "65a59785d4b18df9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Knowledge_Base/Reports/daily/2026-06-12-malli-daily.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2026-06-12-malli-daily"
+            }
+          },
+          {
+            "id": "d38f9230249e7f3b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "587b58217ca7ab9c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "55f4e2b4195307b2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Knowledge_Base/Reports/daily/2026-06-12-malli-daily.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2026-06-12-malli-daily"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "db174613954721cb",
+  "lastOpenFiles": [
+    "Scripts/upload_categorized_md.py",
+    "Scripts/upload_combined_md.py",
+    "Scripts/upload_to_drive.py",
+    "Untitled 1.base",
+    "Untitled.base",
+    "Knowledge_Base/Reports/daily/2026-06-19-malli-daily.md",
+    "Knowledge_Base/Reports/daily/2026-06-12-malli-daily.md",
+    "AI_QA_Portfolio/docs/screenshots/github-actions.png",
+    "AI_QA_Portfolio/docs/screenshots/playwright-report.png",
+    "AI_QA_Portfolio/docs/screenshots/ai-failure-report.png",
+    "AI_QA_Portfolio/docs/screenshots",
+    "AI_QA_Portfolio/docs",
+    "AI_QA_Portfolio/test-results/ui-checkout-Checkout-Flow--91769-nt-checkout-with-empty-cart-webkit/error-context.md",
+    "AI_QA_Portfolio/test-results/ui-checkout-Checkout-Flow--91769-nt-checkout-with-empty-cart-webkit",
+    "AI_QA_Portfolio/test-results/ui-checkout-Checkout-Flow--91769-nt-checkout-with-empty-cart-chromium/error-context.md",
+    "AI_QA_Portfolio/test-results/ui-checkout-Checkout-Flow--91769-nt-checkout-with-empty-cart-chromium",
+    "AI_QA_Portfolio/playwright-report/data/46b255eebebf93b1425836d90ba8adac838a7a01.md",
+    "AI_QA_Portfolio/playwright-report/data/ce72f3106213f9fd76ef0a67db1478264c65842e.md",
+    "Knowledge_Base/Architecture_and_Workflows/MACRO_SYSTEM_ARCHITECTURE.md",
+    "Portfolios/Oman_Mock_Portfolio/history/2026-06-11.json",
+    "Knowledge_Base/Reports/daily/2026-06-11-malli-daily.md",
+    "Portfolios/Oman_Mock_Portfolio/history/2026-06-10.json",
+    "Knowledge_Base/Reports/daily/2026-06-10-malli-daily.md",
+    "MALLI_MEMORY.md",
+    "MALI_MEMORY.md",
+    "AI_QA_Portfolio/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
+    "AI_QA_Portfolio/node_modules/playwright-core/lib/vite/dashboard/playwright-logo.svg",
+    "AI_QA_Portfolio/node_modules/playwright-core/lib/vite/dashboard/assets/safari-na3_-uQk.svg",
+    "AI_QA_Portfolio/node_modules/playwright-core/lib/vite/dashboard/assets/firefox-nightly-Cp5nfeDT.svg",
+    "AI_QA_Portfolio/node_modules/playwright-core/lib/vite/dashboard/assets/firefox-beta-k3eOH_eK.svg",
+    "AI_QA_Portfolio/node_modules/playwright-core/lib/vite/dashboard/assets/firefox-1bWoP6pv.svg",
+    "AI_QA_Portfolio/node_modules/dotenv/README.md",
+    "AI_QA_Portfolio/node_modules/dotenv/README-es.md",
+    "AI_QA_Portfolio/node_modules/dotenv/CHANGELOG.md",
+    "Knowledge_Base/Sources/VRT/2026-06-08-news.md",
+    "Knowledge_Base/Sources/TSM/2026-06-08-news.md",
+    "Knowledge_Base/Sources/TER/2026-06-08-news.md",
+    "Knowledge_Base/Sources/PLTR/2026-06-08-news.md",
+    "Knowledge_Base/Sources/MU/2026-06-08-news.md",
+    "Knowledge_Base/Sources/MSFT/2026-06-08-news.md",
+    "Knowledge_Base/Sources/META/2026-06-08-news.md",
+    "Knowledge_Base/Sources/GOOGL/2026-06-08-news.md",
+    "Knowledge_Base/Sources/DELL/2026-06-08-news.md",
+    "Knowledge_Base/Sources/CCJ/2026-06-08-news.md",
+    "Knowledge_Base/Sources/AVGO/2026-06-08-news.md",
+    "AI_QA_Portfolio/node_modules/playwright-core/lib/tools/dashboard/appIcon.png"
+  ]
+}
