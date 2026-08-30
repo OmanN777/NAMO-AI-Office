@@ -1,8 +1,8 @@
 # MALLI MEMORY BANK (Persistent Session State)
 
 **Status:** ACTIVE  
-**Last_Updated:** 2026-08-17  
-**Last_Routine_Executed:** 2026-08-17 (`malli-daily`)  
+**Last_Updated:** 2026-08-19  
+**Last_Routine_Executed:** 2026-08-19 (`malli-daily`)  
 **MODEL_CONFIG:** Gemini 3.7 Flash (Default: **Medium Thinking Level**, Auto-switch to High Thinking for deep 10-K & Risk calculations).  
 **OFFICE_WEB_APP:** `C:\Users\namo_\OneDrive\เอกสาร\gemini-cli\antigravity-office-workspace\dashboard` (`http://localhost:3000/`) — Portfolio Dashboard Web App showing Namo's Real & Oman's Mock Portfolios.
 
@@ -16,6 +16,9 @@
 - ⚖️ **Vera:** Quant & Risk Manager (Drawdown, Worst-Case Scenario, Position Sizing, Veto)
 
 *(Note: Every `/malli-daily` must audit and report the daily activity status of all 7 agents.)*
+
+## 💖 Special Personal Milestones
+- **ทุกวันที่ 20 ของทุกเดือน:** วันครบรอบของบอสกับแฟน (Anniversary Reminder) — มอลิจะช่วยเตือนบอสให้เสมอนะคะ!
 
 ## Current Context & Ongoing Tasks
 

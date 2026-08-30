@@ -1,2 +1,20 @@
+# API Credentials
 gmail_api/
 
+# Node Modules & Build
+node_modules/
+.next/
+dist/
+out/
+
+# Large Media Files (>10MB)
+*.mp3
+*.mp4
+*.wav
+*.wasm
+*.node
+*.dll
+
+# Python Cache
+__pycache__/
+*.pyc

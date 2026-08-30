@@ -48,6 +48,16 @@
   - นโยบายภาครัฐเปลี่ยนทิศทางไม่สนับสนุนพลังงานนิวเคลียร์
   - เกิดอุบัติเหตุทางนิวเคลียร์ร้ายแรงที่กระทบ Sentiment ทั่วโลก
 
+### 6. Palantir (PLTR) - *The Enterprise AIP & Defense Moat*
+- **Status:** 🟢 INTACT (Initiated: 2026-08-17)
+- **Weekly Note:** Initiated Starter Position (1.0 share) at $174.50 following exceptional US Commercial AIP expansion (+100%+ YoY) and Department of Defense (DoD) Maven Smart System integration.
+- **Thesis:** เป็นผู้นำเบอร์ 1 ในการสร้างระบบปฏิบัติการ AI สำหรับองค์กร (Ontology + AIP) ที่เปลี่ยนข้อมูลดิบให้เป็น Action อัตโนมัติ ปลอดหนี้สินระยะยาว และมี Margin กระแสเงินสดอิสระ (FCF) สูงกว่า 35%
+- **Scalability:** การเติบโตผ่าน AIP Bootcamps ย่นระยะเวลาปิดดีลลูกค้าจากหลายเดือนเหลือเพียงไม่กี่วัน และขยายตัวในอัตราเร่ง
+- **Kill Conditions:**
+  - อัตราการเติบโตของลูกค้ารายใหม่ (US Commercial Customer Count) ชะลอตัวลงต่ำกว่า 30% YoY
+  - การสูญเสียสัญญาหลักจากภาครัฐ (DoD) ให้กับคู่แข่ง Big Tech
+
+
 ### 6. Alphabet (GOOGL) - *The AI Vertical Integrator*
 - **Status:** 🟢 INTACT (Updated: 2026-07-17)
 - **Weekly Note:** Slipped amid tech rotation and hyperscaler capex return concerns. Moat is defended by the vertical AI stack and Berkshire's $10B long-term backing.

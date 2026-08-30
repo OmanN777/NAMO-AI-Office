@@ -1,173 +1,383 @@
 {
-  "last_updated": "2026-05-17",
+  "last_updated": "2026-08-30",
+  "version": "2.5.0 (Comprehensive 25-Stock AI & Tech Infrastructure Universe)",
+  "curator": "Agent Oman (CIO), Fundamentokung (Valuation), Newwy (Sentiment), Vera (Quant)",
+  "description": "Full Master Universe of 25 High-Conviction Tech, AI, Infrastructure, Energy, and Software stocks actively tracked and scouted by the 7 Executive Agents.",
   "items": [
     {
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
       "status": "SELECTED",
-      "reason": "ราชาแห่ง Custom AI Silicon ที่มี Backlog ยาวเหยียดและคุมตลาดกว่า 70% ตรงตามเกณฑ์ Scalability และ Engineering Strength ขั้นสูงสุด",
-      "category": "AI Chips"
-    },
-    {
-      "ticker": "VRT",
-      "name": "Vertiv Holdings Co",
-      "status": "SELECTED",
-      "reason": "ผู้นำระบบระบายความร้อน (Liquid Cooling) ซึ่งเป็นคอขวดสำคัญของ AI Infrastructure ในปี 2026 มี Backlog มหาศาลระดับ $15B",
-      "category": "Infrastructure"
+      "category": "AI Chips & Custom ASIC",
+      "market_cap_tier": "Mega-Cap",
+      "conviction_score": 9.5,
+      "thesis": "ราชาแห่ง Custom AI Silicon (XPU) คุมส่วนแบ่งตลาด Hyperscaler ASIC กว่า 70% พร้อม Backlog มหาศาล และมีรายได้ซอฟต์แวร์เสถียรภาพสูงจาก VMware",
+      "valuation_metrics": {
+        "pe_forward": "28.5x",
+        "fcf_yield": "3.8%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Blackwell Custom Networking rollout, Google TPU v6 / Meta MTIA volume scaling"
     },
     {
       "ticker": "CRM",
       "name": "Salesforce, Inc.",
       "status": "SELECTED",
-      "reason": "การเปลี่ยนผ่านสู่ Agentic AI ผ่าน Agentforce สร้างรายได้รูปแบบใหม่ (Usage-based) ที่สเกลได้ดีกว่าโมเดลเดิม",
-      "category": "Software"
+      "category": "Agentic Enterprise Software",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 9.2,
+      "thesis": "ผู้นำ Agentic AI ระดับ Enterprise ด้วย Agentforce ARR ทะลุ .5B (+240% YoY) เปลี่ยนผ่านจาก Seat-based สู่ Usage-based Monetization สำเร็จ",
+      "valuation_metrics": {
+        "pe_forward": "19.8x",
+        "fcf_yield": "4.9%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Dreamforce 2026 showcase, Data Cloud adoption, Enterprise Autonomous Agents"
     },
     {
-      "ticker": "MU",
-      "name": "Micron Technology, Inc.",
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc.",
       "status": "SELECTED",
-      "reason": "Memory (HBM3E) กลายเป็นสินค้าขาดแคลนและถูกจองเต็มล่วงหน้าข้ามปี ทำให้ Micron มีอำนาจการต่อรองราคาสูงมาก",
-      "category": "Memory"
+      "category": "AI Operating System & Defense",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 9.0,
+      "thesis": "AIP Bootcamps ปิดการขายระดับ Enterprise เร็วที่สุด อัตรากำไรขยายตัว และเป็นเสาหลัก AI Defense ของรัฐบาลสหรัฐฯ/NATO",
+      "valuation_metrics": {
+        "pe_forward": "45.0x",
+        "fcf_margin": "38.0%",
+        "fair_value": ".00"
+      },
+      "catalysts": "S&P 500 Institutional inflows, AIP US Commercial Revenue +50% YoY"
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co",
+      "status": "SELECTED",
+      "category": "Thermal Management & Datacenter Power",
+      "market_cap_tier": "Mid-to-Large-Cap",
+      "conviction_score": 8.8,
+      "thesis": "คอขวด AI Cluster คือความร้อนและพลังงาน Vertiv ครองส่วนแบ่ง Liquid Cooling และ Power Distribution ใน AI Datacenter ทั่วโลก",
+      "valuation_metrics": {
+        "pe_forward": "24.0x",
+        "fcf_yield": "3.2%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Direct-to-Chip Liquid Cooling adoption across GB200/B200 NVL72 architectures"
     },
     {
       "ticker": "CCJ",
       "name": "Cameco Corporation",
       "status": "SELECTED",
-      "reason": "AI Data Centers ต้องการพลังงานสะอาด 24/7 และนิวเคลียร์คือคำตอบเดียว CCJ ครองทรัพยากรยูเรเนียมคุณภาพสูงที่สุดในโลก",
-      "category": "Energy"
-    },
-    {
-      "ticker": "ALAB",
-      "name": "Astera Labs",
-      "status": "PASSED",
-      "reason": "ทำระบบเชื่อมต่อ Smart Fabric ที่น่าสนใจมาก แต่ปัจจุบันเลือก AVGO ที่มี Ecosystem ครบวงจรกว่าในระดับเงินทุนนี้",
-      "category": "Hardware"
-    },
-    {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices",
-      "status": "PASSED",
-      "reason": "MI450 กำลังชิงส่วนแบ่งตลาดได้ดี แต่ยังตามหลัง Nvidia และ Custom Silicon ของ Hyperscalers อยู่หนึ่งก้าว",
-      "category": "AI Chips"
-    },
-    {
-      "ticker": "TSM",
-      "name": "Taiwan Semiconductor",
-      "status": "PASSED",
-      "reason": "เป็นหัวใจของทุกอย่าง แต่ความเสี่ยงทางภูมิรัฐศาสตร์และต้นทุน node 2nm ที่สูงขึ้นทำให้การถือผ่านลูกค้า (AVGO/AAPL) ดูคุ้มค่ากว่า",
-      "category": "Foundry"
-    },
-    {
-      "ticker": "AMKR",
-      "name": "Amkor Technology",
-      "status": "PASSED",
-      "reason": "ผู้นำด้าน Advanced Packaging ที่โตตาม Nvidia แต่ Margin ยังต่ำกว่ากลุ่มผู้ออกแบบชิป",
-      "category": "Hardware"
-    },
-    {
-      "ticker": "TER",
-      "name": "Teradyne",
-      "status": "PASSED",
-      "reason": "โตตามความซับซ้อนของการทดสอบชิป AI แต่ยังไม่เห็นอำนาจการต่อรองที่ชัดเจนเท่ากลุ่มต้นน้ำ",
-      "category": "Hardware"
-    },
-    {
-      "ticker": "CRDO",
-      "name": "Credo Technology",
-      "status": "PASSED",
-      "reason": "Connectivity ประหยัดพลังงานเป็นธีมที่ดี แต่ขนาดตลาดยังเล็กเกินไปสำหรับพอร์ตหลัก",
-      "category": "Hardware"
-    },
-    {
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "status": "PASSED",
-      "reason": "แข็งแกร่งเกินบรรยาย แต่การจะสร้าง Aggressive Growth จากฐานที่ใหญ่ขนาดนี้ทำได้ยากกว่าหุ้นขนาดกลาง",
-      "category": "Cloud/AI"
-    },
-    {
-      "ticker": "AMZN",
-      "name": "Amazon.com",
-      "status": "PASSED",
-      "reason": "AWS Bedrock และชิป Trainium มาถูกทาง แต่ธุรกิจ E-commerce ยังเป็นตัวถ่วง Margin รวม",
-      "category": "Cloud/AI"
+      "category": "Nuclear Energy & Clean Baseload",
+      "market_cap_tier": "Mid-Cap",
+      "conviction_score": 8.7,
+      "thesis": "AI Datacenters ต้องการพลังงานไฟฟ้าสะอาดตลอด 24/7 CCJ ครอบครองเหมืองยูเรเนียมคุณภาพสูงและสัดส่วนใน Westinghouse Nuclear",
+      "valuation_metrics": {
+        "pe_forward": "22.5x",
+        "fcf_yield": "3.5%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Hyperscaler Long-term Nuclear PPA contracts, Global Uranium deficit"
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
       "status": "SELECTED",
-      "reason": "อยู่ในรายการ Shortlist ลำดับที่ 1 มีความแข็งแกร่งจาก Vertical Integration (TPU + Gemini + Cloud) รอจังหวะเข้าลงทุนเมื่อมีกระแสเงินสดพร้อม",
-      "category": "Cloud/AI"
+      "category": "Full-Stack AI Leader & Cloud",
+      "market_cap_tier": "Mega-Cap",
+      "conviction_score": 8.9,
+      "thesis": "โครงสร้าง Full-Stack AI สมบูรณ์แบบที่สุดในโลก (Gemini Series, TPU v6, Google Cloud AI, Waymo, Search Agentic Transformation)",
+      "valuation_metrics": {
+        "pe_forward": "21.0x",
+        "fcf_yield": "4.2%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Google Cloud AI revenue reacceleration, Waymo commercial scaling"
+    },
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies Inc.",
+      "status": "MONITORING_PROMOTE",
+      "category": "AI Infrastructure & Sovereign Servers",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 9.1,
+      "thesis": "ผู้ครอง AI Server Backlog สูงสุดในโลก (.3B) ด้วยทีมขายตรงและสิทธิ์จัดสรรชิป Nvidia Blackwell ระดับสูงสุด",
+      "valuation_metrics": {
+        "pe_forward": "16.5x",
+        "fcf_yield": "5.5%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Q2 FY2027 Earnings on Sept 1, 2026, Conversion of  backlog into FCF"
+    },
+    {
+      "ticker": "APP",
+      "name": "AppLovin Corporation",
+      "status": "MONITORING_PROMOTE",
+      "category": "AI AdTech & E-commerce Recommendation",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 8.9,
+      "thesis": "โมเดล AI AXON 2.0 สร้าง ROAS สูง ดึงดูดเม็ดเงิน E-commerce นอกเกม พร้อม EBITDA Margin สูงกว่า 55-60%",
+      "valuation_metrics": {
+        "pe_forward": "26.0x",
+        "fcf_yield": "4.0%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Web E-commerce ad engine rollout, Mobile programmatic expansion"
+    },
+    {
+      "ticker": "RKLB",
+      "name": "Rocket Lab USA, Inc.",
+      "status": "MONITORING_PROMOTE",
+      "category": "Space Economy & Defense Satellites",
+      "market_cap_tier": "Mid-Cap",
+      "conviction_score": 8.6,
+      "thesis": "จรวด Neutron เริ่มทดสอบและเตรียมยิงจริงเพื่อรองรับกลุ่มดาวเทียม AI & Defense เป็นเบอร์ 2 ของโลกรองจาก SpaceX เท่านั้น",
+      "valuation_metrics": {
+        "pe_forward": "N/A (Growth)",
+        "ev_sales": "11.2x",
+        "fair_value": ".00"
+      },
+      "catalysts": "Neutron launch pad testing, DoD satellite constellation award wins"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "status": "WATCHLIST",
+      "category": "AI Compute Monopoly",
+      "market_cap_tier": "Mega-Cap",
+      "conviction_score": 9.4,
+      "thesis": "เจ้าตลาด GPU และ CUDA Ecosystem ผูกขาดการฝึกสอน AI ของโลก แต่ต้องคอยระวัง Valuation Multiples และรอบการส่งมอบ Blackwell",
+      "valuation_metrics": {
+        "pe_forward": "32.0x",
+        "fcf_yield": "3.1%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Blackwell Ultra ramp-up, Rubin architecture announcement"
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "status": "WATCHLIST",
+      "category": "HBM Memory Supercycle",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 8.2,
+      "thesis": "HBM3E และ HBM4 ถูกจองเต็มล่วงหน้าข้ามปี มีอำนาจตั้งราคาสูง แต่มีความเสี่ยงความผันผวนของรอบ Commodity Memory",
+      "valuation_metrics": {
+        "pe_forward": "14.0x",
+        "fcf_yield": "3.0%",
+        "fair_value": ".00"
+      },
+      "catalysts": "HBM4 supply contract volume confirmation"
+    },
+    {
+      "ticker": "MSFT",
+      "name": "Microsoft Corporation",
+      "status": "WATCHLIST",
+      "category": "Enterprise Cloud & Copilot",
+      "market_cap_tier": "Mega-Cap",
+      "conviction_score": 8.8,
+      "thesis": "ผู้นำ Azure Cloud AI ร่วมกับ OpenAI ecosystem แต่ต้องพิสูจน์การสร้างรายได้ Copilot และ CapEx ที่สูงขึ้น",
+      "valuation_metrics": {
+        "pe_forward": "29.0x",
+        "fcf_yield": "2.9%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Azure AI growth reacceleration, Copilot enterprise ARPU expansion"
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "status": "WATCHLIST",
+      "category": "Cloud Hyperscaler & AI Infrastructure",
+      "market_cap_tier": "Mega-Cap",
+      "conviction_score": 8.9,
+      "thesis": "AWS Trainium/Inferentia เติบโตแรง คุมตลาดคลาวด์เบอร์ 1 ของโลก พร้อมกระแสเงินสดแข็งแกร่งจาก E-commerce และโฆษณา",
+      "valuation_metrics": {
+        "pe_forward": "27.0x",
+        "fcf_yield": "3.9%",
+        "fair_value": ".00"
+      },
+      "catalysts": "AWS AI annual run-rate milestone, Anthropic Claude 3.7 integration"
     },
     {
       "ticker": "META",
-      "name": "Meta Platforms",
-      "status": "PASSED",
-      "reason": "Llama กลายเป็นมาตรฐาน Open-source แต่รายได้ยังผูกติดกับโฆษณาเป็นหลัก ซึ่งผันผวนตามเศรษฐกิจ",
-      "category": "Software/AI"
+      "name": "Meta Platforms, Inc.",
+      "status": "WATCHLIST",
+      "category": "Open-Source AI & Digital Ads",
+      "market_cap_tier": "Mega-Cap",
+      "conviction_score": 9.0,
+      "thesis": "Llama ecosystem ขยายตัวครอบคลุมทั่วโลก และ AI ช่วยยกระดับระบบแนะนำโฆษณา สร้าง Free Cash Flow มหาศาล",
+      "valuation_metrics": {
+        "pe_forward": "22.0x",
+        "fcf_yield": "4.5%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Llama 4 launch, Ray-Ban Meta AI smart glasses sales surge"
     },
     {
-      "ticker": "CEG",
-      "name": "Constellation Energy",
-      "status": "PASSED",
-      "reason": "ดีล Microsoft-Three Mile Island เป็นจุดเปลี่ยน แต่ราคาหุ้นสะท้อนข่าวดีไปมากแล้วเมื่อเทียบกับ CCJ",
-      "category": "Energy"
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices",
+      "status": "WATCHLIST",
+      "category": "AI GPU Challenger",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 8.0,
+      "thesis": "MI400/MI450 กำลังชิงส่วนแบ่งตลาด Inference GPU จาก Nvidia ในฝั่ง Hyperscalers แต่ยังต้องเร่งเครื่องด้าน ROCm Software",
+      "valuation_metrics": {
+        "pe_forward": "28.0x",
+        "fcf_yield": "2.5%",
+        "fair_value": ".00"
+      },
+      "catalysts": "MI450 customer deployment benchmarks"
+    },
+    {
+      "ticker": "ALAB",
+      "name": "Astera Labs",
+      "status": "WATCHLIST",
+      "category": "PCIe/CXL Connectivity Fabric",
+      "market_cap_tier": "Mid-Cap",
+      "conviction_score": 8.4,
+      "thesis": "หัวใจของระบบเชื่อมต่อ PCIe Gen 6 และ CXL Retimer ในคลัสเตอร์เซิร์ฟเวอร์ AI แต่ Valuation ค่อนข้างตึงตัว",
+      "valuation_metrics": {
+        "pe_forward": "42.0x",
+        "fcf_yield": "2.1%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Scorpio Smart Fabric Switch volume deliveries"
+    },
+    {
+      "ticker": "CRDO",
+      "name": "Credo Technology Group",
+      "status": "WATCHLIST",
+      "category": "High-Speed Active Electrical Cables",
+      "market_cap_tier": "Mid-Cap",
+      "conviction_score": 8.3,
+      "thesis": "ผู้นำสายสัญญาณ Active Electrical Cables (AEC) ประหยัดพลังงานในดาต้าเซ็นเตอร์ AI เติบโตตามปริมาณ Rack Scale",
+      "valuation_metrics": {
+        "pe_forward": "35.0x",
+        "fcf_yield": "2.8%",
+        "fair_value": ".00"
+      },
+      "catalysts": "800G and 1.6T AEC adoption with tier-1 cloud providers"
     },
     {
       "ticker": "VST",
       "name": "Vistra Corp",
-      "status": "PASSED",
-      "reason": "เป็น Utility ที่โตแรงที่สุดในปี 2026 แต่ความเสี่ยงด้านกฎระเบียบ (Regulation) สูงกว่าการถือวัตถุดิบต้นน้ำอย่างยูเรเนียม",
-      "category": "Energy"
+      "status": "WATCHLIST",
+      "category": "Nuclear & Independent Power Producer",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 8.7,
+      "thesis": "ผู้ผลิตไฟฟ้าเอกชนรายใหญ่ที่สุดในสหรัฐฯ มีโรงไฟฟ้านิวเคลียร์ Comanche Peak พร้อมจ่ายไฟป้อน AI Datacenter โดยตรง",
+      "valuation_metrics": {
+        "pe_forward": "17.5x",
+        "fcf_yield": "5.8%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Direct co-located data center power agreements"
     },
     {
-      "ticker": "NEE",
-      "name": "NextEra Energy",
-      "status": "PASSED",
-      "reason": "ผู้นำพลังงานสะอาด แต่โครงการ Renewable มักเจอปัญหาการเชื่อมต่อ Grid ที่ล่าช้า",
-      "category": "Energy"
+      "ticker": "CEG",
+      "name": "Constellation Energy",
+      "status": "WATCHLIST",
+      "category": "Nuclear Fleet Operator",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 8.8,
+      "thesis": "เจ้าของฝูงโรงไฟฟ้านิวเคลียร์ที่ใหญ่ที่สุดในสหรัฐฯ ได้รับผลประโยชน์สูงสุดจากสัญญาขายไฟฟ้า Clean Baseload 24/7",
+      "valuation_metrics": {
+        "pe_forward": "21.0x",
+        "fcf_yield": "4.1%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Three Mile Island unit restart progress, Big Tech power contracts"
     },
     {
       "ticker": "GEV",
-      "name": "GE Vernova",
-      "status": "PASSED",
-      "reason": "Grid Modernization เป็นธีมที่ใช่ แต่การปรับปรุงโครงสร้างพื้นฐานรัฐต้องใช้เวลาพิสูจน์ผลกำไร",
-      "category": "Energy"
-    },
-    {
-      "ticker": "BEPC",
-      "name": "Brookfield Renewable",
-      "status": "PASSED",
-      "reason": "พันธมิตรที่ดีของ Hyperscalers แต่โครงสร้างหนี้ในกลุ่ม Infrastructure เริ่มสูงขึ้นตามดอกเบี้ย",
-      "category": "Energy"
+      "name": "GE Vernova Inc.",
+      "status": "WATCHLIST",
+      "category": "Power Grid & Turbines Infrastructure",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 8.5,
+      "thesis": "ผู้ผลิตกังหันก๊าซและอุปกรณ์โครงข่ายสายส่งไฟฟ้า (Grid Equipment) ที่ได้รับอานิสงส์จากการอัปเกรดระบบสายส่งทั่วโลก",
+      "valuation_metrics": {
+        "pe_forward": "25.0x",
+        "fcf_yield": "3.9%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Grid electrification backlog expansion"
     },
     {
       "ticker": "ASML",
-      "name": "ASML Holding",
-      "status": "PASSED",
-      "reason": "ผูกขาด EUV แน่นอน แต่เป็นรอบการลงทุนที่ไกลตัวผู้บริโภคเกินไปสำหรับพอร์ตที่เน้นการทำกำไรใน 1-2 ปีนี้",
-      "category": "Equipment"
+      "name": "ASML Holding N.V.",
+      "status": "WATCHLIST",
+      "category": "EUV Semiconductor Lithography",
+      "market_cap_tier": "Mega-Cap",
+      "conviction_score": 9.1,
+      "thesis": "ผูกขาดเครื่องพิมพ์ชิป High-NA EUV เพียงเจ้าเดียวในโลก เป็นรากฐานของชิป AI 2nm และ 1.4nm ในอนาคต",
+      "valuation_metrics": {
+        "pe_forward": "30.0x",
+        "fcf_yield": "3.0%",
+        "fair_value": ",050.00"
+      },
+      "catalysts": "High-NA EUV mass deployment at TSMC and Intel"
+    },
+    {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor",
+      "status": "WATCHLIST",
+      "category": "Foundry Monopoly",
+      "market_cap_tier": "Mega-Cap",
+      "conviction_score": 8.5,
+      "thesis": "ผูกขาดการผลิตชิป 3nm/2nm ของโลก แต่มีความเสี่ยงภูมิรัฐศาสตร์และต้นทุนการลงทุน Fab ต่างประเทศที่กดดัน Margin",
+      "valuation_metrics": {
+        "pe_forward": "23.0x",
+        "fcf_yield": "3.2%",
+        "fair_value": ".00"
+      },
+      "catalysts": "2nm mass production yield confirmation in Taiwan and Arizona"
     },
     {
       "ticker": "ISRG",
-      "name": "Intuitive Surgical",
-      "status": "PASSED",
-      "reason": "AI ในการแพทย์มาแรงจริง แต่ไม่ใช่หัวใจหลักของ AI-Energy Convergence ที่เราโฟกัส",
-      "category": "Healthcare/AI"
+      "name": "Intuitive Surgical, Inc.",
+      "status": "WATCHLIST",
+      "category": "AI Robotic Healthcare",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 8.4,
+      "thesis": "หุ่นยนต์ผ่าตัด da Vinci 5 พร้อมระบบ AI Data Feedback มี Recurring Revenue จากอุปกรณ์สิ้นเปลืองสูงมาก",
+      "valuation_metrics": {
+        "pe_forward": "55.0x",
+        "fcf_yield": "1.8%",
+        "fair_value": ".00"
+      },
+      "catalysts": "da Vinci 5 global regulatory approvals and procedure volume growth"
     },
     {
-      "ticker": "DELL",
-      "name": "Dell Technologies",
-      "status": "SELECTED",
-      "reason": "AI Server Revenue โต 757% Backlog ล้นมือ ทรงพลังในฐานะ Hardware Infrastructure",
-      "category": "Hardware"
+      "ticker": "NEE",
+      "name": "NextEra Energy, Inc.",
+      "status": "WATCHLIST",
+      "category": "Renewable & Utility Giant",
+      "market_cap_tier": "Large-Cap",
+      "conviction_score": 7.8,
+      "thesis": "ยักษ์ใหญ่พลังงานหมุนเวียน (Solar/Wind) และ Utility เสถียรภาพสูง แต่เติบโตช้ากว่ากลุ่มนิวเคลียร์ในการป้อนดาต้าเซ็นเตอร์",
+      "valuation_metrics": {
+        "pe_forward": "19.5x",
+        "fcf_yield": "4.0%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Renewable battery storage integration contracts"
     },
     {
-      "ticker": "PLTR",
-      "name": "Palantir Technologies",
-      "status": "SELECTED",
-      "reason": "DoD รับรอง Maven ให้เป็นโปรแกรมหลักถาวร ลูกค้าเอกชนโต 133% ธีม AI Defense น่าจับตา",
-      "category": "Software/Defense"
+      "ticker": "TER",
+      "name": "Teradyne, Inc.",
+      "status": "WATCHLIST",
+      "category": "Automated Chip Testing & Robotics",
+      "market_cap_tier": "Mid-to-Large-Cap",
+      "conviction_score": 8.1,
+      "thesis": "อุปกรณ์ทดสอบชิป AI System-on-Chip (SoC) และหุ่นยนต์ Universal Robots มีความสำคัญในการคัดกรอง Yield",
+      "valuation_metrics": {
+        "pe_forward": "31.0x",
+        "fcf_yield": "2.6%",
+        "fair_value": ".00"
+      },
+      "catalysts": "Blackwell / Rubin test equipment demand acceleration"
     }
   ]
 }

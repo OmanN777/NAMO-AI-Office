@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Malli Executive Assistant//Namo Anniversary Reminder//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:namo-anniversary-every-20th@antigravity-office
+DTSTAMP:20260819T164831Z
+DTSTART;VALUE=DATE:20260820
+DTEND;VALUE=DATE:20260821
+RRULE:FREQ=MONTHLY;BYMONTHDAY=20
+SUMMARY:❤️ วันครบรอบของบอสกับแฟน (Monthly Anniversary)
+DESCRIPTION:วันครบรอบสุดพิเศษประจำเดือนของบอสกับแฟน อย่าลืมส่งข้อความน่ารักๆ หรือพาไปทานของอร่อยด้วยกันนะคะ! 🥰💐✨\n(แจ้งเตือนโดย มอลิ)
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+TRIGGER:-PT0M
+ACTION:DISPLAY
+DESCRIPTION:🎉 สุขสันต์วันครบรอบค่ะบอส! เข้าสู่วันที่ 20 แล้วนะคะ (Midnight Reminder) ❤️
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT12H
+ACTION:DISPLAY
+DESCRIPTION:❤️ เตือนความจำ: พรุ่งนี้เป็นวันครบรอบของบอสกับแฟนนะคะ!
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:20260820T010000Z
+ACTION:DISPLAY
+DESCRIPTION:❤️ อรุณสวัสดิ์ค่ะบอส! วันนี้วันครบรอบของบอสกับแฟน (วันที่ 20) นะคะ 💐
+END:VALARM
+END:VEVENT
+END:VCALENDAR
