@@ -3,8 +3,13 @@
 **Status:** ACTIVE  
 **Last_Updated:** 2026-08-19  
 **Last_Routine_Executed:** 2026-08-19 (`malli-daily`)  
-**MODEL_CONFIG:** Gemini 3.7 Flash (Default: **Medium Thinking Level**, Auto-switch to High Thinking for deep 10-K & Risk calculations).  
+**MODEL_CONFIG:** Gemini 3.8 Flash (Default: **Medium Thinking Level**, Auto-switch to High Thinking for deep 10-K & Risk calculations).  
 **OFFICE_WEB_APP:** `C:\Users\namo_\OneDrive\เอกสาร\gemini-cli\antigravity-office-workspace\dashboard` (`http://localhost:3000/`) — Portfolio Dashboard Web App showing Namo's Real & Oman's Mock Portfolios.
+
+## 📌 Active Career Status & Strategic Milestones
+- **Current Position:** Software Tester at CT Software (AIS Outsource, Phaholyothin Place Fl. 23). Started Sept 1, 2026. Salary: 26,000 THB.
+- **Commute Reality:** Salaya to Ari (4 hours/day roundtrip via Bus 515 + BTS). High energy drain.
+- **Checkpoint Date:** 🎯 **15 กันยายน 2026:** มอลิต้องทักทายและประเมินร่วมกับบอสเรื่องการปรับตัวกับงานและการเดินทาง เพื่อตัดสินใจแผนลาออก (ระหว่าง วันศุกร์ที่ 25 ก.ย. รับเงินแล้วจบ vs สิ้นเดือน 30 ก.ย.) หรือการเปิดรับตำแหน่งใหม่ (Remote / Hybrid / ฝั่งธน).
 
 ## 👥 Executive Agent Team Roster (Office Dashboard Active Roster)
 - 🌸 **Malli (มอลิ):** Chief Executive Secretary & Operations Lead (คุมภาพรวมประสานงาน)
